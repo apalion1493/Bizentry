@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-tiles {
+    background-size: 73px 73px;
+    background-image: linear-gradient(currentColor 1px, transparent 1px),
+    linear-gradient(to right, currentColor 1px, transparent 1px);
+    @apply -m-0.5;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 lg:px-3 w-full minsm:max-w-[672px] minmd:max-w-[800px] minlg:max-w-[1056px] minxl:max-w-[1216px] min2xl:max-w-[1216px];
+  }
+
+  .container-full {
+    @apply pl-8 pr-6 w-full max-w-full md:px-4;
+  }
+
+  .w-full {
+    width: 100% !important;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    scroll-behavior: smooth;
+    @apply text-Text bg-white;
+  }
+}
+
+.border-none {
+  border: none !important;
+}
+
+.row {
+  @apply grid grid-cols-12;
+}
+
+.row-10 {
+  @apply grid grid-cols-10;
+}
+
+section {
+  @apply w-full
+}
+
+.pr-10 {
+  padding-right: 2.5rem !important; /* 40px */
+;
+}
+
+.input::placeholder {
+  @apply text-Grey2 md:text-body2
+}
+
+.input-solo::placeholder {
+  @apply text-Grey2 text-body2 font-medium
+}
+
+.input {
+  &.bg-input-1 {
+    @apply bg-pageBg
+  }
+
+  &.active {
+    @apply border-blue-100
+  }
+
+  &.input-icon {
+    @apply pl-[55px]
+  }
+
+  &--radio {
+    label {
+      @apply ml-2
+    }
+
+    @apply text-blue-100
+  }
+
+  &.success {
+    @apply bg-green-500 border-green-500
+  }
+
+  &.error {
+    @apply bg-Error2 border-Error
+  }
+
+  &.textarea {
+    @apply rounded-7xl h-[140px]
+  }
+
+  @apply py-4 px-5 bg-white flex items-center rounded-full text-body2 h-[55px] md:h-[48px]
+  w-full text-Text font-medium border border-Grey transition-all focus:shadow-none
+  focus:ring-0 outline-0 focus:outline-0 focus:outline-inherit focus:border-Grey2
+}
+
+.input-radio-block {
+  &:checked {
+    background-image: url("../img/icons/Check-box-active-icon20.svg");
+  }
+
+  @apply relative h-5 w-5 appearance-none rounded-full border border-blue-100 bg-white disabled:cursor-not-allowed focus:ring-0 outline-0 focus:outline-0 focus:outline-inherit
+}
+
+.radio-filter {
+  @apply hidden
+}
+
+.input[type="search"]::placeholder {
+
+}
+
+.min-w-0 {
+  min-width: 0 !important;
+}
+
+textarea.input {
+
+  &.steps {
+    height: 120px !important;
+    resize: none;
+  }
+
+  @apply h-[100px] p-3
+}
+
+select.select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background: url('__IMAGE_PATH__fi-rs-paper-plane2.svg') no-repeat calc(100% - 20px) center;
+  @apply text-blue-100
+}
+
+.select option:first-child {
+  color: #A9B1B3;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+
+  a {
+    @apply text-green-500 hover:underline;
+  }
+}
+
+.custom-checkbox input[type='checkbox'] {
+  @apply hidden;
+}
+
+.custom-checkbox input[type='checkbox']:checked + .checkmark {
+  @apply flex items-center justify-center;
+}
+
+.custom-checkbox .checkmark {
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 2px;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.image-wrapper-1 {
+  background: radial-gradient(
+                  88.41% 99.23% at 0% 0%,
+                  #F6FAFA 20.41%,
+                  rgba(246, 250, 250, 0) 100%
+  ),
+  lightgray 50% / cover no-repeat,
+  #F1F7FC;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.text-white {
+  color: white !important;
+}
+
+
+@media (max-width: 1279.98px) {
+}
+
+@media (max-width: 1023.98px) {
+
+  .contact-color-block {
+    width: calc(100% + 32px) !important;
+    background-size: cover !important;
+  }
+
+  .disable-transition {
+    transition: none !important;
+  }
+
+}
+
+@media (max-width: 767.98px) {
+}
+
+@media (max-width: 639.98px) {
+}
+
+@media (max-width: 424.98px) {
+}
