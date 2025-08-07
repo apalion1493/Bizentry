@@ -84,7 +84,7 @@ module.exports = {
             },
             boxShadow: {
                 'v1': '0px 0px 16px 0px rgba(37, 51, 126, 0.05)',
-                'v2': '0px 1px 12px 0px rgba(148, 163, 184, 0.10)',
+                'v2': '0 0 20px 0 rgba(111, 132, 156, 0.10)',
             },
             borderRadius: {
                 '4xl': '32px',
@@ -97,6 +97,7 @@ module.exports = {
                 pageBg: '#FAF9FB',
                 Grey: '#6F849C',
                 Grey2: '#A9B1B3',
+                Grey3: '#ECEDF2',
                 bgLight: '#A9B1B3',
                 DarkGrey: '#596D7F',
                 Error: '#ED484B',
