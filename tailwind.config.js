@@ -112,7 +112,8 @@ module.exports = {
             letterSpacing: {
                 '04': '-0.4px', //tracking
                 '12': '-1.2px', //tracking
-                '24': '2.4px' //tracking
+                '24': '2.4px', //tracking
+                '36': '3.6px', //tracking
             },
             padding: {
                 '1/4': '25%',
