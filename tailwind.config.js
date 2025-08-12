@@ -86,6 +86,7 @@ module.exports = {
             boxShadow: {
                 'v1': '0px 0px 16px 0px rgba(37, 51, 126, 0.05)',
                 'v2': '0 0 20px 0 rgba(111, 132, 156, 0.10)',
+                'v3': '0 0 20px 0 rgba(223, 74, 83, 0.30)',
             },
             borderRadius: {
                 '4xl': '32px',
@@ -102,14 +103,16 @@ module.exports = {
                 Grey4: '#E5E5E8',
                 bgLight: '#A9B1B3',
                 DarkGrey: '#596D7F',
-                Error: '#ED484B',
+                Error: '#D8132A',
                 Error2: '#FFF6F6',
                 Error3: '#DD00001A',
                 Text: '#202020',
                 Title: '#14142B',
                 Red: '#DF4A53',
+                Red2: '#E9525C',
                 Blue: '#2F3C8A',
                 DarkBlue: '#091F44',
+                White2: '#F8F7FA',
             },
             letterSpacing: {
                 '04': '-0.4px', //tracking

@@ -41,15 +41,11 @@
 .button {
 
   &.btn-white {
-    @apply bg-white text-Grey2 hover:bg-Grey
-  }
-
-  &.big-1 {
-    @apply h-[85px] min-h-[85px] px-[55px] lg:h-[60px] lg:min-h-[60px] lg:px-5 sm:w-full text-Top3
+    @apply bg-white text-Red hover:bg-Grey border-[1.5px] border-Red hover:shadow-v3 hover:border-Red2 hover:text-Red2 active:border-Error active:text-Error;
   }
 
   &.medium-btn {
-    @apply h-[50px] text-body
+    @apply h-[48px]
   }
 
   &.disabled {
@@ -64,8 +60,8 @@
     @apply min-w-[0px]
   }
 
-  @apply h-[65px] min-w-[130px] w-fit flex items-center justify-center rounded-full
-  text-white text-Top3 lg:text-base text-center whitespace-nowrap font-bold bg-green-500 transition-all hover:bg-green-500 disabled:bg-Grey2 disabled:cursor-not-allowed;
+  @apply h-[56px] min-w-[119px] w-fit flex items-center justify-center rounded-full
+  text-white text-Top3 lg:text-body text-center whitespace-nowrap font-semibold bg-Red transition-all hover:bg-Red2 active:bg-Error disabled:bg-Red2 disabled:cursor-not-allowed;
 }
 
 // Button with arrow Style End
@@ -667,4 +663,8 @@
   top: -3px;
   left: -25px;
   display: block;
+}
+
+.bg-gradient-1 {
+  background: linear-gradient(180deg, #FFF 0%, #FAF9FB 56.73%, rgba(255, 235, 231, 0.50) 100%);
 }
