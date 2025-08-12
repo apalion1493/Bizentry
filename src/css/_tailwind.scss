@@ -97,9 +97,9 @@ section {
     @apply rounded-7xl h-[140px]
   }
 
-  @apply p-4 bg-White2 flex items-center rounded-full text-body2 h-12
-  w-full text-Text font-medium border border-Grey transition-all focus:shadow-none
-  focus:ring-0 outline-0 focus:outline-0 focus:outline-inherit focus:border-Grey2
+  @apply p-4 bg-White2 flex items-center rounded-[6px] text-body2 h-12
+  w-full text-DarkBlue border border-transparent transition-all focus:shadow-none
+  focus:ring-0 outline-0 focus:outline-0 focus:outline-inherit focus:border-Red active:border-Grey4
 }
 
 .input-radio-block {

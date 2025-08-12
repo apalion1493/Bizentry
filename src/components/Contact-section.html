@@ -18,7 +18,43 @@
       </div>
       <div class="col-span-7">
         <div class="max-w-[573px] flex flex-col w-full">
-          <form action="">
+          <form class="flex flex-col gap-y-2" action="">
+              @@include('input.html', {
+              "common-style": "",
+              "StyleLabel": "hidden",
+              "idInput": "nameID",
+              "label": "Full Name",
+              "styleInput": "",
+              "type": "text",
+              "placeholder": "Full Name",
+              "Name": "fullName",
+              "errorStyle": "hidden",
+              })
+
+              @@include('input.html', {
+              "common-style": "",
+              "StyleLabel": "hidden",
+              "idInput": "EmailID",
+              "label": "Email",
+              "styleInput": "",
+              "type": "email",
+              "placeholder": "Email",
+              "Name": "email",
+              "errorStyle": "hidden",
+              })
+
+              @@include('input.html', {
+              "common-style": "",
+              "StyleLabel": "hidden",
+              "idInput": "nameID",
+              "label": "Full Name",
+              "styleInput": "",
+              "type": "text",
+              "placeholder": "Full Name",
+              "Name": "fullName",
+              "errorStyle": "hidden",
+              })
+
 
           </form>
         </div>
