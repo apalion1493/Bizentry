@@ -2514,6 +2514,9 @@ html {
 .top-\[50px\]{
   top: 50px;
 }
+.bottom-5{
+  bottom: 1.25rem;
+}
 .z-10{
   z-index: 10;
 }
@@ -2523,11 +2526,26 @@ html {
 .z-\[1\]{
   z-index: 1;
 }
+.z-\[2px\]{
+  z-index: 2px;
+}
+.z-0{
+  z-index: 0;
+}
+.z-\[2\]{
+  z-index: 2;
+}
+.z-\[3\]{
+  z-index: 3;
+}
 .col-span-12{
   grid-column: span 12 / span 12;
 }
 .col-span-5{
   grid-column: span 5 / span 5;
+}
+.col-span-6{
+  grid-column: span 6 / span 6;
 }
 .col-span-7{
   grid-column: span 7 / span 7;
@@ -2544,6 +2562,9 @@ html {
 }
 .mb-5{
   margin-bottom: 1.25rem;
+}
+.mb-6{
+  margin-bottom: 1.5rem;
 }
 .ml-2{
   margin-left: 0.5rem;
@@ -2587,8 +2608,8 @@ html {
 .mt-auto{
   margin-top: auto;
 }
-.mb-6{
-  margin-bottom: 1.5rem;
+.ml-auto{
+  margin-left: auto;
 }
 .block{
   display: block;
@@ -2781,10 +2802,6 @@ html {
 }
 .gap-y-6{
   row-gap: 1.5rem;
-}
-.gap-x-1{
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
 }
 .self-start{
   align-self: flex-start;
@@ -3396,561 +3413,11 @@ input[type=search]::-webkit-search-results-decoration {
     transition: none !important;
   }
 }
-.image-1 {
-  background: url("../img/image-1.png");
-  display: block;
-  height: 90px;
-  width: 92px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.image-2 {
-  background: url("../img/image-2.png");
-  display: block;
-  height: 263px;
-  width: 264px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.image-3 {
-  background: url("../img/image-3.png");
-  display: block;
-  height: 214px;
-  width: 193px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.list-icon-check {
-  background: url("../img/list-icon-check.svg");
-  display: block;
-  height: 2.5rem;
-  width: 2.5rem;
-  min-width: 2.5rem;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.list-icon-check30 {
-  background: url("../img/list-icon-check.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.World-img-1 {
-  background: url("../img/World-img-1.svg");
-  display: block;
-  height: 306px;
-  width: 526px;
-  min-width: 526px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.pie-chart-003 {
-  background: url("../img/003-pie-chart.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.recycling-container {
-  background: url("../img/recycling-container.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.info-traced {
-  background: url("../img/info-traced.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.stopwatch {
-  background: url("../img/stopwatch.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.security {
-  background: url("../img/security.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.Buy-Smarter {
-  background: url("../img/Buy-Smarter.png");
-  display: block;
-  height: 105px;
-  width: 100px;
-  min-width: 100px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.Sell-Excess {
-  background: url("../img/Sell-Excess.png");
-  display: block;
-  height: 105px;
-  width: 100px;
-  min-width: 100px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.Gain-Total-Control {
-  background: url("../img/Gain-Total-Control.png");
-  display: block;
-  height: 105px;
-  width: 100px;
-  min-width: 100px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.bg-icon-1 {
-  background: url("../img/bg-icon-1.svg");
-  display: block;
-  height: 258px;
-  width: 151px;
-  min-width: 151px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.thumbs-up {
-  background: url("../img/thumbs-up.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.money-icon {
-  background: url("../img/money-icon.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.pill {
-  background: url("../img/pill.svg");
-  display: block;
-  height: 30px;
-  width: 30px;
-  min-width: 30px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-user-add {
-  background: url("../img/fi-rr-user-add.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-play {
-  background: url("../img/fi-rr-play.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rs-marker {
-  background: url("../img/fi-rs-marker.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-phone-call {
-  background: url("../img/fi-rr-phone-call.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-envelope {
-  background: url("../img/fi-rr-envelope.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-calendar {
-  background: url("../img/fi-rr-calendar.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-calendar-green {
-  background: url("../img/fi-rr-calendar-green.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-share {
-  background: url("../img/fi-rr-share.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-envelope2 {
-  background: url("../img/fi-rr-envelope2.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-link {
-  background: url("../img/fi-rr-link.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-print {
-  background: url("../img/fi-rr-print.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rs-paper-plane {
-  background: url("../img/fi-rs-paper-plane.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.modal-icon {
-  background: url("../img/modal-icon.svg");
-  display: block;
-  height: 140px;
-  width: 140px;
-  min-width: 140px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-phone-call-black {
-  background: url("../img/fi-rr-phone-call-black.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-user {
-  background: url("../img/fi-rr-user.svg");
-  display: block;
-  height: 20px;
-  width: 20px;
-  min-width: 20px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.fi-rr-envelope-input {
-  background: url("../img/fi-rr-envelope.svg") no-repeat 20px center;
-  background-size: 20px 20px;
-}
-
-.fi-rr-lock-input {
-  background: url("../img/fi-rr-lock.svg") no-repeat 20px center;
-  background-size: 20px 20px;
-}
-
-.img-tab-1 {
-  background: url("../img/img-tab-1.png");
-  display: block;
-  height: 628px;
-  width: 399px;
-  min-width: 399px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-2 {
-  background: url("../img/img-tab-2.png");
-  display: block;
-  height: 326px;
-  width: 226px;
-  min-width: 226px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-3 {
-  background: url("../img/img-tab-3.png");
-  display: block;
-  height: 269px;
-  width: 224px;
-  min-width: 224px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-4 {
-  background: url("../img/img-tab-4.png");
-  display: block;
-  height: 343px;
-  width: 259px;
-  min-width: 259px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-5 {
-  background: url("../img/img-tab-5.png");
-  display: block;
-  height: 411px;
-  width: 333px;
-  min-width: 333px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-6 {
-  background: url("../img/img-tab-6.png");
-  display: block;
-  height: 255px;
-  width: 363px;
-  min-width: 363px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-7 {
-  background: url("../img/img-tab-7.png");
-  display: block;
-  height: 247px;
-  width: 345px;
-  min-width: 345px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-8 {
-  background: url("../img/img-tab-8.png");
-  display: block;
-  height: 125px;
-  width: 177px;
-  min-width: 177px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-9 {
-  background: url("../img/img-tab-9.png");
-  display: block;
-  height: 171px;
-  width: 164px;
-  min-width: 164px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-10 {
-  background: url("../img/img-tab-10.png");
-  display: block;
-  height: 266px;
-  width: 229px;
-  min-width: 229px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-11 {
-  background: url("../img/img-tab-11.png");
-  display: block;
-  height: 251px;
-  width: 225px;
-  min-width: 225px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-12 {
-  background: url("../img/img-tab-12.png");
-  display: block;
-  height: 385px;
-  width: 290px;
-  min-width: 290px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-13 {
-  background: url("../img/img-tab-13.png");
-  display: block;
-  height: 235px;
-  width: 235px;
-  min-width: 235px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-14 {
-  background: url("../img/img-tab-14.png");
-  display: block;
-  height: 209px;
-  width: 172px;
-  min-width: 172px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-15 {
-  background: url("../img/img-tab-15.png");
-  display: block;
-  height: 269px;
-  width: 224px;
-  min-width: 224px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-16 {
-  background: url("../img/img-tab-16.png");
-  display: block;
-  height: 313px;
-  width: 260px;
-  min-width: 260px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.img-tab-17 {
-  background: url("../img/img-tab-17.png");
-  display: block;
-  height: 203px;
-  width: 226px;
-  min-width: 226px;
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
+.img-bg-1 {
+  background: url("../img/img-bg-1.png") white -18.959px 0px/108.742% 100% no-repeat;
+  opacity: 1;
+  height: 301px;
+  width: 571px;
 }
 
 .bg-footer {

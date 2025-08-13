@@ -17,7 +17,7 @@
 
 <body class="">
 <main id="content" class="flex flex-col min-h-screen overflow-hidden">
-    <header class="w-full py-5">
+  <header class="w-full py-5">
     <div class="container">
         <div class="flex justify-between items-center width-full gap-x-5 bg-white py-[15px] lg:p-[10px] pr-[15px] pl-[30px] rounded-full">
             <button id="burger-button" class="minlg:hidden flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-Grey2"
@@ -83,11 +83,11 @@
 </header>
 
 
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-span-12">
-            <div class="flex gap-x-4 bg-white border border-Grey4 rounded-3xl shadow-v2 py-6 px-5 transition-all hover:border-Red @@Style">
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-span-12">
+          <div class="flex gap-x-4 bg-white border border-Grey4 rounded-3xl shadow-v2 py-6 px-5 transition-all hover:border-Red @@Style">
   <div class="relative min-w-20 w-20 h-20 overflow-hidden rounded-full">
     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
       <g filter="url(#filter0_n_133_721)">
@@ -132,18 +132,43 @@
   </div>
 </div>
 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pb-12 pt-14 bg-gradient-1">
+    <section>
+      <div class="container">
+        <div class="row gap-x-6 gap-y-5">
+          <div class="col-span-6">
+            <div>
+              <h3>Why BizEntry<span>?</span></h3>
+              <p>Corporate solutions is our business!
+                Due Diligence, Integrity, and Consistency are the virtues of our professionals.</p>
+            </div>
           </div>
+          <div class="col-span-6">
+            <div>
+              <div>
+                <span></span>
+              </div>
+              <p>Company registered in Florida, a top business-friendly state.</p>
+            </div>
+          </div>
+          <div class="col-span-6"></div>
+          <div class="col-span-6"></div>
+          <div class="col-span-6"></div>
+          <div class="col-span-6"></div>
         </div>
       </div>
     </section>
-
-    <div class="pb-12 pt-14 bg-gradient-1">
-        <section class="">
+    <section class="">
   <div class="container rounded-4xl overflow-hidden bg-white shadow-v2 border border-Grey4 pt-12 px-12">
     <div class="row gap-x-6">
       <div class="col-span-5">
-        <div class="flex flex-col gap-y-6 relative h-full">
-          <svg class="absolute bottom-[94px] -left-2" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+        <div class="relative h-full">
+          <svg class="absolute bottom-[94px] z-[2] -left-2" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
      viewBox="0 0 31 31">
   <defs>
     <!-- Радиальный градиент для эффекта затухания -->
@@ -161,7 +186,7 @@
   <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
 </svg>
 
-          <svg class="absolute bottom-1/2 right-0" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+          <svg class="absolute bottom-1/2 z-[2] right-0" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
      viewBox="0 0 31 31">
   <defs>
     <!-- Радиальный градиент для эффекта затухания -->
@@ -179,16 +204,19 @@
   <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
 </svg>
 
-          <h3 class="text-h2_2 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
-            business?</h3>
-          <p class="text-base font-medium">Get a free consultation today. <br>
-            BizEntry — your gateway to the U.S. <br>
-            No visa. No stress. Guaranteed.</p>
-          <img class="w-full absolute left-0 bottom-0" src="img/businessman-04-3.png" alt="Ready to launch your U.S. business?">
+          <div class="flex flex-col gap-y-6 relative z-[3]">
+            <h3 class="text-h2_2 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
+              business?</h3>
+            <p class="text-base font-medium">Get a free consultation today. <br>
+              BizEntry — your gateway to the U.S. <br>
+              No visa. No stress. Guaranteed.</p>
+          </div>
+          <div class="img-bg-1 absolute bottom-5 left-0 z-0"></div>
+          <img class="w-full absolute left-0 bottom-0 z-[1]" src="img/businessman-04-3.png" alt="Ready to launch your U.S. business?">
         </div>
       </div>
-      <div class="col-span-7">
-        <div class="max-w-[573px] flex flex-col w-full">
+      <div class="col-span-7 relative">
+        <div class="max-w-[573px] flex flex-col w-full ml-auto">
           <form class="flex flex-col gap-y-5" action="">
             <div class="flex flex-col gap-y-2">
               <div class="form-group flex flex-col items-start ">
@@ -251,8 +279,8 @@
   </div>
 </section>
 
-    </div>
-    <footer class="w-full mt-auto overflow-hidden bg-footer shadow-v2">
+  </div>
+  <footer class="w-full mt-auto overflow-hidden bg-footer shadow-v2">
   <div class="container">
     <div class="flex justify-between gap-x-6 lg:gap-y-[10px] pt-16 pb-10">
       <div class="flex flex-col gap-y-5 max-w-[331px]">

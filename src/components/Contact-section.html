@@ -2,23 +2,26 @@
   <div class="container rounded-4xl overflow-hidden bg-white shadow-v2 border border-Grey4 pt-12 px-12">
     <div class="row gap-x-6">
       <div class="col-span-5">
-        <div class="flex flex-col gap-y-6 relative h-full">
+        <div class="relative h-full">
           @@include('Animated-circle.html', {
-          "Style": "absolute bottom-[94px] -left-2"
+          "Style": "absolute bottom-[94px] z-[2] -left-2"
           })
           @@include('Animated-circle.html', {
-          "Style": "absolute bottom-1/2 right-0"
+          "Style": "absolute bottom-1/2 z-[2] right-0"
           })
-          <h3 class="text-h2_2 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
-            business?</h3>
-          <p class="text-base font-medium">Get a free consultation today. <br>
-            BizEntry — your gateway to the U.S. <br>
-            No visa. No stress. Guaranteed.</p>
-          <img class="w-full absolute left-0 bottom-0" src="__IMAGE_PATH__businessman-04-3.png" alt="Ready to launch your U.S. business?">
+          <div class="flex flex-col gap-y-6 relative z-[3]">
+            <h3 class="text-h2_2 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
+              business?</h3>
+            <p class="text-base font-medium">Get a free consultation today. <br>
+              BizEntry — your gateway to the U.S. <br>
+              No visa. No stress. Guaranteed.</p>
+          </div>
+          <div class="img-bg-1 absolute bottom-5 left-0 z-0"></div>
+          <img class="w-full absolute left-0 bottom-0 z-[1]" src="__IMAGE_PATH__businessman-04-3.png" alt="Ready to launch your U.S. business?">
         </div>
       </div>
-      <div class="col-span-7">
-        <div class="max-w-[573px] flex flex-col w-full">
+      <div class="col-span-7 relative">
+        <div class="max-w-[573px] flex flex-col w-full ml-auto">
           <form class="flex flex-col gap-y-5" action="">
             <div class="flex flex-col gap-y-2">
               @@include('input.html', {

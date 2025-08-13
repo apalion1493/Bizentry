@@ -7,24 +7,49 @@
 
 <body class="">
 <main id="content" class="flex flex-col min-h-screen overflow-hidden">
-    @@include('components/Header.html', {
-    'commonStyle': ' ',
-    })
+  @@include('components/Header.html', {
+  'commonStyle': ' ',
+  })
 
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-span-12">
+          @@include('components/Card.html')
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pb-12 pt-14 bg-gradient-1">
     <section>
       <div class="container">
-        <div class="row">
-          <div class="col-span-12">
-            @@include('components/Card.html')
+        <div class="row gap-x-6 gap-y-5">
+          <div class="col-span-6">
+            <div>
+              <h3>Why BizEntry<span>?</span></h3>
+              <p>Corporate solutions is our business!
+                Due Diligence, Integrity, and Consistency are the virtues of our professionals.</p>
+            </div>
           </div>
+          <div class="col-span-6">
+            <div>
+              <div>
+                <span></span>
+              </div>
+              <p>Company registered in Florida, a top business-friendly state.</p>
+            </div>
+          </div>
+          <div class="col-span-6"></div>
+          <div class="col-span-6"></div>
+          <div class="col-span-6"></div>
+          <div class="col-span-6"></div>
         </div>
       </div>
     </section>
-
-    <div class="pb-12 pt-14 bg-gradient-1">
-        @@include('components/Contact-section.html')
-    </div>
-    @@include('components/Footer.html')
+    @@include('components/Contact-section.html')
+  </div>
+  @@include('components/Footer.html')
 </main>
 
 @@include('components/script.html')
