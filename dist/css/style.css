@@ -2508,11 +2508,11 @@ html {
 .right-0{
   right: 0px;
 }
-.top-\[50px\]{
-  top: 50px;
-}
 .top-1\/2{
   top: 50%;
+}
+.top-\[50px\]{
+  top: 50px;
 }
 .z-10{
   z-index: 10;
@@ -2587,6 +2587,9 @@ html {
 .mt-auto{
   margin-top: auto;
 }
+.mb-6{
+  margin-bottom: 1.5rem;
+}
 .block{
   display: block;
 }
@@ -2613,6 +2616,9 @@ html {
   width: 1rem;
   height: 1rem;
 }
+.h-20{
+  height: 5rem;
+}
 .h-6{
   height: 1.5rem;
 }
@@ -2625,8 +2631,8 @@ html {
 .h-\[50px\]{
   height: 50px;
 }
-.h-20{
-  height: 5rem;
+.h-full{
+  height: 100%;
 }
 .max-h-44{
   max-height: 11rem;
@@ -2636,6 +2642,9 @@ html {
 }
 .min-h-screen{
   min-height: 100vh;
+}
+.w-20{
+  width: 5rem;
 }
 .w-6{
   width: 1.5rem;
@@ -2655,14 +2664,11 @@ html {
 .w-full{
   width: 100%;
 }
-.w-20{
-  width: 5rem;
+.min-w-20{
+  min-width: 5rem;
 }
 .min-w-\[16px\]{
   min-width: 16px;
-}
-.min-w-20{
-  min-width: 5rem;
 }
 .max-w-\[1075px\]{
   max-width: 1075px;
@@ -2741,6 +2747,10 @@ html {
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
 }
+.gap-x-4{
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
 .gap-x-5{
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
@@ -2763,18 +2773,18 @@ html {
 .gap-y-2{
   row-gap: 0.5rem;
 }
+.gap-y-3{
+  row-gap: 0.75rem;
+}
 .gap-y-5{
   row-gap: 1.25rem;
 }
 .gap-y-6{
   row-gap: 1.5rem;
 }
-.gap-x-4{
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
-}
-.gap-y-3{
-  row-gap: 0.75rem;
+.gap-x-1{
+  -moz-column-gap: 0.25rem;
+       column-gap: 0.25rem;
 }
 .self-start{
   align-self: flex-start;
@@ -2791,6 +2801,9 @@ html {
 .rounded{
   border-radius: 0.25rem;
 }
+.rounded-3xl{
+  border-radius: 1.5rem;
+}
 .rounded-4xl{
   border-radius: 32px;
 }
@@ -2805,9 +2818,6 @@ html {
 }
 .rounded-xl{
   border-radius: 0.75rem;
-}
-.rounded-3xl{
-  border-radius: 1.5rem;
 }
 .border{
   border-width: 1px;
@@ -2922,13 +2932,13 @@ html {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
 }
-.py-\[15px\]{
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+.py-\[15px\]{
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .pb-10{
   padding-bottom: 2.5rem;
@@ -2965,6 +2975,10 @@ html {
 }
 .text-center{
   text-align: center;
+}
+.text-Top1{
+  font-size: 24px;
+  line-height: 130%;
 }
 .text-Top3{
   font-size: 20px;
@@ -3005,10 +3019,6 @@ html {
 .text-none{
   font-size: 0px;
   line-height: 0px;
-}
-.text-Top1{
-  font-size: 24px;
-  line-height: 130%;
 }
 .font-bold{
   font-weight: 700;
@@ -3253,8 +3263,8 @@ section {
   background-color: rgb(255 246 246 / var(--tw-bg-opacity, 1));
 }
 .input.textarea{
-  height: 140px;
-  border-radius: 10px;
+  height: 132px;
+  border-radius: 6px;
 }
 
 .input-radio-block{
@@ -3309,13 +3319,12 @@ select.select {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
-  background: url("../img/fi-rs-paper-plane2.svg") no-repeat calc(100% - 20px) center;
   --tw-text-opacity: 1;
-  color: rgb(219 234 254 / var(--tw-text-opacity, 1));
+  color: rgb(111 132 156 / var(--tw-text-opacity, 1));
 }
 
 .select option:first-child {
-  color: #A9B1B3;
+  color: #091F44;
 }
 
 input[type=search]::-webkit-search-decoration,
@@ -3989,8 +3998,8 @@ input[type=search]::-webkit-search-results-decoration {
   --tw-bg-opacity: 1;
   background-color: rgb(223 74 83 / var(--tw-bg-opacity, 1));
   text-align: center;
-  font-size: 20px;
-  line-height: 130%;
+  font-size: 16px;
+  line-height: 120%;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
@@ -4014,13 +4023,6 @@ input[type=search]::-webkit-search-results-decoration {
   cursor: not-allowed;
   --tw-bg-opacity: 1;
   background-color: rgb(233 82 92 / var(--tw-bg-opacity, 1));
-}
-
-@media (max-width: 1023px){
-  .button{
-    font-size: 16px;
-    line-height: 120%;
-  }
 }
 .button.btn-white{
   border-width: 1.5px;

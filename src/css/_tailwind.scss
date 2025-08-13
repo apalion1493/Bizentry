@@ -94,7 +94,7 @@ section {
   }
 
   &.textarea {
-    @apply rounded-7xl h-[140px]
+    @apply rounded-[6px] h-[132px]
   }
 
   @apply p-4 bg-White2 flex items-center rounded-[6px] text-body2 h-12
@@ -136,12 +136,11 @@ select.select {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   appearance: none !important;
-  background: url('__IMAGE_PATH__fi-rs-paper-plane2.svg') no-repeat calc(100% - 20px) center;
-  @apply text-blue-100
+  @apply text-Grey
 }
 
 .select option:first-child {
-  color: #A9B1B3;
+  color: #091F44;
 }
 
 input[type='search']::-webkit-search-decoration,
