@@ -44,7 +44,7 @@
 .button {
 
   &.btn-white {
-    @apply bg-white text-Red hover:bg-Grey border-[1.5px] border-Red hover:shadow-v3 hover:border-Red2 hover:text-Red2 active:border-Error active:text-Error;
+    @apply bg-white text-Red hover:bg-white border-[1.5px] border-Red hover:shadow-v3 hover:border-Red2 hover:text-Red2 active:border-Error active:text-Error;
   }
 
   &.medium-btn {

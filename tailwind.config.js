@@ -32,15 +32,15 @@ module.exports = {
         fontSize: {
             none: ['0px', '0px'],
             base: ['18px', '130%'],
-            h1: ['60px', '120%'],
-            h2: ['48px', '120%'],
+            h1: ['52px', '100%'],
+            h2: ['48px', '100%'],
             h2_2: ['45px', '120%'],
             h3: ['40px', '130%'],
             h4: ['32px', '130%'],
             h5: ['26px', '130%'],
             h1Mob: ['56px', '120%'],
             h2Mob: ['30px', '120%'],
-            Top1: ['24px', '130%'],
+            Top1: ['24px', '110%'],
             Top2: ['22px', '130%'],
             Top3: ['20px', '130%'],
             Top4: ['35px', 'normal'],
@@ -113,6 +113,7 @@ module.exports = {
                 Blue: '#2F3C8A',
                 DarkBlue: '#091F44',
                 White2: '#F8F7FA',
+                White3: 'rgba(255, 255, 255, 0.80)',
             },
             letterSpacing: {
                 '04': '-0.4px', //tracking

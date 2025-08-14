@@ -11,17 +11,97 @@
   'commonStyle': ' ',
   })
 
-  <section class="pt-[120px]">
+  <section class="pt-[120px] pb-14 img-bg-2">
     <div class="container">
-      <div class="row">
-        <div class="col-span-12">
-          @@include('components/Card.html', {
-          'Icon': 'Company-Formation-icon',
-          })
+      <div class="row gap-x-6">
+        <div class="col-span-7">
+          <div class="flex flex-col pt-[70px] gap-y-8">
+            <h1 class="text-h1 font-bold text-DarkBlue">Launch Your <br>
+              <span class="italic text-Blue">U.S.</span> Business- <br>
+              <span class="text-Red">Remotely</span> & with <br>
+              Real Account at Chase.</h1>
+            <p class="text-base font-medium">BizEntry is your reliable gateway to the U.S. market. <br>No need to travel
+              to the U.S. — everything is done
+              <br> remotely, turnkey, and with a guaranteed outcome.</p>
+            <div class="flex items-center gap-x-4">
+              @@include('components/Link.html', {
+              'style': 'px-8',
+              'title': 'Start Now',
+              'url': '#',
+              })
+              @@include('components/Link.html', {
+              'style': 'px-8 btn-white',
+              'title': 'Our Pricing',
+              'url': 'Pricing.html',
+              })
+            </div>
+          </div>
+        </div>
+        <div class="col-span-5">
+          <img class="max-w-[407px] ml-auto" src="__IMAGE_PATH__hero-img-1.png" alt="Businessman Image">
         </div>
       </div>
     </div>
   </section>
+  <section class="py-14 img-bg-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-span-12">
+          <div class="flex flex-col gap-y-5 max-w-[720px] mx-auto">
+            <h2 class="text-white text-h2 font-bold text-center">With us, your <span class="text-Red">U.S.</span> business is fully compliant, secure, and built on trust.</h2>
+            <p class="text-White3 font-medium text-center">BizEntry is your reliable and transparent business partner in the U.S. We guide you every step of the way
+              — from registering your company and opening a Chase bank account to providing accounting, tax, and legal
+              support.</p>
+          </div>
+        </div>
+        <div class="col-span-12">
+          <div class="flex gap-x-5 justify-between mt-6">
+            <div class="flex flex-col justify-center gap-y-5 w-[35%] pt-[60px]">
+              <div class="flex flex-col gap-y-3 w-full bg-pageBg rounded-3xl overflow-hidden py-8 px-6">
+                <span class="text-DarkBlue text-Top1 font-bold">Your company in <span
+                  class="text-Red">USA.</span></span>
+                <p class="font-medium">Start your U.S. business and gain the asset protection and stability you deserve.
+                  Sell and operate
+                  online in just days — with expert support every step of the way. Contact us to get started.</p>
+              </div>
+              <div class="flex flex-col gap-y-3 w-full bg-pageBg rounded-3xl overflow-hidden py-8 px-6">
+                <span class="text-DarkBlue text-Top1 font-bold">Corporate <span class="text-Red">Law.</span></span>
+                <p class="font-medium">Select a wide range of corporate law support services including, partner
+                  disputes, litigation, class action suits, and all other corporate matters related in USA only.</p>
+              </div>
+            </div>
+            <div class="w-[30%]">
+              <img class="w-full" src="__IMAGE_PATH__img-n1.png" alt="businessman img">
+            </div>
+            <div class="flex flex-col justify-center gap-y-5 w-[35%] pt-[60px]">
+              <div class="flex flex-col gap-y-3 w-full bg-pageBg rounded-3xl overflow-hidden py-8 px-6">
+                <span class="text-DarkBlue text-Top1 font-bold">Full-Service business <span
+                  class="text-Red">Support.</span></span>
+                <p class="font-medium">We handle everything — from company setup to full compliance, CBA, and accounting — so your U.S. business runs smoothly from day one.</p>
+              </div>
+              <div class="flex flex-col gap-y-3 w-full bg-pageBg rounded-3xl overflow-hidden py-8 px-6">
+                <span class="text-DarkBlue text-Top1 font-bold">Bank <span
+                  class="text-Red">Account.</span></span>
+                <p class="font-medium">We open business accounts in trusted banks like Chase with legal support from our licensed team. Your funds are secure and your company is in good hands.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  <section class="pt-[120px]">-->
+  <!--    <div class="container">-->
+  <!--      <div class="row">-->
+  <!--        <div class="col-span-12">-->
+  <!--          @@include('components/Card.html', {-->
+  <!--          'Icon': 'Company-Formation-icon',-->
+  <!--          })-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </section>-->
 
   <div class="pb-12 pt-14 bg-gradient-1">
     <section>

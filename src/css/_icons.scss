@@ -265,6 +265,18 @@
   width: 571px;
 }
 
+.img-bg-2 {
+  background: url("__IMAGE_PATH__img-bg-2.png") white -18.959px 0px / 108.742% 100% no-repeat;
+  opacity: 1;
+}
+
+.img-bg-3 {
+  background: url("__IMAGE_PATH__img-bg-3.png");
+  background-size: 100% auto;
+  background-repeat: repeat;
+  background-position: center center;
+}
+
 .Company-Formation-icon {
   background: url("__IMAGE_PATH__Company-Formation-icon.svg");
   @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
