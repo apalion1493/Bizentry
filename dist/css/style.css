@@ -2511,6 +2511,9 @@ html {
 .right-0{
   right: 0px;
 }
+.top-0{
+  top: 0px;
+}
 .top-1\/2{
   top: 50%;
 }
@@ -2519,6 +2522,9 @@ html {
 }
 .top-\[50px\]{
   top: 50px;
+}
+.-bottom-6{
+  bottom: -1.5rem;
 }
 .z-0{
   z-index: 0;
@@ -2712,6 +2718,9 @@ html {
 .max-w-\[1075px\]{
   max-width: 1075px;
 }
+.max-w-\[1700px\]{
+  max-width: 1700px;
+}
 .max-w-\[331px\]{
   max-width: 331px;
 }
@@ -2726,6 +2735,9 @@ html {
 }
 .max-w-\[720px\]{
   max-width: 720px;
+}
+.max-w-\[734px\]{
+  max-width: 734px;
 }
 .max-w-xs{
   max-width: 20rem;
@@ -3026,6 +3038,9 @@ html {
 }
 .pb-8{
   padding-bottom: 2rem;
+}
+.pb-\[130px\]{
+  padding-bottom: 130px;
 }
 .pt-12{
   padding-top: 3rem;
@@ -3509,8 +3524,68 @@ input[type=search]::-webkit-search-results-decoration {
   background-position: center center;
 }
 
+.img-bg-4 {
+  background: url("../img/img-bg-4.png") white 0px -0.04px/100% 150.611% no-repeat;
+  opacity: 1;
+}
+
 .Company-Formation-icon {
   background: url("../img/Company-Formation-icon.svg");
+  display: block;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.money-cash-bill {
+  background: url("../img/money-cash-bill.svg");
+  display: block;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.business-cash-target {
+  background: url("../img/business-cash-target.svg");
+  display: block;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.business-cash-shield {
+  background: url("../img/business-cash-shield.svg");
+  display: block;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.business-deal-handshake {
+  background: url("../img/business-deal-handshake.svg");
+  display: block;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cash-briefcase {
+  background: url("../img/cash-briefcase.svg");
   display: block;
   height: 48px;
   width: 48px;
@@ -4411,6 +4486,10 @@ input[type=search]::-webkit-search-results-decoration {
 
 .bg-gradient-1 {
   background: linear-gradient(180deg, #FFF 0%, #FAF9FB 56.73%, rgba(255, 235, 231, 0.5) 100%);
+}
+
+.bg-gradient-2 {
+  background: linear-gradient(0deg, #FFF 36.13%, rgba(255, 235, 231, 0.5) 109.17%);
 }
 
 .header-w {

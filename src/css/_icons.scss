@@ -277,7 +277,37 @@
   background-position: center center;
 }
 
+.img-bg-4 {
+  background: url("__IMAGE_PATH__img-bg-4.png") white 0px -0.04px / 100% 150.611% no-repeat;
+  opacity: 1;
+}
+
 .Company-Formation-icon {
   background: url("__IMAGE_PATH__Company-Formation-icon.svg");
+  @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
+}
+
+.money-cash-bill {
+  background: url("__IMAGE_PATH__money-cash-bill.svg");
+  @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
+}
+
+.business-cash-target {
+  background: url("__IMAGE_PATH__business-cash-target.svg");
+  @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
+}
+
+.business-cash-shield {
+  background: url("__IMAGE_PATH__business-cash-shield.svg");
+  @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
+}
+
+.business-deal-handshake {
+  background: url("__IMAGE_PATH__business-deal-handshake.svg");
+  @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
+}
+
+.cash-briefcase {
+  background: url("__IMAGE_PATH__cash-briefcase.svg");
   @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
 }
