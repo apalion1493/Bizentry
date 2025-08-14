@@ -1,5 +1,8 @@
 // Footer Style Start
 
+/* Hide elements marked with x-cloak until Alpine initializes */
+[x-cloak] { display: none !important; }
+
 .bg-footer {
   background: url("__IMAGE_PATH__bg-footer.png") lightgray 50% / cover no-repeat;
   background-size: cover;
@@ -673,4 +676,22 @@
   width: calc(100% + 96px);
   margin-left: -48px;
   margin-right: -48px;
+}
+
+.header-menu a.active {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: block;
+    background: url("__IMAGE_PATH__red-dot.svg") no-repeat center;
+  }
+
+  @apply text-Red
 }

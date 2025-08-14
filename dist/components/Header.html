@@ -42,21 +42,33 @@
             <img class="lg:max-w-[124px]" width="124" height="36" src="img/Logo-1.svg" alt="Logo BizEntry">
           </a>
         </div>
-        <ul class=" relative z-[1] flex items-center gap-x-[30px]">
+        <ul class="header-menu relative z-[1] flex items-center gap-x-[30px]">
           <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
-            <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="About.html">Home</a>
+            <a class="text-body font-semibold text-Grey hover:text-Red transition-all active" href="index.html">Home</a>
           </li>
           <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
-            <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="How-Works.html">About</a>
+            <a class="text-body font-semibold text-Grey hover:text-Red transition-all" href="About-us.html">About</a>
+          </li>
+          <li class="relative lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+            <div x-data="{ open: false }" @click.outside="open = false">
+              <button type="button" class="flex items-center text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open">
+                Services
+                <svg class="ml-2 w-4 h-4 text-Grey transition-transform minlg:group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <ul id="services-submenu" x-cloak :class="{ 'hidden': !open }" class="block border border-Grey4 px-4 space-y-2 minlg:space-y-0 minlg:absolute minlg:left-1/2 minlg:-translate-x-1/2 minlg:top-full minlg:mt-3 minlg:w-[156px] minlg:rounded-2xl minlg:bg-white minlg:shadow-v2 minlg:py-4">
+                <li><a class="block py-1 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Business-Support.html">Business Support</a></li>
+                <li><a class="block py-1 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Tax-Support.html">Tax Support</a></li>
+                <li><a class="block py-1 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Other-Services.html">Other Services</a></li>
+              </ul>
+            </div>
           </li>
           <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
-            <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="Blog.html">Services</a>
+            <a class="text-body font-semibold text-Grey hover:text-Red transition-all" href="FAQs.html">FAQ</a>
           </li>
           <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
-            <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="FAQ.html">FAQ</a>
-          </li>
-          <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
-            <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="contact-us.html">Pricing</a>
+            <a class="text-body font-semibold text-Grey hover:text-Red transition-all active" href="Pricing.html">Pricing</a>
           </li>
         </ul>
         <a class="button minlg:hidden px-5 w-full relative z-[1] " href="#">
