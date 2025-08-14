@@ -264,3 +264,8 @@
   height: 301px;
   width: 571px;
 }
+
+.Company-Formation-icon {
+  background: url("__IMAGE_PATH__Company-Formation-icon.svg");
+  @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
+}

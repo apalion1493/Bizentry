@@ -668,3 +668,9 @@
 .bg-gradient-1 {
   background: linear-gradient(180deg, #FFF 0%, #FAF9FB 56.73%, rgba(255, 235, 231, 0.50) 100%);
 }
+
+.header-w {
+  width: calc(100% + 96px);
+  margin-left: -48px;
+  margin-right: -48px;
+}

@@ -2517,6 +2517,12 @@ html {
 .top-\[50px\]{
   top: 50px;
 }
+.top-0{
+  top: 0px;
+}
+.top-8{
+  top: 2rem;
+}
 .z-0{
   z-index: 0;
 }
@@ -2534,6 +2540,9 @@ html {
 }
 .z-\[3\]{
   z-index: 3;
+}
+.z-\[100\]{
+  z-index: 100;
 }
 .col-span-12{
   grid-column: span 12 / span 12;
@@ -2824,6 +2833,9 @@ html {
 .rounded-\[50\%\]{
   border-radius: 50%;
 }
+.rounded-\[56px\]{
+  border-radius: 56px;
+}
 .rounded-full{
   border-radius: 9999px;
 }
@@ -2942,6 +2954,10 @@ html {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -2949,10 +2965,6 @@ html {
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-.py-\[15px\]{
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 .pb-10{
   padding-bottom: 2.5rem;
@@ -2965,12 +2977,6 @@ html {
 }
 .pb-8{
   padding-bottom: 2rem;
-}
-.pl-\[30px\]{
-  padding-left: 30px;
-}
-.pr-\[15px\]{
-  padding-right: 15px;
 }
 .pt-12{
   padding-top: 3rem;
@@ -3415,6 +3421,17 @@ input[type=search]::-webkit-search-results-decoration {
   opacity: 1;
   height: 301px;
   width: 571px;
+}
+
+.Company-Formation-icon {
+  background: url("../img/Company-Formation-icon.svg");
+  display: block;
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-footer {
@@ -4303,6 +4320,12 @@ input[type=search]::-webkit-search-results-decoration {
 
 .bg-gradient-1 {
   background: linear-gradient(180deg, #FFF 0%, #FAF9FB 56.73%, rgba(255, 235, 231, 0.5) 100%);
+}
+
+.header-w {
+  width: calc(100% + 96px);
+  margin-left: -48px;
+  margin-right: -48px;
 }
 
 @media (max-width: 1023px){
