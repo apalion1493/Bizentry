@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Contacts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+</head>
+
+
+<body class="">
+<main id="content" class="flex flex-col min-h-screen overflow-hidden">
+  <header class="w-full py-5">
+    <div class="container">
+        <div class="flex justify-between items-center width-full gap-x-5 bg-white py-[15px] lg:p-[10px] pr-[15px] pl-[30px] rounded-full">
+            <button id="burger-button" class="minlg:hidden flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-Grey2"
+                    aria-label="Mobile Burger Button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M19.1667 9.16602H0.833333C0.373096 9.16602 0 9.53911 0 9.99935C0 10.4596 0.373096 10.8327 0.833333 10.8327H19.1667C19.6269 10.8327 20 10.4596 20 9.99935C20 9.53911 19.6269 9.16602 19.1667 9.16602Z" fill="#0E2B4C"/>
+                    <path d="M19.1667 3.33398H0.833333C0.373096 3.33398 0 3.70708 0 4.16732C0 4.62755 0.373096 5.00065 0.833333 5.00065H19.1667C19.6269 5.00065 20 4.62755 20 4.16732C20 3.70708 19.6269 3.33398 19.1667 3.33398Z" fill="#0E2B4C"/>
+                    <path d="M19.1667 15H0.833333C0.373096 15 0 15.3731 0 15.8333C0 16.2936 0.373096 16.6667 0.833333 16.6667H19.1667C19.6269 16.6667 20 16.2936 20 15.8333C20 15.3731 19.6269 15 19.1667 15Z" fill="#0E2B4C"/>
+                </svg>
+            </button>
+            <a class="flex items-center lg:mx-auto" href="index.html">
+                <img class="lg:max-w-[124px]" width="124" height="36" src="img/Logo-1.svg" alt="Logo OneSaleRX">
+            </a>
+            <div id="mobile-menu" class="show-mobile-menu">
+                <div class=" relative z-[1] minlg:hidden flex items-center">
+                    <button id="burger-button-close" class="minlg:hidden flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-Grey2"
+                            aria-label="Mobile Burger Button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <g clip-path="url(#clip0_1_5885)">
+                                <path d="M19.7561 0.243989C19.5999 0.0877628 19.3879 0 19.167 0C18.946 0 18.7341 0.0877628 18.5778 0.243989L10.0003 8.82149L1.42281 0.243989C1.26654 0.0877628 1.05461 0 0.833644 0C0.612674 0 0.40075 0.0877628 0.244477 0.243989C0.0882511 0.400262 0.000488281 0.612185 0.000488281 0.833155C0.000488281 1.05413 0.0882511 1.26605 0.244477 1.42232L8.82198 9.99982L0.244477 18.5773C0.0882511 18.7336 0.000488281 18.9455 0.000488281 19.1665C0.000488281 19.3875 0.0882511 19.5994 0.244477 19.7557C0.40075 19.9119 0.612674 19.9996 0.833644 19.9996C1.05461 19.9996 1.26654 19.9119 1.42281 19.7557L10.0003 11.1782L18.5778 19.7557C18.7341 19.9119 18.946 19.9996 19.167 19.9996C19.3879 19.9996 19.5999 19.9119 19.7561 19.7557C19.9124 19.5994 20.0001 19.3875 20.0001 19.1665C20.0001 18.9455 19.9124 18.7336 19.7561 18.5773L11.1786 9.99982L19.7561 1.42232C19.9124 1.26605 20.0001 1.05413 20.0001 0.833155C20.0001 0.612185 19.9124 0.400262 19.7561 0.243989Z" fill="#0E2B4C"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_5885">
+                                    <rect width="20" height="20" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                    <a class="flex items-center lg:mx-auto" href="index.html">
+                        <img class="lg:max-w-[124px]" width="124" height="36" src="img/Logo-1.svg" alt="Logo BizEntry">
+                    </a>
+                </div>
+                <ul class=" relative z-[1] flex items-center gap-x-[30px]">
+                    <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+                        <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="About.html">Home</a>
+                    </li>
+                    <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+                        <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="How-Works.html">About</a>
+                    </li>
+                    <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+                        <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="Blog.html">Services</a>
+                    </li>
+                    <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+                        <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="FAQ.html">FAQ</a>
+                    </li>
+                    <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+                        <a class="text-body text-Grey2 hover:text-green-500 transition-all" href="contact-us.html">Pricing</a>
+                    </li>
+                </ul>
+                <a class="button minlg:hidden px-5 w-full relative z-[1] " href="#">
+    <span class="">Free Account</span>
+</a>
+
+                <div class="bg-icon-1 absolute bottom-0 left-1/2 -translate-x-1/2 minlg:hidden"></div>
+            </div>
+            <div class="flex items-center">
+                <a class="button lg:hidden px-[32px] ml-4" href="#">
+    <span class="">Contact Us</span>
+</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+  <footer class="w-full mt-auto overflow-hidden bg-footer shadow-v2">
+  <div class="container">
+    <div class="flex justify-between gap-x-6 lg:gap-y-[10px] pt-16 pb-10">
+      <div class="flex flex-col gap-y-5 max-w-[331px]">
+        <a class="w-full" href="index.html">
+          <img src="img/Logo-2.svg" alt="BizEntry Logo">
+        </a>
+        <p>BizEntry is your reliable gateway to the U.S. market. No need to travel to the U.S— everything is done
+          remotely, turnkey, and with a guaranteed outcome.</p>
+      </div>
+      <div class="flex flex-col">
+        <h3 class="text-body text-Grey font-semibold mb-3 uppercase">EXPLORE</h3>
+        <ul class="flex flex-col gap-y-2">
+          <li class="flex items-center">
+            <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">Home</a>
+          </li>
+          <li class="flex items-center">
+            <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">About</a>
+          </li>
+          <li class="flex items-center">
+            <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">Services</a>
+          </li>
+          <li class="flex items-center">
+            <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">FAQ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col">
+        <h3 class="text-body text-Grey font-semibold mb-3 uppercase">LEGAL</h3>
+        <ul class="flex flex-col gap-y-2">
+          <li class="flex items-center">
+            <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">Contact</a>
+          </li>
+          <li class="flex items-center">
+            <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">Pricing</a>
+          </li>
+          <li class="flex items-center">
+            <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">Privacy Policy</a>
+          </li>
+          <li class="flex items-center">
+            <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">Terms & Conditions</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col">
+        <h3 class="text-body text-Grey font-semibold mb-3 uppercase">CONTACTS</h3>
+        <div class="flex items-center gap-x-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+            <g clip-path="url(#clip0_208_222)">
+              <path d="M22.7173 22.7021C23.8846 22.7021 24.834 21.7524 24.834 20.5854V12.4145C24.834 11.2475 23.8846 10.2979 22.7173 10.2979H9.28234C8.11509 10.2979 7.16565 11.2475 7.16565 12.4145V20.5854C7.16565 21.7524 8.11509 22.7021 9.28234 22.7021H22.7173ZM10.3663 20.8271L14.5045 16.6889L15.1092 17.0864C15.3553 17.2504 15.6373 17.3325 15.9198 17.3325C16.1996 17.3325 16.4796 17.2519 16.7245 17.0903L17.4241 16.6179L21.6334 20.8271H10.3663ZM22.9593 12.8811V19.5012L19.0072 15.5491L22.9593 12.8811ZM20.6571 12.1729L15.9166 15.3733L11.047 12.1729H20.6571ZM9.04034 13.0979L12.9043 15.6374L9.04034 19.5012V13.0979Z" fill="#DF4A53"/>
+              <path d="M27.314 5.18625C24.292 2.16431 20.2739 0.5 16.0002 0.5C12.4414 0.5 9.05322 1.6575 6.27341 3.79319L6.2866 3.2385C6.29879 2.72094 5.88941 2.29125 5.37154 2.279C4.85348 2.2675 4.42454 2.67619 4.41204 3.19406L4.35929 5.41794C4.34223 6.13962 4.87029 6.74531 5.58754 6.82688L8.04235 7.09931C8.51279 7.09931 8.9186 6.74581 8.97279 6.26725C9.03116 5.75288 8.66154 5.2885 8.14685 5.23012L7.56847 5.16444C9.99291 3.3545 12.9243 2.375 16.0002 2.375C19.7732 2.375 23.3203 3.84425 25.988 6.51219C28.656 9.17994 30.1252 12.7271 30.1252 16.5C30.1252 18.2744 29.8008 20.0044 29.1606 21.6416C28.9721 22.1238 29.2101 22.6675 29.6923 22.856C29.8044 22.8999 29.9199 22.9207 30.0334 22.9207C30.4081 22.9207 30.7621 22.6944 30.907 22.3242C31.6323 20.4685 32.0002 18.5091 32.0002 16.5C32.0002 12.2263 30.3359 8.20825 27.314 5.18625Z" fill="#DF4A53"/>
+              <path d="M26.4927 26.1886L24.0059 25.8976C23.4917 25.8375 23.0259 26.2057 22.9656 26.7199C22.9055 27.234 23.2737 27.6999 23.7878 27.7599L24.4465 27.837C22.0434 29.6461 19.1072 30.6251 16 30.6251C12.2271 30.6251 8.67994 29.1559 6.01219 26.4879C3.34425 23.8202 1.875 20.273 1.875 16.5001C1.875 14.172 2.45312 11.8646 3.54713 9.82747C3.792 9.37141 3.62087 8.80303 3.16456 8.55816C2.7085 8.31303 2.13987 8.48416 1.895 8.94047C0.65525 11.2493 0 13.8634 0 16.5001C0 20.7738 1.66431 24.7919 4.68625 27.8139C7.70819 30.8359 11.7263 32.5001 16 32.5001C19.5603 32.5001 22.9248 31.3632 25.6687 29.2635L25.6594 29.7027C25.6487 30.2203 26.0593 30.649 26.5772 30.6598C26.5837 30.66 26.5906 30.66 26.5972 30.66C27.1057 30.66 27.5232 30.253 27.5342 29.742L27.5823 27.4398C27.5959 26.8007 27.1274 26.2625 26.4927 26.1886Z" fill="#DF4A53"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_208_222">
+                <rect width="32" height="32" fill="white" transform="translate(0 0.5)"/>
+              </clipPath>
+            </defs>
+          </svg>
+
+          <div class="flex flex-col">
+            <p class="text-body4 uppercase font-medium tracking-36">Email</p>
+            <a class="mt-[2px] text-body text-DarkBlue font-medium hover:underline transition-all" href="mailto:Info@bizentry.com">Info@bizentry.com</a>
+          </div>
+        </div>
+        <ul class="flex gap-x-3 mt-4">
+          <li class="flex items-center">
+            <a target="_blank" class="w-[30px] h-[30px] text-none flex items-center justify-center rounded-full bg-Red border border-Red group hover:bg-white transition-all" href="#">
+              Facebook
+              <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+                <g clip-path="url(#clip0_208_232)">
+                  <rect class="group-hover:fill-white transition-all" width="8.75" height="14" fill="#DF4A53"/>
+                  <path class="group-hover:fill-Red transition-all" d="M7.6327 7.875L8.02153 5.34133H5.5904V3.69715C5.5904 3.00398 5.93001 2.32832 7.01884 2.32832H8.12407V0.171172C8.12407 0.171172 7.1211 0 6.16215 0C4.16004 0 2.85137 1.21352 2.85137 3.41031V5.34133H0.625854V7.875H2.85137V14H5.5904V7.875H7.6327Z" fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_208_232">
+                    <rect class="group-hover:fill-Red transition-all" width="8.75" height="14" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a target="_blank" class="w-[30px] h-[30px] text-none flex items-center justify-center rounded-full bg-Red border border-Red group hover:bg-white transition-all" href="#">
+              Linkedin
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                <g clip-path="url(#clip0_208_236)">
+                  <rect class="group-hover:fill-white transition-all" width="12.25" height="14" fill="#DF4A53"/>
+                  <path class="group-hover:fill-Red transition-all" d="M2.74203 12.25H0.202344V4.07145H2.74203V12.25ZM1.47082 2.95583C0.658711 2.95583 0 2.28317 0 1.47106C5.81273e-09 1.08098 0.154961 0.706869 0.430793 0.431037C0.706626 0.155205 1.08073 0.000244141 1.47082 0.000244141C1.86091 0.000244141 2.23501 0.155205 2.51085 0.431037C2.78668 0.706869 2.94164 1.08098 2.94164 1.47106C2.94164 2.28317 2.28266 2.95583 1.47082 2.95583ZM12.2473 12.25H9.71305V8.26872C9.71305 7.31989 9.69391 6.10309 8.39262 6.10309C7.07219 6.10309 6.86984 7.13395 6.86984 8.20036V12.25H4.33289V4.07145H6.76867V5.18708H6.80422C7.14328 4.5445 7.97152 3.86638 9.20719 3.86638C11.7775 3.86638 12.25 5.55895 12.25 7.75739V12.25H12.2473Z" fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_208_236">
+                    <rect class="group-hover:fill-Red transition-all" width="12.25" height="14" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a target="_blank" class="w-[30px] h-[30px] text-none flex items-center justify-center rounded-full bg-Red border border-Red group hover:bg-white transition-all" href="#">
+              Instagram
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path class="group-hover:fill-Red transition-all" d="M7 1.26506C8.85542 1.26506 9.10843 1.26506 9.86747 1.26506C10.5422 1.26506 10.8795 1.43374 11.1325 1.51807C11.4699 1.68675 11.7229 1.77108 11.9759 2.0241C12.2289 2.27711 12.3976 2.53012 12.4819 2.86747C12.5663 3.12048 12.6506 3.45783 12.7349 4.13253C12.7349 4.89157 12.7349 5.06024 12.7349 7C12.7349 8.93976 12.7349 9.10843 12.7349 9.86747C12.7349 10.5422 12.5663 10.8795 12.4819 11.1325C12.3133 11.4699 12.2289 11.7229 11.9759 11.9759C11.7229 12.2289 11.4699 12.3976 11.1325 12.4819C10.8795 12.5663 10.5422 12.6506 9.86747 12.7349C9.10843 12.7349 8.93976 12.7349 7 12.7349C5.06024 12.7349 4.89157 12.7349 4.13253 12.7349C3.45783 12.7349 3.12048 12.5663 2.86747 12.4819C2.53012 12.3133 2.27711 12.2289 2.0241 11.9759C1.77108 11.7229 1.60241 11.4699 1.51807 11.1325C1.43374 10.8795 1.3494 10.5422 1.26506 9.86747C1.26506 9.10843 1.26506 8.93976 1.26506 7C1.26506 5.06024 1.26506 4.89157 1.26506 4.13253C1.26506 3.45783 1.43374 3.12048 1.51807 2.86747C1.68675 2.53012 1.77108 2.27711 2.0241 2.0241C2.27711 1.77108 2.53012 1.60241 2.86747 1.51807C3.12048 1.43374 3.45783 1.3494 4.13253 1.26506C4.89157 1.26506 5.14458 1.26506 7 1.26506ZM7 0C5.06024 0 4.89157 0 4.13253 0C3.37349 0 2.86747 0.168675 2.44578 0.33735C2.0241 0.506025 1.60241 0.759037 1.18072 1.18072C0.759037 1.60241 0.590362 1.93976 0.33735 2.44578C0.168675 2.86747 0.0843374 3.37349 0 4.13253C0 4.89157 0 5.14458 0 7C0 8.93976 0 9.10843 0 9.86747C0 10.6265 0.168675 11.1325 0.33735 11.5542C0.506025 11.9759 0.759037 12.3976 1.18072 12.8193C1.60241 13.241 1.93976 13.4096 2.44578 13.6627C2.86747 13.8313 3.37349 13.9157 4.13253 14C4.89157 14 5.14458 14 7 14C8.85542 14 9.10843 14 9.86747 14C10.6265 14 11.1325 13.8313 11.5542 13.6627C11.9759 13.494 12.3976 13.241 12.8193 12.8193C13.241 12.3976 13.4096 12.0602 13.6627 11.5542C13.8313 11.1325 13.9157 10.6265 14 9.86747C14 9.10843 14 8.85542 14 7C14 5.14458 14 4.89157 14 4.13253C14 3.37349 13.8313 2.86747 13.6627 2.44578C13.494 2.0241 13.241 1.60241 12.8193 1.18072C12.3976 0.759037 12.0602 0.590362 11.5542 0.33735C11.1325 0.168675 10.6265 0.0843374 9.86747 0C9.10843 0 8.93976 0 7 0Z" fill="white"/>
+                <path class="group-hover:fill-Red transition-all" d="M7 3.37349C4.9759 3.37349 3.37349 4.9759 3.37349 7C3.37349 9.0241 4.9759 10.6265 7 10.6265C9.0241 10.6265 10.6265 9.0241 10.6265 7C10.6265 4.9759 9.0241 3.37349 7 3.37349ZM7 9.36145C5.73494 9.36145 4.63855 8.3494 4.63855 7C4.63855 5.73494 5.6506 4.63855 7 4.63855C8.26506 4.63855 9.36145 5.6506 9.36145 7C9.36145 8.26506 8.26506 9.36145 7 9.36145Z" fill="white"/>
+                <path class="group-hover:fill-Red transition-all" d="M10.7108 4.13253C11.1766 4.13253 11.5542 3.75495 11.5542 3.28916C11.5542 2.82336 11.1766 2.44578 10.7108 2.44578C10.245 2.44578 9.86747 2.82336 9.86747 3.28916C9.86747 3.75495 10.245 4.13253 10.7108 4.13253Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a target="_blank" class="w-[30px] h-[30px] text-none flex items-center justify-center rounded-full bg-Red border border-Red group hover:bg-white transition-all" href="#">
+              Youtube
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path class="group-hover:fill-Red transition-all" d="M13.7075 3.56466C13.5464 2.94878 13.072 2.46372 12.4697 2.29911C11.3779 2 7 2 7 2C7 2 2.6221 2 1.53029 2.29911C0.927952 2.46375 0.453555 2.94878 0.292544 3.56466C0 4.68099 0 7.0101 0 7.0101C0 7.0101 0 9.33922 0.292544 10.4555C0.453555 11.0714 0.927952 11.5363 1.53029 11.7009C2.6221 12 7 12 7 12C7 12 11.3779 12 12.4697 11.7009C13.072 11.5363 13.5464 11.0714 13.7075 10.4555C14 9.33922 14 7.0101 14 7.0101C14 7.0101 14 4.68099 13.7075 3.56466ZM5.56817 9.12477V4.89544L9.22725 7.01016L5.56817 9.12477Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="pt-6 pb-8 border-t border-Grey3">
+      <div class="row">
+        <div class="col-span-12">
+          <p class="text-center text-body4 text-Grey">Copyright &#169; 2025. All rights reserved by BizEntry</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="./js/scripts.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('data', () => ({
+        }))
+    })
+</script>
+
+</body>
+
+</html>
