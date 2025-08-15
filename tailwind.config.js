@@ -116,6 +116,7 @@ module.exports = {
                 White2: '#F8F7FA',
                 White3: 'rgba(255, 255, 255, 0.80)',
                 White4: 'rgba(255, 255, 255, 0.10)',
+                White5: 'rgba(250, 249, 251, 0.70)',
             },
             letterSpacing: {
                 '04': '-0.4px', //tracking
