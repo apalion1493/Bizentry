@@ -17,50 +17,22 @@
 
 <body class="">
 <main id="content" class="flex flex-col min-h-screen overflow-hidden">
-  <header class="w-full absolute top-8 left-1/2 -translate-x-1/2 z-[100]">
+  <header class="w-full absolute top-8 left-1/2 -translate-x-1/2 z-[100] overflow-hidden" x-data="{ mobileOpen: false }" x-init="
+    document.documentElement.classList.remove('overflow-hidden');
+    document.body.classList.remove('overflow-hidden');
+    $watch('mobileOpen', v => {
+      const on = !!v;
+      document.documentElement.classList.toggle('overflow-hidden', on);
+      document.body.classList.remove('overflow-hidden');
+    })
+  ">
   <div class="container">
     <div
       class="flex justify-between items-center header-w gap-x-5 px-12 bg-white py-4 lg:p-[10px] rounded-[56px] shadow-v2 mx-auto">
-      <button id="burger-button"
-              class="minlg:hidden flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-Grey2"
-              aria-label="Mobile Burger Button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path
-            d="M19.1667 9.16602H0.833333C0.373096 9.16602 0 9.53911 0 9.99935C0 10.4596 0.373096 10.8327 0.833333 10.8327H19.1667C19.6269 10.8327 20 10.4596 20 9.99935C20 9.53911 19.6269 9.16602 19.1667 9.16602Z"
-            fill="#0E2B4C"/>
-          <path
-            d="M19.1667 3.33398H0.833333C0.373096 3.33398 0 3.70708 0 4.16732C0 4.62755 0.373096 5.00065 0.833333 5.00065H19.1667C19.6269 5.00065 20 4.62755 20 4.16732C20 3.70708 19.6269 3.33398 19.1667 3.33398Z"
-            fill="#0E2B4C"/>
-          <path
-            d="M19.1667 15H0.833333C0.373096 15 0 15.3731 0 15.8333C0 16.2936 0.373096 16.6667 0.833333 16.6667H19.1667C19.6269 16.6667 20 16.2936 20 15.8333C20 15.3731 19.6269 15 19.1667 15Z"
-            fill="#0E2B4C"/>
-        </svg>
-      </button>
-      <a class="flex items-center lg:mx-auto" href="index.html">
+      <a class="flex items-center" href="index.html">
         <img class="lg:max-w-[124px]" width="124" height="36" src="img/Logo-1.svg" alt="Logo OneSaleRX">
       </a>
-      <div id="mobile-menu" class="show-mobile-menu">
-        <div class=" relative z-[1] minlg:hidden flex items-center">
-          <button id="burger-button-close"
-                  class="minlg:hidden flex items-center justify-center w-[50px] h-[50px] rounded-[50%] bg-Grey2"
-                  aria-label="Mobile Burger Button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <g clip-path="url(#clip0_1_5885)">
-                <path
-                  d="M19.7561 0.243989C19.5999 0.0877628 19.3879 0 19.167 0C18.946 0 18.7341 0.0877628 18.5778 0.243989L10.0003 8.82149L1.42281 0.243989C1.26654 0.0877628 1.05461 0 0.833644 0C0.612674 0 0.40075 0.0877628 0.244477 0.243989C0.0882511 0.400262 0.000488281 0.612185 0.000488281 0.833155C0.000488281 1.05413 0.0882511 1.26605 0.244477 1.42232L8.82198 9.99982L0.244477 18.5773C0.0882511 18.7336 0.000488281 18.9455 0.000488281 19.1665C0.000488281 19.3875 0.0882511 19.5994 0.244477 19.7557C0.40075 19.9119 0.612674 19.9996 0.833644 19.9996C1.05461 19.9996 1.26654 19.9119 1.42281 19.7557L10.0003 11.1782L18.5778 19.7557C18.7341 19.9119 18.946 19.9996 19.167 19.9996C19.3879 19.9996 19.5999 19.9119 19.7561 19.7557C19.9124 19.5994 20.0001 19.3875 20.0001 19.1665C20.0001 18.9455 19.9124 18.7336 19.7561 18.5773L11.1786 9.99982L19.7561 1.42232C19.9124 1.26605 20.0001 1.05413 20.0001 0.833155C20.0001 0.612185 19.9124 0.400262 19.7561 0.243989Z"
-                  fill="#0E2B4C"/>
-              </g>
-              <defs>
-                <clipPath id="clip0_1_5885">
-                  <rect width="20" height="20" fill="white"/>
-                </clipPath>
-              </defs>
-            </svg>
-          </button>
-          <a class="flex items-center lg:mx-auto" href="index.html">
-            <img class="lg:max-w-[124px]" width="124" height="36" src="img/Logo-1.svg" alt="Logo BizEntry">
-          </a>
-        </div>
+      <div id="desktop-menu" class="show-mobile-menu">
         <ul class="header-menu relative z-[1] flex items-center gap-x-[30px]">
           <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
             <a class="text-body font-semibold text-Grey hover:text-Red transition-all active" href="index.html">Home</a>
@@ -91,8 +63,8 @@
           </li>
         </ul>
       </div>
-      <div class="flex items-center">
-        <div class="relative" x-data="{ open: false, lang: localStorage.getItem('lang') || 'EN', setLang(v){ this.lang = v; localStorage.setItem('lang', v); this.open = false; } }">
+      <div class="flex items-center gap-x-3">
+        <div class="relative hidden minlg:block" x-data="{ open: false, lang: localStorage.getItem('lang') || 'EN', setLang(v){ this.lang = v; localStorage.setItem('lang', v); this.open = false; } }">
           <button type="button" class="flex items-center gap-x-[6px] text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open" @keydown.escape.window="open = false">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M3.23159e-07 10.0035C-0.0013909 4.49086 4.48935 -0.000779088 10.0015 1.01362e-07C15.5138 0.00077929 20.0032 4.49386 20 10.0066C19.9968 15.5175 15.499 20.0071 9.98812 20.0001C4.48451 19.9929 0.00139154 15.506 3.23159e-07 10.0035ZM13.2358 8.01129C11.0728 8.01129 8.92517 8.01129 6.77986 8.01129C6.62933 8.73944 6.63055 11.3088 6.78153 11.9887C8.92701 11.9887 11.0747 11.9887 13.2343 11.9887C13.3673 10.6639 13.3647 9.34999 13.2358 8.01129ZM13.0398 6.6575C13.0398 6.6152 13.045 6.5807 13.0391 6.54819C12.8224 5.35036 12.5063 4.18313 11.9475 3.09421C11.6768 2.56698 11.3556 2.07337 10.8883 1.69412C10.3006 1.21726 9.72228 1.21425 9.1284 1.68099C8.73992 1.98632 8.45683 2.3797 8.21298 2.8023C7.71336 3.66792 7.39778 4.60467 7.16567 5.57153C7.08047 5.92646 7.01291 6.28566 6.93423 6.6575C8.98806 6.6575 11.0114 6.6575 13.0398 6.6575ZM13.0787 13.3432C11.0126 13.3432 8.98739 13.3432 6.96055 13.3432C6.96055 13.3872 6.95532 13.4224 6.96133 13.4556C7.17263 14.6272 7.48159 15.7692 8.01782 16.8386C8.28354 17.3685 8.59701 17.8683 9.05556 18.2577C9.69891 18.8041 10.3238 18.8235 10.9366 18.2494C11.2657 17.9412 11.5462 17.5654 11.7864 17.1812C12.2226 16.4832 12.4942 15.7077 12.7057 14.9146C12.8427 14.4005 12.9525 13.8792 13.0787 13.3432ZM5.37445 8.00021C4.1529 8.00021 2.91844 7.99843 1.68404 8.00689C1.63591 8.00722 1.55917 8.09872 1.54509 8.15922C1.37286 8.89962 1.29072 9.65181 1.34653 10.41C1.38549 10.9394 1.47464 11.4651 1.54041 11.985C2.86469 11.985 4.1376 11.985 5.37445 11.985C5.37445 10.6547 5.37445 9.33936 5.37445 8.00021ZM18.4135 11.993C18.4293 11.945 18.4457 11.9068 18.4546 11.8669C18.7283 10.6438 18.7368 9.42045 18.47 8.19384C18.4368 8.04084 18.383 7.99542 18.228 7.99632C17.0762 8.00299 15.9243 7.99977 14.7725 8.00043C14.7123 8.00049 14.652 8.00717 14.6256 8.00878C14.6256 9.34659 14.6256 10.6664 14.6256 11.993C15.8704 11.993 17.1319 11.993 18.4135 11.993ZM12.7649 18.1928C15.2002 17.3311 16.9341 15.7202 18.0018 13.3428C16.7874 13.3428 15.61 13.3428 14.4194 13.3428C14.1323 15.0489 13.6902 16.7006 12.7649 18.1928ZM17.9914 6.66067C17.4991 5.48599 16.7976 4.49837 15.8906 3.65646C14.9834 2.81454 13.9458 2.19191 12.7208 1.77972C13.6956 3.3056 14.132 4.95982 14.4214 6.66062C15.6174 6.66067 16.79 6.66067 17.9914 6.66067ZM1.99963 6.65572C3.22268 6.65572 4.39937 6.65572 5.58102 6.65572C5.86722 4.9444 6.31168 3.29658 7.23406 1.80588C4.80199 2.67145 3.06419 4.27663 1.99963 6.65572ZM7.23083 18.1898C6.30612 16.6959 5.86705 15.0443 5.57979 13.3432C4.38624 13.3432 3.21032 13.3432 1.99807 13.3432C3.06419 15.7193 4.79898 17.3282 7.23083 18.1898Z" fill="#DF4A53"/>
@@ -109,12 +81,96 @@
             </li>
           </ul>
         </div>
-        <a class="button lg:hidden px-[32px] ml-4" href="#">
+        <a class="button lg:hidden px-[32px] ml-1" href="#">
     <span class="">Contact Us</span>
 </a>
+        <button id="burger-button" @click="mobileOpen = true"
+                class="minlg:hidden flex items-center justify-center w-12 h-12 rounded-[50%] bg-Red"
+                aria-label="Mobile Burger Button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none">
+            <path d="M1 1H19M1 7H19M1 13H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </div>
+
+  <!-- Mobile overlay -->
+  <div x-cloak x-show="mobileOpen" @click="mobileOpen = false" class="fixed inset-0 bg-black/40 z-[900] minlg:hidden"></div>
+
+  <!-- Mobile left drawer -->
+  <aside x-cloak x-show="mobileOpen" @keydown.escape.window="mobileOpen = false"
+         class="fixed inset-y-0 pt-[68px] -top-14 left-0 w-full h-[120vh] max-w-full bg-white shadow-v2 z-[1000] minlg:hidden flex flex-col px-5 py-4"
+         x-transition:enter="transition-transform ease-out duration-200"
+         x-transition:enter-start="-translate-x-full"
+         x-transition:enter-end="translate-x-0"
+         x-transition:leave="transition-transform ease-in duration-150"
+         x-transition:leave-start="translate-x-0"
+         x-transition:leave-end="-translate-x-full">
+    <div class="flex items-center justify-between mb-4">
+      <a class="flex items-center" href="index.html">
+        <img class="max-w-[124px]" width="124" height="36" src="img/Logo-1.svg" alt="Logo BizEntry">
+      </a>
+      <button id="burger-button-close" @click="mobileOpen = false"
+              class="flex items-center justify-center w-[40px] h-[40px] rounded-[50%] bg-Red"
+              aria-label="Close Mobile Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <g clip-path="url(#clip0_1_5885)">
+            <path d="M19.7561 0.243989C19.5999 0.0877628 19.3879 0 19.167 0C18.946 0 18.7341 0.0877628 18.5778 0.243989L10.0003 8.82149L1.42281 0.243989C1.26654 0.0877628 1.05461 0 0.833644 0C0.612674 0 0.40075 0.0877628 0.244477 0.243989C0.0882511 0.400262 0.000488281 0.612185 0.000488281 0.833155C0.000488281 1.05413 0.0882511 1.26605 0.244477 1.42232L8.82198 9.99982L0.244477 18.5773C0.0882511 18.7336 0.000488281 18.9455 0.000488281 19.1665C0.000488281 19.3875 0.0882511 19.5994 0.244477 19.7557C0.40075 19.9119 0.612674 19.9996 0.833644 19.9996C1.05461 19.9996 1.26654 19.9119 1.42281 19.7557L10.0003 11.1782L18.5778 19.7557C18.7341 19.9119 18.946 19.9996 19.167 19.9996C19.3879 19.9996 19.5999 19.9119 19.7561 19.7557C19.9124 19.5994 20.0001 19.3875 20.0001 19.1665C20.0001 18.9455 19.9124 18.7336 19.7561 18.5773L11.1786 9.99982L19.7561 1.42232C19.9124 1.26605 20.0001 1.05413 20.0001 0.833155C20.0001 0.612185 19.9124 0.400262 19.7561 0.243989Z" fill="white"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_1_5885">
+              <rect width="20" height="20" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="flex flex-col gap-y-[10px]">
+      <li><a class="block px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" href="index.html">Home</a></li>
+      <li><a class="block px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" href="About-us.html">About</a></li>
+      <li>
+        <div x-data="{ open: false }" @click.outside="open = false">
+          <button type="button" class="w-full flex items-center justify-between px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open">
+            <span>Services</span>
+            <svg class="ml-2 w-4 h-4 text-Grey transition-transform" :class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <ul x-cloak x-show="open" class="pl-4 space-y-1">
+            <li><a class="block py-2 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Business-Support.html">Business Support</a></li>
+            <li><a class="block py-2 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Tax-Support.html">Tax Support</a></li>
+            <li><a class="block py-2 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Other-Services.html">Other Services</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a class="block px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" href="FAQs.html">FAQ</a></li>
+      <li><a class="block px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" href="Pricing.html">Pricing</a></li>
+    </ul>
+
+    <div class="mt-4 border-t border-Grey4 pt-4">
+      <div class="relative" x-data="{ open: false, lang: localStorage.getItem('lang') || 'EN', setLang(v){ this.lang = v; localStorage.setItem('lang', v); this.open = false; } }">
+        <button type="button" class="w-full flex items-center justify-between gap-x-[6px] text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open" @keydown.escape.window="open = false">
+          <span class="flex items-center gap-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3.23159e-07 10.0035C-0.0013909 4.49086 4.48935 -0.000779088 10.0015 1.01362e-07C15.5138 0.00077929 20.0032 4.49386 20 10.0066C19.9968 15.5175 15.499 20.0071 9.98812 20.0001C4.48451 19.9929 0.00139154 15.506 3.23159e-07 10.0035ZM13.2358 8.01129C11.0728 8.01129 8.92517 8.01129 6.77986 8.01129C6.62933 8.73944 6.63055 11.3088 6.78153 11.9887C8.92701 11.9887 11.0747 11.9887 13.2343 11.9887C13.3673 10.6639 13.3647 9.34999 13.2358 8.01129ZM13.0398 6.6575C13.0398 6.6152 13.045 6.5807 13.0391 6.54819C12.8224 5.35036 12.5063 4.18313 11.9475 3.09421C11.6768 2.56698 11.3556 2.07337 10.8883 1.69412C10.3006 1.21726 9.72228 1.21425 9.1284 1.68099C8.73992 1.98632 8.45683 2.3797 8.21298 2.8023C7.71336 3.66792 7.39778 4.60467 7.16567 5.57153C7.08047 5.92646 7.01291 6.28566 6.93423 6.6575C8.98806 6.6575 11.0114 6.6575 13.0398 6.6575ZM13.0787 13.3432C11.0126 13.3432 8.98739 13.3432 6.96055 13.3432C6.96055 13.3872 6.95532 13.4224 6.96133 13.4556C7.17263 14.6272 7.48159 15.7692 8.01782 16.8386C8.28354 17.3685 8.59701 17.8683 9.05556 18.2577C9.69891 18.8041 10.3238 18.8235 10.9366 18.2494C11.2657 17.9412 11.5462 17.5654 11.7864 17.1812C12.2226 16.4832 12.4942 15.7077 12.7057 14.9146C12.8427 14.4005 12.9525 13.8792 13.0787 13.3432ZM5.37445 8.00021C4.1529 8.00021 2.91844 7.99843 1.68404 8.00689C1.63591 8.00722 1.55917 8.09872 1.54509 8.15922C1.37286 8.89962 1.29072 9.65181 1.34653 10.41C1.38549 10.9394 1.47464 11.4651 1.54041 11.985C2.86469 11.985 4.1376 11.985 5.37445 11.985C5.37445 10.6547 5.37445 9.33936 5.37445 8.00021ZM18.4135 11.993C18.4293 11.945 18.4457 11.9068 18.4546 11.8669C18.7283 10.6438 18.7368 9.42045 18.47 8.19384C18.4368 8.04084 18.383 7.99542 18.228 7.99632C17.0762 8.00299 15.9243 7.99977 14.7725 8.00043C14.7123 8.00049 14.652 8.00717 14.6256 8.00878C14.6256 9.34659 14.6256 10.6664 14.6256 11.993C15.8704 11.993 17.1319 11.993 18.4135 11.993ZM12.7649 18.1928C15.2002 17.3311 16.9341 15.7202 18.0018 13.3428C16.7874 13.3428 15.61 13.3428 14.4194 13.3428C14.1323 15.0489 13.6902 16.7006 12.7649 18.1928ZM17.9914 6.66067C17.4991 5.48599 16.7976 4.49837 15.8906 3.65646C14.9834 2.81454 13.9458 2.19191 12.7208 1.77972C13.6956 3.3056 14.132 4.95982 14.4214 6.66062C15.6174 6.66067 16.79 6.66067 17.9914 6.66067ZM1.99963 6.65572C3.22268 6.65572 4.39937 6.65572 5.58102 6.65572C5.86722 4.9444 6.31168 3.29658 7.23406 1.80588C4.80199 2.67145 3.06419 4.27663 1.99963 6.65572ZM7.23083 18.1898C6.30612 16.6959 5.86705 15.0443 5.57979 13.3432C4.38624 13.3432 3.21032 13.3432 1.99807 13.3432C3.06419 15.7193 4.79898 17.3282 7.23083 18.1898Z" fill="#DF4A53"/>
+            </svg>
+            <span x-text="lang"></span>
+          </span>
+          <svg class="ml-[2px] w-4 h-4 text-Grey" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <ul x-cloak x-show="open" @click.outside="open = false" class="mt-2 w-[100%] border border-Grey4 rounded-2xl bg-white shadow-v2 py-2">
+          <li class="border-b border-Grey4">
+            <button type="button" @click="setLang('EN')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">EN</button>
+          </li>
+          <li>
+            <button type="button" @click="setLang('RU')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">RU</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
 </header>
 
 
