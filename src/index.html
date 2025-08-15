@@ -45,7 +45,7 @@
       </div>
     </div>
   </section>
-  <section class="py-14 img-bg-3">
+  <section class="py-14 lg:py-8 img-bg-3">
     <div class="container">
       <div class="row">
         <div class="col-span-12">
@@ -98,69 +98,67 @@
     </div>
   </section>
   <section class="overflow-hidden bg-white">
-    <div class="max-w-[1700px] mx-auto img-bg-4 pt-14 pb-[130px]">
+    <div class="max-w-[1700px] mx-auto img-bg-4 pt-14 pb-[130px] md:py-8">
       <div class="container">
         <div class="row">
           <div class="col-span-12 relative">
             <div class="flex flex-col gap-y-5 max-w-[734px] mx-auto relative z-[1]">
-              <h2 class="text-h2 font-bold text-center text-DarkBlue mb-5">BizEntry is your reliable and transparent business
+              <h2 class="text-h2 font-bold text-center text-DarkBlue mb-5 lg:text-Top5">BizEntry is your reliable and transparent business
                 partner in the <span class="text-Red">U.S.</span></h2>
               <p class="text-base font-medium text-center text-Grey">We guide you every step of the way — from registering your company and opening a Chase bank account to
                 providing accounting, tax, and legal support. We operate officially and collaborate with licensed
                 accountants, tax professionals, and the reputable law <br>
                 firm Consumer Attorneys Florida.</p>
             </div>
-            <img class="absolute left-0 top-0 w-full" src="__IMAGE_PATH__img-n2.svg" alt="">
+            <img class="absolute left-1/2 -translate-x-1/2 top-0 w-full min-w-[1200px] md:hidden" src="__IMAGE_PATH__img-n2.svg" alt="">
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section class="bg-gradient-2 py-14">
+  <section class="bg-gradient-2 py-14 lg:py-8">
     <div class="container">
-      <div class="row gap-6">
-        <div class="col-span-6">
+      <div class="row gap-6 lg:gap-x-0 lg:gap-y-5">
+        <div class="col-span-6 lg:col-span-12 lg:order-2">
           @@include('components/Card.html', {
           'Icon': 'Company-Formation-icon',
           'Title': 'Company Formation in the <span class="text-Red">U.S.</span>',
           'Text': 'We register LLCs or Corporations in Florida, prepare all founding documents, obtain your EIN, and provide a registered agent and legal business address.',
           })
         </div>
-        <div class="col-span-6">
-
-        </div>
-        <div class="col-span-6">
+        <div class="col-span-6 lg:hidden"></div>
+        <div class="col-span-6 lg:col-span-12 lg:order-3">
           @@include('components/Card.html', {
           'Icon': 'money-cash-bill',
           'Title': 'Chase <span class="text-Red">Bank</span> Account Opening.',
           'Text': 'Officially open a business bank account with Chase — one of the largest U.S. banks — fully remote, with compliance support and no U.S. visit required.',
           })
         </div>
-        <div class="col-span-6 relative">
-          <img class="absolute right-0 -bottom-6 w-full" src="__IMAGE_PATH__img-n3.png" alt="">
+        <div class="col-span-6 lg:col-span-12 relative lg:order-1">
+          <img class="absolute right-0 -bottom-6 w-full lg:relative lg:-bottom-5 lg:max-w-[500px] lg:mx-auto" src="__IMAGE_PATH__img-n3.png" alt="">
         </div>
-        <div class="col-span-6">
+        <div class="col-span-6 lg:col-span-12 lg:order-4">
           @@include('components/Card.html', {
           'Icon': 'business-cash-target',
           'Title': 'Accounting and <span class="text-Red">Tax</span> Filing.',
           'Text': 'Ongoing bookkeeping for LLCs and corporations, preparation of tax returns (5472, 1120, 1065, etc.), filing Sales Tax, Annual Reports, and issuing 1099 forms, etc.',
           })
         </div>
-        <div class="col-span-6">
+        <div class="col-span-6 lg:col-span-12 lg:order-5">
           @@include('components/Card.html', {
           'Icon': 'business-cash-shield',
           'Title': 'Personal Tax <span class="text-Red">Support</span>.',
           'Text': 'Preparation and filing of individual tax returns (1040/1040-NR), tax planning, deadline extensions, and official IRS representation.',
           })
         </div>
-        <div class="col-span-6">
+        <div class="col-span-6 lg:col-span-12 lg:order-6">
           @@include('components/Card.html', {
           'Icon': 'business-deal-handshake',
           'Title': '<span class="text-Red">Legal</span> and Compliance Services.',
           'Text': 'Advising on corporate structure and taxes, company changes and dissolution, Amazon compliance support — all backed by our legal partnership with Consumer Attorneys Florida.',
           })
         </div>
-        <div class="col-span-6">
+        <div class="col-span-6 lg:col-span-12 lg:order-7">
           @@include('components/Card.html', {
           'Icon': 'cash-briefcase',
           'Title': 'Virtual Office & U.S.Business <span class="text-Red">Real</span> Address.',
