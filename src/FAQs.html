@@ -11,6 +11,35 @@
   'commonStyle': ' ',
   })
 
+  <section class="pt-[168px] lg:pt-[132px] pb-12 lg:pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-span-12">
+          <h1 class="text-h2 font-bold text-DarkBlue text-center">FAQ<span class="text-Red">s</span></h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pb-12 lg:pb-8">
+    <div class="container">
+      <div class="row">
+        <div class="col-span-6">
+          <div x-data="{ isExpanded: false }" class="overflow-hidden rounded-xl border border-slate-300 bg-slate-100/40 dark:border-slate-700 dark:bg-slate-800/50">
+            <button id="controlsAccordionItemOne" type="button" class="flex w-full items-center justify-between gap-2 bg-slate-100 p-4 text-left underline-offset-2 hover:bg-slate-100/75 focus-visible:bg-slate-100/75 focus-visible:underline focus-visible:outline-hidden dark:bg-slate-800 dark:hover:bg-slate-800/75 dark:focus-visible:bg-slate-800/75" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded" x-bind:class="isExpanded ? 'text-onSurfaceStrong dark:text-onSurfaceDarkStrong font-bold'  : 'text-onSurface dark:text-onSurfaceDark font-medium'" x-bind:aria-expanded="isExpanded ? 'true' : 'false'">
+              What browsers are supported?
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  'rotate-180'  :  ''">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+              </svg>
+            </button>
+            <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne"  x-collapse>
+              <div class="p-4 text-sm sm:text-base text-pretty">
+                Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our <a href="#" class="underline underline-offset-2 text-blue-700 dark:text-blue-600">documentation</a> for additional information.
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
 
   @@include('components/Footer.html')
 </main>
