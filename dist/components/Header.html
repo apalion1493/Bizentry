@@ -1,4 +1,4 @@
-<header class="w-full absolute top-8 left-1/2 -translate-x-1/2 z-[100] overflow-hidden" x-data="{ mobileOpen: false }" x-init="
+<header class="w-full absolute top-8 lg:top-5 left-1/2 -translate-x-1/2 z-[100]" x-data="{ mobileOpen: false }" x-init="
     document.documentElement.classList.remove('overflow-hidden');
     document.body.classList.remove('overflow-hidden');
     $watch('mobileOpen', v => {
@@ -15,13 +15,13 @@
       </a>
       <div id="desktop-menu" class="show-mobile-menu">
         <ul class="header-menu relative z-[1] flex items-center gap-x-[30px]">
-          <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+          <li class="flex items-center lg:px-[10px] lg:py-42 lg:w-full lg:rounded-7xl">
             <a class="text-body font-semibold text-Grey hover:text-Red transition-all active" href="index.html">Home</a>
           </li>
-          <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+          <li class="flex items-center lg:px-[10px] lg:py-4 lg:w-full lg:rounded-7xl">
             <a class="text-body font-semibold text-Grey hover:text-Red transition-all" href="About-us.html">About</a>
           </li>
-          <li class="relative lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+          <li class="relative lg:px-[10px] lg:py-4 lg:w-full lg:rounded-7xl">
             <div x-data="{ open: false }" @click.outside="open = false">
               <button type="button" class="flex items-center text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open">
                 Services
@@ -36,10 +36,10 @@
               </ul>
             </div>
           </li>
-          <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+          <li class="flex items-center lg:px-[10px] lg:py-4 lg:w-full lg:rounded-7xl">
             <a class="text-body font-semibold text-Grey hover:text-Red transition-all" href="FAQs.html">FAQ</a>
           </li>
-          <li class="flex items-center lg:px-[10px] lg:py-4 lg:bg-Grey2 lg:w-full lg:rounded-7xl">
+          <li class="flex items-center lg:px-[10px] lg:py-4 lg:w-full lg:rounded-7xl">
             <a class="text-body font-semibold text-Grey hover:text-Red transition-all active" href="Pricing.html">Pricing</a>
           </li>
         </ul>
@@ -77,7 +77,7 @@
   </div>
 
   <!-- Mobile overlay -->
-  <div x-cloak x-show="mobileOpen" @click="mobileOpen = false" class="fixed inset-0 bg-black/40 z-[900] minlg:hidden"></div>
+  <div x-cloak x-show="mobileOpen" @click="mobileOpen = false" class="fixed inset-0 z-[900] minlg:hidden"></div>
 
   <!-- Mobile left drawer -->
   <aside x-cloak x-show="mobileOpen" @keydown.escape.window="mobileOpen = false"

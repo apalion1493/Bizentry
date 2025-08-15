@@ -2783,6 +2783,12 @@ html {
 .max-w-\[331px\]{
   max-width: 331px;
 }
+.max-w-\[346px\]{
+  max-width: 346px;
+}
+.max-w-\[350px\]{
+  max-width: 350px;
+}
 .max-w-\[355px\]{
   max-width: 355px;
 }
@@ -4670,6 +4676,14 @@ input[type=search]::-webkit-search-results-decoration {
   margin-right: -48px;
 }
 
+@media (max-width: 1023px){
+  .header-w {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
 .header-menu a.active {
   position: relative;
   --tw-text-opacity: 1;
@@ -4770,6 +4784,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:-bottom-5{
     bottom: -1.25rem;
   }
+  .lg\:top-5{
+    top: 1.25rem;
+  }
   .lg\:order-1{
     order: 1;
   }
@@ -4794,6 +4811,10 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:col-span-12{
     grid-column: span 12 / span 12;
   }
+  .lg\:mx-5{
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
   .lg\:mx-auto{
     margin-left: auto;
     margin-right: auto;
@@ -4802,9 +4823,11 @@ input[type=search]::-webkit-search-results-decoration {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
-  .lg\:mx-5{
-    margin-left: 1.25rem;
-    margin-right: 1.25rem;
+  .lg\:mb-0{
+    margin-bottom: 0px;
+  }
+  .lg\:mb-6{
+    margin-bottom: 1.5rem;
   }
   .lg\:ml-0{
     margin-left: 0px;
@@ -4817,12 +4840,6 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:mt-8{
     margin-top: 2rem;
-  }
-  .lg\:mb-6{
-    margin-bottom: 1.5rem;
-  }
-  .lg\:mb-0{
-    margin-bottom: 0px;
   }
   .lg\:inline{
     display: inline;
@@ -4863,6 +4880,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:max-w-full{
     max-width: 100%;
   }
+  .lg\:flex-1{
+    flex: 1 1 0%;
+  }
   .lg\:flex-col{
     flex-direction: column;
   }
@@ -4883,8 +4903,8 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:gap-y-6{
     row-gap: 1.5rem;
   }
-  .lg\:gap-y-\[10px\]{
-    row-gap: 10px;
+  .lg\:gap-y-8{
+    row-gap: 2rem;
   }
   .lg\:rounded-7xl{
     border-radius: 10px;
@@ -4933,6 +4953,9 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:pt-\[110px\]{
     padding-top: 110px;
+  }
+  .lg\:pt-\[84px\]{
+    padding-top: 84px;
   }
   .lg\:text-Top1{
     font-size: 24px;
