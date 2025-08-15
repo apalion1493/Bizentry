@@ -699,3 +699,7 @@
 
   @apply text-Red
 }
+
+.blur-effect {
+  backdrop-filter: blur(10px);
+}
