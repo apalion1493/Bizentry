@@ -2542,6 +2542,9 @@ html {
 .top-\[50px\]{
   top: 50px;
 }
+.-bottom-5{
+  bottom: -1.25rem;
+}
 .z-0{
   z-index: 0;
 }
@@ -4850,6 +4853,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:top-5{
     top: 1.25rem;
   }
+  .lg\:bottom-0{
+    bottom: 0px;
+  }
   .lg\:order-1{
     order: 1;
   }
@@ -4949,6 +4955,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:flex-col{
     flex-direction: column;
   }
+  .lg\:items-start{
+    align-items: flex-start;
+  }
   .lg\:gap-x-0{
     -moz-column-gap: 0px;
          column-gap: 0px;
@@ -5015,6 +5024,9 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:pt-\[84px\]{
     padding-top: 84px;
+  }
+  .lg\:text-center{
+    text-align: center;
   }
   .lg\:text-Top1{
     font-size: 24px;
