@@ -31,7 +31,7 @@ module.exports = {
         },
         fontSize: {
             none: ['0px', '0px'],
-            base: ['18px', '130%'],
+            base: ['18px', '110%'],
             h1: ['52px', '100%'],
             h2: ['48px', '100%'],
             h2_2: ['45px', '120%'],
