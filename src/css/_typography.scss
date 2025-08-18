@@ -27,7 +27,7 @@ p {
 }
 
 .main-ul {
-  @apply list-disc pl-6 text-Text flex flex-col gap-y-2
+  @apply list-disc pl-6 text-Grey flex flex-col gap-y-2
 }
 
 .text-block {
@@ -56,15 +56,15 @@ p {
   }
 
   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    @apply font-extrabold leading-normal text-Text my-3
+    @apply font-extrabold leading-normal text-Grey my-3
   }
 
   a {
-    @apply transition-colors
+    @apply text-Red
   }
 
   ul {
-    @apply list-disc pl-6 text-body text-Text leading-[24px] flex flex-col gap-y-[10px]
+    @apply list-disc pl-6 text-body text-Grey leading-[24px] flex flex-col gap-y-[10px]
   }
 
   ol {
@@ -72,11 +72,11 @@ p {
       @apply pl-2
     }
 
-    @apply flex flex-col gap-y-4 text-body text-Text list-image-[url(__IMAGE_PATH__list-icon-check30.svg)] pl-6 leading-[24px]
+    @apply flex flex-col gap-y-4 text-body text-Grey list-image-[url(__IMAGE_PATH__list-icon-check30.svg)] pl-6 leading-[24px]
   }
 
   p {
-    @apply text-body text-Text leading-[24px] mb-0
+    @apply text-body text-Grey font-medium mb-5
   }
 
   blockquote {
