@@ -2699,6 +2699,9 @@ html {
 .h-\[40px\] {
   height: 40px;
 }
+.h-\[58px\] {
+  height: 58px;
+}
 .h-full {
   height: 100%;
 }
@@ -2744,6 +2747,9 @@ html {
 .w-\[40px\] {
   width: 40px;
 }
+.w-\[58px\] {
+  width: 58px;
+}
 .w-\[60px\] {
   width: 60px;
 }
@@ -2765,6 +2771,12 @@ html {
 }
 .min-w-\[16px\] {
   min-width: 16px;
+}
+.min-w-\[58px\] {
+  min-width: 58px;
+}
+.min-w-\[45\%\] {
+  min-width: 45%;
 }
 .max-w-\[1217px\] {
   max-width: 1217px;
@@ -2801,6 +2813,9 @@ html {
 }
 .max-w-\[480px\] {
   max-width: 480px;
+}
+.max-w-\[50\%\] {
+  max-width: 50%;
 }
 .max-w-\[530px\] {
   max-width: 530px;
@@ -2893,6 +2908,9 @@ html {
 }
 .gap-6 {
   gap: 1.5rem;
+}
+.gap-8 {
+  gap: 2rem;
 }
 .gap-x-1 {
   -moz-column-gap: 0.25rem;
@@ -3137,6 +3155,10 @@ html {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .py-14 {
   padding-top: 3.5rem;
@@ -3840,6 +3862,17 @@ input[type=search]::-webkit-search-results-decoration {
   background-repeat: no-repeat;
 }
 
+.list-image-1 {
+  background: url("../img/Red-dot-10.svg");
+  display: block;
+  height: 1.25rem;
+  width: 1.25rem;
+  min-width: 1.25rem;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /* Hide elements marked with x-cloak until Alpine initializes */
 [x-cloak] {
   display: none !important;
@@ -4472,6 +4505,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:h-4 {
     height: 1rem;
   }
+  .lg\:h-\[52px\] {
+    height: 52px;
+  }
   .lg\:w-16 {
     width: 4rem;
   }
@@ -4481,11 +4517,20 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:w-full {
     width: 100%;
   }
+  .lg\:w-\[52px\] {
+    width: 52px;
+  }
   .lg\:min-w-16 {
     min-width: 4rem;
   }
   .lg\:min-w-4 {
     min-width: 1rem;
+  }
+  .lg\:min-w-\[52px\] {
+    min-width: 52px;
+  }
+  .lg\:min-w-full {
+    min-width: 100%;
   }
   .lg\:max-w-\[124px\] {
     max-width: 124px;
@@ -4527,6 +4572,10 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:gap-y-8 {
     row-gap: 2rem;
+  }
+  .lg\:gap-x-3 {
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
   }
   .lg\:rounded-7xl {
     border-radius: 10px;
