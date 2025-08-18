@@ -2516,6 +2516,9 @@ html {
 .bottom-20 {
   bottom: 5rem;
 }
+.bottom-3 {
+  bottom: 0.75rem;
+}
 .bottom-5 {
   bottom: 1.25rem;
 }
@@ -2528,11 +2531,23 @@ html {
 .left-1\/2 {
   left: 50%;
 }
+.left-40 {
+  left: 10rem;
+}
+.left-6 {
+  left: 1.5rem;
+}
 .right-0 {
   right: 0px;
 }
+.right-8 {
+  right: 2rem;
+}
 .top-0 {
   top: 0px;
+}
+.top-1 {
+  top: 0.25rem;
 }
 .top-1\/2 {
   top: 50%;
@@ -2772,11 +2787,14 @@ html {
 .min-w-\[16px\] {
   min-width: 16px;
 }
+.min-w-\[45\%\] {
+  min-width: 45%;
+}
 .min-w-\[58px\] {
   min-width: 58px;
 }
-.min-w-\[45\%\] {
-  min-width: 45%;
+.min-w-\[72px\] {
+  min-width: 72px;
 }
 .max-w-\[1217px\] {
   max-width: 1217px;
@@ -2822,6 +2840,9 @@ html {
 }
 .max-w-\[573px\] {
   max-width: 573px;
+}
+.max-w-\[600px\] {
+  max-width: 600px;
 }
 .max-w-\[605px\] {
   max-width: 605px;
@@ -3247,6 +3268,10 @@ html {
 }
 .text-Top1 {
   font-size: 24px;
+  line-height: 110%;
+}
+.text-Top2 {
+  font-size: 22px;
   line-height: 110%;
 }
 .text-Top3 {
@@ -3713,14 +3738,14 @@ input[type=search]::-webkit-search-results-decoration {
   }
 }
 .img-bg-1 {
-  background: url("../img/img-bg-1.png") white -18.959px 0px/108.742% 100% no-repeat;
+  background: url("../img/img-bg-1.png") white -18.959px 0px/108.742% auto no-repeat;
   opacity: 1;
   height: 301px;
   width: 571px;
 }
 
 .img-bg-2 {
-  background: url("../img/img-bg-2.png") white -18.959px 0px/108.742% 100% no-repeat;
+  background: url("../img/img-bg-2.png") white -18.959px 0px/108.742% auto no-repeat;
   opacity: 1;
 }
 
@@ -4514,11 +4539,11 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:w-4 {
     width: 1rem;
   }
-  .lg\:w-full {
-    width: 100%;
-  }
   .lg\:w-\[52px\] {
     width: 52px;
+  }
+  .lg\:w-full {
+    width: 100%;
   }
   .lg\:min-w-16 {
     min-width: 4rem;
@@ -4561,6 +4586,10 @@ input[type=search]::-webkit-search-results-decoration {
     -moz-column-gap: 0.5rem;
          column-gap: 0.5rem;
   }
+  .lg\:gap-x-3 {
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
+  }
   .lg\:gap-y-3 {
     row-gap: 0.75rem;
   }
@@ -4572,10 +4601,6 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:gap-y-8 {
     row-gap: 2rem;
-  }
-  .lg\:gap-x-3 {
-    -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
   }
   .lg\:rounded-7xl {
     border-radius: 10px;

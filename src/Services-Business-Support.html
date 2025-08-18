@@ -12,8 +12,24 @@
   })
   <section class="overflow-hidden">
     <div class="max-w-[1700px] mx-auto pt-[120px] lg:pt-[84px] pb-14 img-bg-2">
-      <div class="container">
-
+      <div class="container relative">
+        <div class="flex flex-col max-w-[600px] mx-auto mt-12 relative z-[2]">
+          <h1 class="text-h2 text-DarkBlue font-bold text-center mb-6"><span class="text-Red">Business</span> Support.</h1>
+          <p class="text-center text-DarkBlue font-bold text-Top2 mb-5">Everything your U.S. company needs after registration — turnkey, stress-free, and guaranteed.</p>
+          <p class="text-center text-base font-medium text-Grey">Forming a company is just the first step. What follows is ongoing: reports, taxes, payroll, and IRS forms.
+            <br><br>
+            BizEntry handles all of it. We manage your Florida company —
+            or one in any other state — accurately, on time, and without issues with banks or the IRS.</p>
+        </div>
+        @@include('components/Animated-circle.html', {
+        "Style": "absolute z-[1] lg:hidden top-0 left-6"
+        })
+        @@include('components/Animated-circle.html', {
+        "Style": "absolute z-[1] lg:hidden top-1 right-8"
+        })
+        @@include('components/Animated-circle.html', {
+        "Style": "absolute z-[1] lg:hidden bottom-3 left-40"
+        })
       </div>
     </div>
   </section>

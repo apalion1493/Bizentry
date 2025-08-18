@@ -65,7 +65,7 @@
       </div>
       <div class="flex items-center gap-x-3">
         <div class="relative hidden minlg:block" x-data="{ open: false, lang: localStorage.getItem('lang') || 'EN', setLang(v){ this.lang = v; localStorage.setItem('lang', v); this.open = false; } }">
-          <button type="button" class="flex items-center gap-x-[6px] text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open" @keydown.escape.window="open = false">
+          <button type="button" class="flex items-center gap-x-[6px] min-w-[72px] text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open" @keydown.escape.window="open = false">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M3.23159e-07 10.0035C-0.0013909 4.49086 4.48935 -0.000779088 10.0015 1.01362e-07C15.5138 0.00077929 20.0032 4.49386 20 10.0066C19.9968 15.5175 15.499 20.0071 9.98812 20.0001C4.48451 19.9929 0.00139154 15.506 3.23159e-07 10.0035ZM13.2358 8.01129C11.0728 8.01129 8.92517 8.01129 6.77986 8.01129C6.62933 8.73944 6.63055 11.3088 6.78153 11.9887C8.92701 11.9887 11.0747 11.9887 13.2343 11.9887C13.3673 10.6639 13.3647 9.34999 13.2358 8.01129ZM13.0398 6.6575C13.0398 6.6152 13.045 6.5807 13.0391 6.54819C12.8224 5.35036 12.5063 4.18313 11.9475 3.09421C11.6768 2.56698 11.3556 2.07337 10.8883 1.69412C10.3006 1.21726 9.72228 1.21425 9.1284 1.68099C8.73992 1.98632 8.45683 2.3797 8.21298 2.8023C7.71336 3.66792 7.39778 4.60467 7.16567 5.57153C7.08047 5.92646 7.01291 6.28566 6.93423 6.6575C8.98806 6.6575 11.0114 6.6575 13.0398 6.6575ZM13.0787 13.3432C11.0126 13.3432 8.98739 13.3432 6.96055 13.3432C6.96055 13.3872 6.95532 13.4224 6.96133 13.4556C7.17263 14.6272 7.48159 15.7692 8.01782 16.8386C8.28354 17.3685 8.59701 17.8683 9.05556 18.2577C9.69891 18.8041 10.3238 18.8235 10.9366 18.2494C11.2657 17.9412 11.5462 17.5654 11.7864 17.1812C12.2226 16.4832 12.4942 15.7077 12.7057 14.9146C12.8427 14.4005 12.9525 13.8792 13.0787 13.3432ZM5.37445 8.00021C4.1529 8.00021 2.91844 7.99843 1.68404 8.00689C1.63591 8.00722 1.55917 8.09872 1.54509 8.15922C1.37286 8.89962 1.29072 9.65181 1.34653 10.41C1.38549 10.9394 1.47464 11.4651 1.54041 11.985C2.86469 11.985 4.1376 11.985 5.37445 11.985C5.37445 10.6547 5.37445 9.33936 5.37445 8.00021ZM18.4135 11.993C18.4293 11.945 18.4457 11.9068 18.4546 11.8669C18.7283 10.6438 18.7368 9.42045 18.47 8.19384C18.4368 8.04084 18.383 7.99542 18.228 7.99632C17.0762 8.00299 15.9243 7.99977 14.7725 8.00043C14.7123 8.00049 14.652 8.00717 14.6256 8.00878C14.6256 9.34659 14.6256 10.6664 14.6256 11.993C15.8704 11.993 17.1319 11.993 18.4135 11.993ZM12.7649 18.1928C15.2002 17.3311 16.9341 15.7202 18.0018 13.3428C16.7874 13.3428 15.61 13.3428 14.4194 13.3428C14.1323 15.0489 13.6902 16.7006 12.7649 18.1928ZM17.9914 6.66067C17.4991 5.48599 16.7976 4.49837 15.8906 3.65646C14.9834 2.81454 13.9458 2.19191 12.7208 1.77972C13.6956 3.3056 14.132 4.95982 14.4214 6.66062C15.6174 6.66067 16.79 6.66067 17.9914 6.66067ZM1.99963 6.65572C3.22268 6.65572 4.39937 6.65572 5.58102 6.65572C5.86722 4.9444 6.31168 3.29658 7.23406 1.80588C4.80199 2.67145 3.06419 4.27663 1.99963 6.65572ZM7.23083 18.1898C6.30612 16.6959 5.86705 15.0443 5.57979 13.3432C4.38624 13.3432 3.21032 13.3432 1.99807 13.3432C3.06419 15.7193 4.79898 17.3282 7.23083 18.1898Z" fill="#DF4A53"/>
             </svg>
@@ -175,7 +175,68 @@
 
   <section class="overflow-hidden">
     <div class="max-w-[1700px] mx-auto pt-[120px] lg:pt-[84px] pb-14 img-bg-2">
-      <div class="container">
+      <div class="container relative">
+        <div class="flex flex-col max-w-[600px] mx-auto mt-12 relative z-[2]">
+          <h1 class="text-h2 text-DarkBlue font-bold text-center mb-6"><span class="text-Red">Business</span> Support.</h1>
+          <p class="text-center text-DarkBlue font-bold text-Top2 mb-5">Everything your U.S. company needs after registration — turnkey, stress-free, and guaranteed.</p>
+          <p class="text-center text-base font-medium text-Grey">Forming a company is just the first step. What follows is ongoing: reports, taxes, payroll, and IRS forms.
+            <br><br>
+            BizEntry handles all of it. We manage your Florida company —
+            or one in any other state — accurately, on time, and without issues with banks or the IRS.</p>
+        </div>
+        <svg class="absolute z-[1] lg:hidden top-0 left-6" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+        <svg class="absolute z-[1] lg:hidden top-1 right-8" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+        <svg class="absolute z-[1] lg:hidden bottom-3 left-40" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
 
       </div>
     </div>
