@@ -11,28 +11,133 @@
   'commonStyle': ' ',
   })
 
-  <section class="pt-[168px] lg:pt-[132px] pb-12 lg:pb-5">
+  <section class="pt-[168px] lg:pt-[132px] pb-12 lg:pb-10">
     <div class="container">
       <div class="row">
         <div class="col-span-12">
-          <h1 class="text-h2 font-bold text-DarkBlue text-center">FAQ<span class="text-Red">s</span></h1>
+          <h1 class="text-h2 lg:text-h4 font-bold text-DarkBlue text-center">FAQ<span class="text-Red">s</span></h1>
         </div>
       </div>
     </div>
   </section>
   <section class="pb-12 lg:pb-8">
     <div class="container">
-      <div class="row">
-        <div class="col-span-6">
-          <div x-data="{ isExpanded: false }" class="overflow-hidden rounded-xl border border-slate-300 bg-slate-100/40 dark:border-slate-700 dark:bg-slate-800/50">
-            <button id="controlsAccordionItemOne" type="button" class="flex w-full items-center justify-between gap-2 bg-slate-100 p-4 text-left underline-offset-2 hover:bg-slate-100/75 focus-visible:bg-slate-100/75 focus-visible:underline focus-visible:outline-hidden dark:bg-slate-800 dark:hover:bg-slate-800/75 dark:focus-visible:bg-slate-800/75" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded" x-bind:class="isExpanded ? 'text-onSurfaceStrong dark:text-onSurfaceDarkStrong font-bold'  : 'text-onSurface dark:text-onSurfaceDark font-medium'" x-bind:aria-expanded="isExpanded ? 'true' : 'false'">
-              What browsers are supported?
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke="currentColor" class="size-5 shrink-0 transition" aria-hidden="true" x-bind:class="isExpanded  ?  'rotate-180'  :  ''">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-              </svg>
+      <div class="row gap-6 lg:gap-x-0 lg:gap-y-5">
+        <div class="col-span-6 lg:col-span-12">
+          <div x-data="{ isExpanded: false }" class="overflow-hidden p-6 lg:px-0 lg:py-4 border-b border-Grey">
+            <button id="controlsAccordionItemOne" type="button" class="flex w-full items-start gap-x-1 lg:gap-x-2 text-left text-Top3 font-semibold tracking-04 text-DarkBlue" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded" x-bind:class="isExpanded ? ''  : ''" x-bind:aria-expanded="isExpanded ? 'true' : 'false'">
+              <span class="text-Red">01.</span> Lorem ipsum dolor sit amet ?
+              <div class="flex items-center ml-auto">
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'hidden'  :  'block'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M14.7492 6.74996H9.24939V1.2502C9.24939 0.559957 8.68976 0 7.9992 0C7.30864 0 6.749 0.559636 6.749 1.2502V6.74996H1.24987C0.559636 6.74996 0 7.3096 0 8.00016C0 8.69072 0.559315 9.25003 1.24987 9.25003H6.74964V14.7498C6.74964 15.44 7.30928 16 7.99984 16C8.6904 16 9.25003 15.4404 9.25003 14.7498V9.25003H14.7498C15.4404 9.25003 16 8.6904 16 8.00016C16 7.30992 15.4397 6.74996 14.7492 6.74996Z" fill="#DF4A53"/>
+                </svg>
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'block'  :  'hidden'" xmlns="http://www.w3.org/2000/svg" width="16" height="3" viewBox="0 0 16 3" fill="none">
+                  <path d="M14.7492 0H9.24939C9.24939 0.0109075 8.69056 0 8 0C7.30944 0 7.5 3.89218e-05 6.749 4.76837e-07L1.24987 0C0.559636 0 0 0.559636 0 1.2502C0 1.94076 0.559315 2.50007 1.24987 2.50007H6.74964C7.5 2.5 7.30944 2.50007 8 2.50007C8.69056 2.50007 8.5 2.5 9.25004 2.50007H14.7498C15.4404 2.50007 16 1.94043 16 1.2502C16 0.559957 15.4397 0 14.7492 0Z" fill="#6F849C"/>
+                </svg>
+              </div>
             </button>
             <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne"  x-collapse>
-              <div class="p-4 text-sm sm:text-base text-pretty">
+              <div class="pt-4 lg:pt-2 text-body text-Grey">
+                Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our <a href="#" class="underline underline-offset-2 text-blue-700 dark:text-blue-600">documentation</a> for additional information.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 lg:col-span-12">
+          <div x-data="{ isExpanded: false }" class="overflow-hidden p-6 lg:px-0 lg:py-4 border-b border-Grey">
+            <button id="controlsAccordionItemOne" type="button" class="flex w-full items-start gap-x-1 lg:gap-x-2 text-left text-Top3 font-semibold tracking-04 text-DarkBlue" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded" x-bind:class="isExpanded ? ''  : ''" x-bind:aria-expanded="isExpanded ? 'true' : 'false'">
+              <span class="text-Red">01.</span> Lorem ipsum dolor sit amet ?
+              <div class="flex items-center ml-auto">
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'hidden'  :  'block'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M14.7492 6.74996H9.24939V1.2502C9.24939 0.559957 8.68976 0 7.9992 0C7.30864 0 6.749 0.559636 6.749 1.2502V6.74996H1.24987C0.559636 6.74996 0 7.3096 0 8.00016C0 8.69072 0.559315 9.25003 1.24987 9.25003H6.74964V14.7498C6.74964 15.44 7.30928 16 7.99984 16C8.6904 16 9.25003 15.4404 9.25003 14.7498V9.25003H14.7498C15.4404 9.25003 16 8.6904 16 8.00016C16 7.30992 15.4397 6.74996 14.7492 6.74996Z" fill="#DF4A53"/>
+                </svg>
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'block'  :  'hidden'" xmlns="http://www.w3.org/2000/svg" width="16" height="3" viewBox="0 0 16 3" fill="none">
+                  <path d="M14.7492 0H9.24939C9.24939 0.0109075 8.69056 0 8 0C7.30944 0 7.5 3.89218e-05 6.749 4.76837e-07L1.24987 0C0.559636 0 0 0.559636 0 1.2502C0 1.94076 0.559315 2.50007 1.24987 2.50007H6.74964C7.5 2.5 7.30944 2.50007 8 2.50007C8.69056 2.50007 8.5 2.5 9.25004 2.50007H14.7498C15.4404 2.50007 16 1.94043 16 1.2502C16 0.559957 15.4397 0 14.7492 0Z" fill="#6F849C"/>
+                </svg>
+              </div>
+            </button>
+            <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne"  x-collapse>
+              <div class="pt-4 lg:pt-2 text-body text-Grey">
+                Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our <a href="#" class="underline underline-offset-2 text-blue-700 dark:text-blue-600">documentation</a> for additional information.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 lg:col-span-12">
+          <div x-data="{ isExpanded: false }" class="overflow-hidden p-6 lg:px-0 lg:py-4 border-b border-Grey">
+            <button id="controlsAccordionItemOne" type="button" class="flex w-full items-start gap-x-1 lg:gap-x-2 text-left text-Top3 font-semibold tracking-04 text-DarkBlue" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded" x-bind:class="isExpanded ? ''  : ''" x-bind:aria-expanded="isExpanded ? 'true' : 'false'">
+              <span class="text-Red">01.</span> Lorem ipsum dolor sit amet ?
+              <div class="flex items-center ml-auto">
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'hidden'  :  'block'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M14.7492 6.74996H9.24939V1.2502C9.24939 0.559957 8.68976 0 7.9992 0C7.30864 0 6.749 0.559636 6.749 1.2502V6.74996H1.24987C0.559636 6.74996 0 7.3096 0 8.00016C0 8.69072 0.559315 9.25003 1.24987 9.25003H6.74964V14.7498C6.74964 15.44 7.30928 16 7.99984 16C8.6904 16 9.25003 15.4404 9.25003 14.7498V9.25003H14.7498C15.4404 9.25003 16 8.6904 16 8.00016C16 7.30992 15.4397 6.74996 14.7492 6.74996Z" fill="#DF4A53"/>
+                </svg>
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'block'  :  'hidden'" xmlns="http://www.w3.org/2000/svg" width="16" height="3" viewBox="0 0 16 3" fill="none">
+                  <path d="M14.7492 0H9.24939C9.24939 0.0109075 8.69056 0 8 0C7.30944 0 7.5 3.89218e-05 6.749 4.76837e-07L1.24987 0C0.559636 0 0 0.559636 0 1.2502C0 1.94076 0.559315 2.50007 1.24987 2.50007H6.74964C7.5 2.5 7.30944 2.50007 8 2.50007C8.69056 2.50007 8.5 2.5 9.25004 2.50007H14.7498C15.4404 2.50007 16 1.94043 16 1.2502C16 0.559957 15.4397 0 14.7492 0Z" fill="#6F849C"/>
+                </svg>
+              </div>
+            </button>
+            <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne"  x-collapse>
+              <div class="pt-4 lg:pt-2 text-body text-Grey">
+                Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our <a href="#" class="underline underline-offset-2 text-blue-700 dark:text-blue-600">documentation</a> for additional information.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 lg:col-span-12">
+          <div x-data="{ isExpanded: false }" class="overflow-hidden p-6 lg:px-0 lg:py-4 border-b border-Grey">
+            <button id="controlsAccordionItemOne" type="button" class="flex w-full items-start gap-x-1 lg:gap-x-2 text-left text-Top3 font-semibold tracking-04 text-DarkBlue" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded" x-bind:class="isExpanded ? ''  : ''" x-bind:aria-expanded="isExpanded ? 'true' : 'false'">
+              <span class="text-Red">01.</span> Lorem ipsum dolor sit amet ?
+              <div class="flex items-center ml-auto">
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'hidden'  :  'block'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M14.7492 6.74996H9.24939V1.2502C9.24939 0.559957 8.68976 0 7.9992 0C7.30864 0 6.749 0.559636 6.749 1.2502V6.74996H1.24987C0.559636 6.74996 0 7.3096 0 8.00016C0 8.69072 0.559315 9.25003 1.24987 9.25003H6.74964V14.7498C6.74964 15.44 7.30928 16 7.99984 16C8.6904 16 9.25003 15.4404 9.25003 14.7498V9.25003H14.7498C15.4404 9.25003 16 8.6904 16 8.00016C16 7.30992 15.4397 6.74996 14.7492 6.74996Z" fill="#DF4A53"/>
+                </svg>
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'block'  :  'hidden'" xmlns="http://www.w3.org/2000/svg" width="16" height="3" viewBox="0 0 16 3" fill="none">
+                  <path d="M14.7492 0H9.24939C9.24939 0.0109075 8.69056 0 8 0C7.30944 0 7.5 3.89218e-05 6.749 4.76837e-07L1.24987 0C0.559636 0 0 0.559636 0 1.2502C0 1.94076 0.559315 2.50007 1.24987 2.50007H6.74964C7.5 2.5 7.30944 2.50007 8 2.50007C8.69056 2.50007 8.5 2.5 9.25004 2.50007H14.7498C15.4404 2.50007 16 1.94043 16 1.2502C16 0.559957 15.4397 0 14.7492 0Z" fill="#6F849C"/>
+                </svg>
+              </div>
+            </button>
+            <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne"  x-collapse>
+              <div class="pt-4 lg:pt-2 text-body text-Grey">
+                Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our <a href="#" class="underline underline-offset-2 text-blue-700 dark:text-blue-600">documentation</a> for additional information.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 lg:col-span-12">
+          <div x-data="{ isExpanded: false }" class="overflow-hidden p-6 lg:px-0 lg:py-4 border-b border-Grey">
+            <button id="controlsAccordionItemOne" type="button" class="flex w-full items-start gap-x-1 lg:gap-x-2 text-left text-Top3 font-semibold tracking-04 text-DarkBlue" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded" x-bind:class="isExpanded ? ''  : ''" x-bind:aria-expanded="isExpanded ? 'true' : 'false'">
+              <span class="text-Red">01.</span> Lorem ipsum dolor sit amet ?
+              <div class="flex items-center ml-auto">
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'hidden'  :  'block'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M14.7492 6.74996H9.24939V1.2502C9.24939 0.559957 8.68976 0 7.9992 0C7.30864 0 6.749 0.559636 6.749 1.2502V6.74996H1.24987C0.559636 6.74996 0 7.3096 0 8.00016C0 8.69072 0.559315 9.25003 1.24987 9.25003H6.74964V14.7498C6.74964 15.44 7.30928 16 7.99984 16C8.6904 16 9.25003 15.4404 9.25003 14.7498V9.25003H14.7498C15.4404 9.25003 16 8.6904 16 8.00016C16 7.30992 15.4397 6.74996 14.7492 6.74996Z" fill="#DF4A53"/>
+                </svg>
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'block'  :  'hidden'" xmlns="http://www.w3.org/2000/svg" width="16" height="3" viewBox="0 0 16 3" fill="none">
+                  <path d="M14.7492 0H9.24939C9.24939 0.0109075 8.69056 0 8 0C7.30944 0 7.5 3.89218e-05 6.749 4.76837e-07L1.24987 0C0.559636 0 0 0.559636 0 1.2502C0 1.94076 0.559315 2.50007 1.24987 2.50007H6.74964C7.5 2.5 7.30944 2.50007 8 2.50007C8.69056 2.50007 8.5 2.5 9.25004 2.50007H14.7498C15.4404 2.50007 16 1.94043 16 1.2502C16 0.559957 15.4397 0 14.7492 0Z" fill="#6F849C"/>
+                </svg>
+              </div>
+            </button>
+            <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne"  x-collapse>
+              <div class="pt-4 lg:pt-2 text-body text-Grey">
+                Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our <a href="#" class="underline underline-offset-2 text-blue-700 dark:text-blue-600">documentation</a> for additional information.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-6 lg:col-span-12">
+          <div x-data="{ isExpanded: false }" class="overflow-hidden p-6 lg:px-0 lg:py-4 border-b border-Grey">
+            <button id="controlsAccordionItemOne" type="button" class="flex w-full items-start gap-x-1 lg:gap-x-2 text-left text-Top3 font-semibold tracking-04 text-DarkBlue" aria-controls="accordionItemOne" x-on:click="isExpanded = ! isExpanded" x-bind:class="isExpanded ? ''  : ''" x-bind:aria-expanded="isExpanded ? 'true' : 'false'">
+              <span class="text-Red">01.</span> Lorem ipsum dolor sit amet ?
+              <div class="flex items-center ml-auto">
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'hidden'  :  'block'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M14.7492 6.74996H9.24939V1.2502C9.24939 0.559957 8.68976 0 7.9992 0C7.30864 0 6.749 0.559636 6.749 1.2502V6.74996H1.24987C0.559636 6.74996 0 7.3096 0 8.00016C0 8.69072 0.559315 9.25003 1.24987 9.25003H6.74964V14.7498C6.74964 15.44 7.30928 16 7.99984 16C8.6904 16 9.25003 15.4404 9.25003 14.7498V9.25003H14.7498C15.4404 9.25003 16 8.6904 16 8.00016C16 7.30992 15.4397 6.74996 14.7492 6.74996Z" fill="#DF4A53"/>
+                </svg>
+                <svg aria-hidden="true" x-bind:class="isExpanded  ?  'block'  :  'hidden'" xmlns="http://www.w3.org/2000/svg" width="16" height="3" viewBox="0 0 16 3" fill="none">
+                  <path d="M14.7492 0H9.24939C9.24939 0.0109075 8.69056 0 8 0C7.30944 0 7.5 3.89218e-05 6.749 4.76837e-07L1.24987 0C0.559636 0 0 0.559636 0 1.2502C0 1.94076 0.559315 2.50007 1.24987 2.50007H6.74964C7.5 2.5 7.30944 2.50007 8 2.50007C8.69056 2.50007 8.5 2.5 9.25004 2.50007H14.7498C15.4404 2.50007 16 1.94043 16 1.2502C16 0.559957 15.4397 0 14.7492 0Z" fill="#6F849C"/>
+                </svg>
+              </div>
+            </button>
+            <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne"  x-collapse>
+              <div class="pt-4 lg:pt-2 text-body text-Grey">
                 Our website is optimized for the latest versions of Chrome, Firefox, Safari, and Edge. Check our <a href="#" class="underline underline-offset-2 text-blue-700 dark:text-blue-600">documentation</a> for additional information.
               </div>
             </div>
