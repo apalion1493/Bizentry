@@ -112,6 +112,7 @@ module.exports = {
                 Red2: '#E9525C',
                 Red3: '#FCD0C7',
                 Blue: '#2F3C8A',
+                Blue2: '#192C62',
                 DarkBlue: '#091F44',
                 White2: '#F8F7FA',
                 White3: 'rgba(255, 255, 255, 0.80)',

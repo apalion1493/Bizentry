@@ -336,7 +336,7 @@
   margin-left: -48px;
   margin-right: -48px;
 
-  @apply lg:w-full lg:mx-auto
+  @apply xl:w-full xl:mx-auto
 }
 
 .header-menu a.active {
@@ -359,6 +359,10 @@
 
 .blur-effect {
   backdrop-filter: blur(10px);
+}
+
+.max-w-screen {
+  max-width: 100vw !important;
 }
 
 //

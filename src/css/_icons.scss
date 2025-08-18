@@ -27,6 +27,12 @@
   opacity: 1;
 }
 
+
+.img-bg-6 {
+  background: url("__IMAGE_PATH__img-bg-6.png") #192C62 center / cover no-repeat;
+  opacity: 1;
+}
+
 .Company-Formation-icon {
   background: url("__IMAGE_PATH__Company-Formation-icon.svg");
   @apply block h-[48px] w-[48px] min-w-[48px] bg-100-auto bg-center bg-no-repeat;
