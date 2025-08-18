@@ -2670,6 +2670,9 @@ html {
 .mt-auto {
   margin-top: auto;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
 .block {
   display: block;
 }
@@ -2732,6 +2735,15 @@ html {
 .h-full {
   height: 100%;
 }
+.h-14 {
+  height: 3.5rem;
+}
+.h-\[\] {
+  height: ;
+}
+.h-\[236px\] {
+  height: 236px;
+}
 .max-h-44 {
   max-height: 11rem;
 }
@@ -2793,6 +2805,9 @@ html {
 .w-full {
   width: 100%;
 }
+.w-14 {
+  width: 3.5rem;
+}
 .min-w-20 {
   min-width: 5rem;
 }
@@ -2813,6 +2828,9 @@ html {
 }
 .min-w-\[76px\] {
   min-width: 76px;
+}
+.min-w-14 {
+  min-width: 3.5rem;
 }
 .max-w-\[1217px\] {
   max-width: 1217px;
@@ -4512,6 +4530,12 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:top-5 {
     top: 1.25rem;
   }
+  .lg\:left-auto {
+    left: auto;
+  }
+  .lg\:top-auto {
+    top: auto;
+  }
   .lg\:order-1 {
     order: 1;
   }
@@ -4559,6 +4583,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:inline {
     display: inline;
   }
+  .lg\:flex {
+    display: flex;
+  }
   .lg\:hidden {
     display: none;
   }
@@ -4573,6 +4600,9 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:h-\[56px\] {
     height: 56px;
+  }
+  .lg\:h-full {
+    height: 100%;
   }
   .lg\:w-16 {
     width: 4rem;
@@ -4619,11 +4649,18 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:flex-1 {
     flex: 1 1 0%;
   }
+  .lg\:translate-x-0 {
+    --tw-translate-x: 0px;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
   .lg\:flex-col {
     flex-direction: column;
   }
   .lg\:items-start {
     align-items: flex-start;
+  }
+  .lg\:items-center {
+    align-items: center;
   }
   .lg\:gap-x-0 {
     -moz-column-gap: 0px;
@@ -4648,6 +4685,10 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:gap-y-8 {
     row-gap: 2rem;
+  }
+  .lg\:gap-x-4 {
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
   }
   .lg\:rounded-7xl {
     border-radius: 10px;
@@ -4704,6 +4745,9 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:pt-\[84px\] {
     padding-top: 84px;
+  }
+  .lg\:text-left {
+    text-align: left;
   }
   .lg\:text-center {
     text-align: center;
