@@ -16,8 +16,8 @@
 
 
 <body class="">
-<main id="content" class="flex flex-col min-h-screen overflow-hidden bg-gradient-main-2">
-  <header class="w-full absolute top-8 lg:top-5 left-1/2 -translate-x-1/2 z-[100]" x-data="{ mobileOpen: false }" x-init="
+<main id="content" class="flex flex-col min-h-screen overflow-hidden max-w-screen ">
+    <header class="w-full absolute top-8 lg:top-5 left-1/2 -translate-x-1/2 z-[100]" x-data="{ mobileOpen: false }" x-init="
     document.documentElement.classList.remove('overflow-hidden');
     document.body.classList.remove('overflow-hidden');
     $watch('mobileOpen', v => {
@@ -177,8 +177,78 @@
   </aside>
 </header>
 
-  <h1>404</h1>
-  <footer class="w-full mt-auto overflow-hidden bg-footer shadow-v2">
+    <section class="overflow-hidden">
+        <div class="max-w-[1700px] mx-auto pt-[120px] lg:pt-[84px] img-bg-2">
+            <div class="container relative">
+                <div class="flex flex-col max-w-[600px] mx-auto mt-12 relative z-[2]">
+                    <h1 class="text-h2 text-DarkBlue font-bold text-center mb-6 lg:text-h4">Error <span class="text-Red">404.</span></h1>
+                    <p class="text-center text-base font-medium text-Grey">We Are Sorry, But the requested page is not available.
+                        <br>
+                        Please check the URL or go to Home Screen.</p>
+
+                    <a class="button px-[32px] mt-6 mx-auto" href="index.html">
+    <span class="">Back to Homepage</span>
+</a>
+                </div>
+                <img class="mx-auto mt-8 max-w-[660px] w-full px-4" src="img/404.png" alt="404 error">
+                <svg class="absolute z-[1] lg:hidden top-0 left-6" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+                <svg class="absolute z-[1] lg:hidden top-1 right-8" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+                <svg class="absolute z-[1] lg:hidden bottom-3 left-40" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+            </div>
+        </div>
+    </section>
+    <footer class="w-full mt-auto overflow-hidden bg-footer shadow-v2">
   <div class="container">
     <div class="flex justify-between lg:flex-col gap-x-6 lg:gap-y-8 pt-16 pb-10 lg:pb-8 lg:pt-8">
       <div class="flex flex-col gap-y-5 max-w-[331px] lg:flex-1">

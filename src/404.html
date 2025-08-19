@@ -6,12 +6,39 @@
 })
 
 <body class="">
-<main id="content" class="flex flex-col min-h-screen overflow-hidden bg-gradient-main-2">
-  @@include('components/Header.html', {
-  'commonStyle': ' ',
-  })
-  <h1>404</h1>
-  @@include('components/Footer.html')
+<main id="content" class="flex flex-col min-h-screen overflow-hidden max-w-screen ">
+    @@include('components/Header.html', {
+    'commonStyle': ' ',
+    })
+    <section class="overflow-hidden">
+        <div class="max-w-[1700px] mx-auto pt-[120px] lg:pt-[84px] img-bg-2">
+            <div class="container relative">
+                <div class="flex flex-col max-w-[600px] mx-auto mt-12 relative z-[2]">
+                    <h1 class="text-h2 text-DarkBlue font-bold text-center mb-6 lg:text-h4">Error <span class="text-Red">404.</span></h1>
+                    <p class="text-center text-base font-medium text-Grey">We Are Sorry, But the requested page is not available.
+                        <br>
+                        Please check the URL or go to Home Screen.</p>
+
+                    @@include('components/Link.html', {
+                    'style': 'px-[32px] mt-6 mx-auto',
+                    'url': 'index.html',
+                    'title': 'Back to Homepage',
+                    })
+                </div>
+                <img class="mx-auto mt-8 max-w-[660px] w-full px-4" src="__IMAGE_PATH__404.png" alt="404 error">
+                @@include('components/Animated-circle.html', {
+                "Style": "absolute z-[1] lg:hidden top-0 left-6"
+                })
+                @@include('components/Animated-circle.html', {
+                "Style": "absolute z-[1] lg:hidden top-1 right-8"
+                })
+                @@include('components/Animated-circle.html', {
+                "Style": "absolute z-[1] lg:hidden bottom-3 left-40"
+                })
+            </div>
+        </div>
+    </section>
+    @@include('components/Footer.html')
 </main>
 
 @@include('components/script.html')
