@@ -369,3 +369,51 @@
 //.lg-w-header {
 //  width: calc(100% - 40px) !important;
 //}
+
+// Table Style Start
+
+.custom-table {
+
+  th {
+    padding: 20px;
+    color: white;
+    @apply uppercase text-body font-bold tracking-24 text-left lg:text-[11px] lg:leading-[120%] lg:p-3 lg:tracking-[1.65px]
+  }
+
+  td {
+    padding: 24px 20px;
+    @apply lg:px-3 lg:py-4
+
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody td {
+    border-right: 1px solid #05093E1A;
+    border-bottom: 1px solid #05093E1A;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+.custom-w {
+  width: calc(100% + 64px) !important;
+  margin-left: -32px;
+  margin-right: -32px;
+}
+
+@media (max-width: 1023.98px) {
+
+  .custom-w {
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+// Table Style End

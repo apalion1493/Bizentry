@@ -54,6 +54,8 @@ module.exports = {
             body3: ['8px', '120%'],
             body4: ['12px', '120%'],
             body5: ['10px', 'normal'],
+            body6: ['13px', '120%'],
+            body7: ['11px', '120%'],
         },
         screens: {
             '2xl': {max: '1216px'},
@@ -87,6 +89,7 @@ module.exports = {
                 'v1': '0px 0px 16px 0px rgba(37, 51, 126, 0.05)',
                 'v2': '0 0 20px 0 rgba(111, 132, 156, 0.10)',
                 'v3': '0 0 20px 0 rgba(223, 74, 83, 0.30)',
+                'v4': '0 2px 16px 0 rgba(111, 132, 156, 0.15)',
             },
             borderRadius: {
                 '4xl': '32px',

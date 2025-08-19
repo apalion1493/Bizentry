@@ -74,10 +74,10 @@
           </button>
           <ul x-cloak x-show="open" @click.outside="open = false" class="absolute right-0 mt-2 w-[64px] border border-Grey4 rounded-2xl bg-white shadow-v2 py-2">
             <li class="border-b border-Grey4">
-              <button type="button" @click="setLang('EN')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">EN</button>
+              <button type="button" @click="setLang('EN')" :class="lang === 'EN' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">En</button>
             </li>
             <li>
-              <button type="button" @click="setLang('RU')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">RU</button>
+              <button type="button" @click="setLang('RU')" :class="lang === 'RU' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">Ru</button>
             </li>
           </ul>
         </div>
@@ -162,10 +162,10 @@
         </button>
         <ul x-cloak x-show="open" @click.outside="open = false" class="mt-2 w-[100%] border border-Grey4 rounded-2xl bg-white shadow-v2 py-2">
           <li class="border-b border-Grey4">
-            <button type="button" @click="setLang('EN')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">EN</button>
+            <button type="button" @click="setLang('EN')" :class="lang === 'EN' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">EN</button>
           </li>
           <li>
-            <button type="button" @click="setLang('RU')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">RU</button>
+            <button type="button" @click="setLang('RU')" :class="lang === 'RU' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">RU</button>
           </li>
         </ul>
       </div>

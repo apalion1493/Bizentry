@@ -74,10 +74,10 @@
           </button>
           <ul x-cloak x-show="open" @click.outside="open = false" class="absolute right-0 mt-2 w-[64px] border border-Grey4 rounded-2xl bg-white shadow-v2 py-2">
             <li class="border-b border-Grey4">
-              <button type="button" @click="setLang('EN')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">EN</button>
+              <button type="button" @click="setLang('EN')" :class="lang === 'EN' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">En</button>
             </li>
             <li>
-              <button type="button" @click="setLang('RU')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">RU</button>
+              <button type="button" @click="setLang('RU')" :class="lang === 'RU' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">Ru</button>
             </li>
           </ul>
         </div>
@@ -162,10 +162,10 @@
         </button>
         <ul x-cloak x-show="open" @click.outside="open = false" class="mt-2 w-[100%] border border-Grey4 rounded-2xl bg-white shadow-v2 py-2">
           <li class="border-b border-Grey4">
-            <button type="button" @click="setLang('EN')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">EN</button>
+            <button type="button" @click="setLang('EN')" :class="lang === 'EN' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">EN</button>
           </li>
           <li>
-            <button type="button" @click="setLang('RU')" class="block w-full text-center px-4 py-1 text-body font-medium text-Grey hover:text-Red transition-all">RU</button>
+            <button type="button" @click="setLang('RU')" :class="lang === 'RU' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">RU</button>
           </li>
         </ul>
       </div>
@@ -181,10 +181,14 @@
         <div class="max-w-[1700px] mx-auto pt-[120px] lg:pt-[84px] pb-14 img-bg-2">
             <div class="container relative">
                 <div class="flex flex-col max-w-[600px] mx-auto mt-12 relative z-[2]">
-                    <h1 class="text-h2 text-DarkBlue font-bold text-center mb-6 lg:text-h4 lg:text-left"><span class="text-Red">Pricing</span> & Services
+                    <h1 class="text-h2 text-DarkBlue font-bold text-center mb-6 lg:text-h4 lg:text-left"><span
+                            class="text-Red">Pricing</span> & Services
                     </h1>
-                    <p class="text-center text-DarkBlue font-bold text-Top2 mb-5 lg:text-left lg:text-Top3">All services are provided remotely.</p>
-                    <p class="text-center text-base font-medium text-Grey lg:text-left">All bank accounts are opened with a real U.S. bank — Chase (JPMorgan Chase), one of the largest banks in the United States.</p>
+                    <p class="text-center text-DarkBlue font-bold text-Top2 mb-5 lg:text-left lg:text-Top3">All services
+                        are provided remotely.</p>
+                    <p class="text-center text-base font-medium text-Grey lg:text-left">All bank accounts are opened
+                        with a real U.S. bank — Chase (JPMorgan Chase), one of the largest banks in the United
+                        States.</p>
                 </div>
                 <svg class="absolute z-[1] lg:hidden top-0 left-6" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
      viewBox="0 0 31 31">
@@ -244,8 +248,90 @@
         </div>
     </section>
     <section class="py-12 bg-pageBg">
-        <div class="container">
-
+        <div class="container sm:px-0">
+            <div class="flex flex-col gap-y-14">
+                <div class="flex flex-col gap-y-6">
+                    <div class="flex items-center gap-x-3 sm:px-5">
+                        <span class="w-[60px] h-[60px] min-w-[60px] lg:w-12 lg:h-12 lg:min-w-12 lg:border-[6px] lg:text-base border-[7px] border-Red3 bg-Red flex items-center justify-center text-center overflow-hidden rounded-full text-white text-Top1 font-semibold">01</span>
+                        <h3 class="text-Top5 lg:text-Top2 text-DarkBlue font-bold">Company Opening Services<span
+                                class="text-Red">.</span></h3>
+                    </div>
+                    <div class="custom-w sm:pl-5 p-8 lg:p-0 lg:border-0 lg:rounded-none lg:bg-transparent flex items-center justify-center rounded-4xl shadow-v4 bg-white border border-Grey4">
+                        <div class="w-full overflow-x-auto rounded-6xl lg:rounded-none minsm:border minsm:border-outline">
+                            <table class="sm:mr-5 w-full custom-table sm:border sm:border-outline">
+                                <thead>
+                                <tr>
+                                    <th class="bg-Grey w-[350px] lg:w-[200px]">
+                                        Service
+                                    </th>
+                                    <th class="bg-DarkBlue lg:min-w-[260px]">
+                                        Description
+                                    </th>
+                                    <th class="bg-Red w-[170px] lg:w-[80px]">Price</th>
+                                </tr>
+                                </thead>
+                                <tbody class="rounded-6xl text-DarkBlue">
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Opening Bank Account</td>
+                                    <td class="text-base lg:text-body4 font-medium">Business account in Chase Bank</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1000</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-Top3 lg:text-body6 font-semibold">Company Registration</td>
+                                    <td class="text-base lg:text-body4 font-medium">Corporation or LLC (incl. full document set + resident agent for 1 year)</td>
+                                    <td class="text-Top5 lg:text-body7 lg:tracking-[1.65px] font-bold"><span class="text-Red">$</span>1199</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="bg-Blue2 relative overflow-hidden">
@@ -254,16 +340,19 @@
                 <div class="flex items-center flex-col">
                     <h1 class="mb-5 text-h2 text-white font-bold text-center lg:text-Top5">How it <span
                             class="text-Red">works?</span></h1>
-                    <p class="text-base text-White3 font-medium text-center lg:text-body">That’s it — your U.S. business <br> is
+                    <p class="text-base text-White3 font-medium text-center lg:text-body">That’s it — your U.S. business
+                        <br> is
                         officially
                         launched!</p>
                 </div>
                 <div class="row">
                     <div class="col-span-12">
-                        <img class="lg:hidden absolute left-1/2 -translate-x-1/2 bottom-0" src="img/businessman-03-4.png"
+                        <img class="lg:hidden absolute left-1/2 -translate-x-1/2 bottom-0"
+                             src="img/businessman-03-4.png"
                              alt="businessman avatar">
                         <div class="minlg:hidden h-[236px] relative mt-5">
-                            <img class="absolute top-0 left-1/2 -translate-x-1/2" src="img/businessman034-mob.png"
+                            <img class="absolute top-0 left-1/2 -translate-x-1/2"
+                                 src="img/businessman034-mob.png"
                                  alt="businessman avatar">
                         </div>
                         <div class="relative mt-10 h-[500px] lg:h-full max-w-[956px] w-full mx-auto lg:flex lg:flex-col lg:gap-y-5">
@@ -286,27 +375,34 @@
                                                     fill="white"/>
                                         </g>
                                         <defs>
-                                            <filter id="filter0_n_94_2010" x="0" y="0" width="76" height="76" filterUnits="userSpaceOnUse"
+                                            <filter id="filter0_n_94_2010" x="0" y="0" width="76" height="76"
+                                                    filterUnits="userSpaceOnUse"
                                                     color-interpolation-filters="sRGB">
                                                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                         result="shape"/>
+                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25"
+                                                              stitchTiles="stitch" numOctaves="3"
                                                               result="noise" seed="6161"/>
                                                 <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise1">
                                                     <feFuncA type="discrete"
                                                              tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise1"
+                                                             result="noise1Clipped"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise2">
                                                     <feFuncA type="discrete"
                                                              tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise2"
+                                                             result="noise2Clipped"/>
                                                 <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
-                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood"
+                                                             result="color1"/>
                                                 <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
-                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood"
+                                                             result="color2"/>
                                                 <feMerge result="effect1_noise_94_2010">
                                                     <feMergeNode in="shape"/>
                                                     <feMergeNode in="color1"/>
@@ -318,7 +414,8 @@
                                 </div>
                                 <div
                                         class="w-fit lg:w-full lg:flex lg:items-center lg:gap-x-4 border border-White4 p-6 px-8 lg:py-4 lg:px-5 rounded-6xl shadow-v2 bg-White4 blur-effect overflow-hidden">
-                                    <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56" height="56"
+                                    <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56"
+                                         height="56"
                                          viewBox="0 0 56 56" fill="none">
                                         <g filter="url(#filter0_n_185_3894)">
                                             <path
@@ -332,27 +429,34 @@
                                                     fill="white"/>
                                         </g>
                                         <defs>
-                                            <filter id="filter0_n_185_3894" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse"
+                                            <filter id="filter0_n_185_3894" x="0" y="0" width="56" height="56"
+                                                    filterUnits="userSpaceOnUse"
                                                     color-interpolation-filters="sRGB">
                                                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                         result="shape"/>
+                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25"
+                                                              stitchTiles="stitch" numOctaves="3"
                                                               result="noise" seed="6161"/>
                                                 <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise1">
                                                     <feFuncA type="discrete"
                                                              tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise1"
+                                                             result="noise1Clipped"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise2">
                                                     <feFuncA type="discrete"
                                                              tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise2"
+                                                             result="noise2Clipped"/>
                                                 <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
-                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood"
+                                                             result="color1"/>
                                                 <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
-                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood"
+                                                             result="color2"/>
                                                 <feMerge result="effect1_noise_185_3894">
                                                     <feMergeNode in="shape"/>
                                                     <feMergeNode in="color1"/>
@@ -385,27 +489,34 @@
                                                     fill="white"/>
                                         </g>
                                         <defs>
-                                            <filter id="filter0_n_94_953" x="0" y="0" width="76" height="76" filterUnits="userSpaceOnUse"
+                                            <filter id="filter0_n_94_953" x="0" y="0" width="76" height="76"
+                                                    filterUnits="userSpaceOnUse"
                                                     color-interpolation-filters="sRGB">
                                                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                         result="shape"/>
+                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25"
+                                                              stitchTiles="stitch" numOctaves="3"
                                                               result="noise" seed="6161"/>
                                                 <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise1">
                                                     <feFuncA type="discrete"
                                                              tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise1"
+                                                             result="noise1Clipped"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise2">
                                                     <feFuncA type="discrete"
                                                              tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise2"
+                                                             result="noise2Clipped"/>
                                                 <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
-                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood"
+                                                             result="color1"/>
                                                 <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
-                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood"
+                                                             result="color2"/>
                                                 <feMerge result="effect1_noise_94_953">
                                                     <feMergeNode in="shape"/>
                                                     <feMergeNode in="color1"/>
@@ -417,7 +528,8 @@
                                 </div>
                                 <div
                                         class="w-fit lg:w-full lg:flex lg:items-center lg:gap-x-4 border border-White4 p-6 px-8 lg:py-4 lg:px-5 rounded-6xl shadow-v2 bg-White4 blur-effect overflow-hidden">
-                                    <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56" height="56"
+                                    <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56"
+                                         height="56"
                                          viewBox="0 0 56 56" fill="none">
                                         <g filter="url(#filter0_n_185_3900)">
                                             <path
@@ -431,27 +543,34 @@
                                                     fill="white"/>
                                         </g>
                                         <defs>
-                                            <filter id="filter0_n_185_3900" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse"
+                                            <filter id="filter0_n_185_3900" x="0" y="0" width="56" height="56"
+                                                    filterUnits="userSpaceOnUse"
                                                     color-interpolation-filters="sRGB">
                                                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                         result="shape"/>
+                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25"
+                                                              stitchTiles="stitch" numOctaves="3"
                                                               result="noise" seed="6161"/>
                                                 <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise1">
                                                     <feFuncA type="discrete"
                                                              tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise1"
+                                                             result="noise1Clipped"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise2">
                                                     <feFuncA type="discrete"
                                                              tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise2"
+                                                             result="noise2Clipped"/>
                                                 <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
-                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood"
+                                                             result="color1"/>
                                                 <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
-                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood"
+                                                             result="color2"/>
                                                 <feMerge result="effect1_noise_185_3900">
                                                     <feMergeNode in="shape"/>
                                                     <feMergeNode in="color1"/>
@@ -484,27 +603,34 @@
                                                     fill="white"/>
                                         </g>
                                         <defs>
-                                            <filter id="filter0_n_94_959" x="0" y="0" width="76" height="76" filterUnits="userSpaceOnUse"
+                                            <filter id="filter0_n_94_959" x="0" y="0" width="76" height="76"
+                                                    filterUnits="userSpaceOnUse"
                                                     color-interpolation-filters="sRGB">
                                                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                         result="shape"/>
+                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25"
+                                                              stitchTiles="stitch" numOctaves="3"
                                                               result="noise" seed="6161"/>
                                                 <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise1">
                                                     <feFuncA type="discrete"
                                                              tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise1"
+                                                             result="noise1Clipped"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise2">
                                                     <feFuncA type="discrete"
                                                              tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise2"
+                                                             result="noise2Clipped"/>
                                                 <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
-                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood"
+                                                             result="color1"/>
                                                 <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
-                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood"
+                                                             result="color2"/>
                                                 <feMerge result="effect1_noise_94_959">
                                                     <feMergeNode in="shape"/>
                                                     <feMergeNode in="color1"/>
@@ -516,7 +642,8 @@
                                 </div>
                                 <div
                                         class="w-fit lg:w-full lg:flex lg:items-center lg:gap-x-4 border border-White4 p-6 px-8 lg:py-4 lg:px-5 rounded-6xl shadow-v2 bg-White4 blur-effect overflow-hidden">
-                                    <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56" height="56"
+                                    <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56"
+                                         height="56"
                                          viewBox="0 0 56 56" fill="none">
                                         <g filter="url(#filter0_n_185_3905)">
                                             <path
@@ -530,27 +657,34 @@
                                                     fill="white"/>
                                         </g>
                                         <defs>
-                                            <filter id="filter0_n_185_3905" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse"
+                                            <filter id="filter0_n_185_3905" x="0" y="0" width="56" height="56"
+                                                    filterUnits="userSpaceOnUse"
                                                     color-interpolation-filters="sRGB">
                                                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                         result="shape"/>
+                                                <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25"
+                                                              stitchTiles="stitch" numOctaves="3"
                                                               result="noise" seed="6161"/>
                                                 <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise1">
                                                     <feFuncA type="discrete"
                                                              tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise1"
+                                                             result="noise1Clipped"/>
                                                 <feComponentTransfer in="alphaNoise" result="coloredNoise2">
                                                     <feFuncA type="discrete"
                                                              tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
                                                 </feComponentTransfer>
-                                                <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                                                <feComposite operator="in" in2="shape" in="coloredNoise2"
+                                                             result="noise2Clipped"/>
                                                 <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
-                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                                                <feComposite operator="in" in2="noise1Clipped" in="color1Flood"
+                                                             result="color1"/>
                                                 <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
-                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                                                <feComposite operator="in" in2="noise2Clipped" in="color2Flood"
+                                                             result="color2"/>
                                                 <feMerge result="effect1_noise_185_3905">
                                                     <feMergeNode in="shape"/>
                                                     <feMergeNode in="color1"/>
@@ -559,8 +693,9 @@
                                             </filter>
                                         </defs>
                                     </svg>
-                                    <p class="text-white text-Top2 font-bold lg:text-base">You receive your EIN & open <br
-                                            class="lg:hidden"> your <span class="text-Red">U.S.</span>
+                                    <p class="text-white text-Top2 font-bold lg:text-base">You receive your EIN & open
+                                        <br
+                                                class="lg:hidden"> your <span class="text-Red">U.S.</span>
                                         bank account</p>
                                 </div>
                             </div>
@@ -576,7 +711,8 @@
                 <div class="row gap-x-6 gap-y-8 lg:gap-x-0">
                     <div class="col-span-6 lg:col-span-12 flex items-end">
                         <div class="flex flex-col gap-y-5 max-w-[392px] lg:max-w-full">
-                            <h3 class="text-h2 text-DarkBlue font-bold lg:text-Top5">Why BizEntry<span class="text-Red">?</span></h3>
+                            <h3 class="text-h2 text-DarkBlue font-bold lg:text-Top5">Why BizEntry<span class="text-Red">?</span>
+                            </h3>
                             <p class="text-base lg:text-body font-medium">Corporate solutions is our business!
                                 Due Diligence, Integrity, and Consistency are the virtues of our professionals.</p>
                         </div>
@@ -587,7 +723,8 @@
                                     class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
                                 <span class="lg:text-Top1">01</span>
                             </div>
-                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Company registered in Florida, a top
+                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Company registered in Florida,
+                                a top
                                 business-friendly state.</p>
                         </div>
                     </div>
@@ -597,7 +734,8 @@
                                     class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
                                 <span class="lg:text-Top1">02</span>
                             </div>
-                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Real Chase Bank account — no U.S. visit
+                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Real Chase Bank account — no
+                                U.S. visit
                                 required.</p>
                         </div>
                     </div>
@@ -607,7 +745,8 @@
                                     class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
                                 <span class="lg:text-Top1">03</span>
                             </div>
-                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Fully remote, fast, no in-person presence
+                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Fully remote, fast, no
+                                in-person presence
                                 needed.</p>
                         </div>
                     </div>
@@ -617,7 +756,8 @@
                                     class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
                                 <span class="lg:text-Top1">04</span>
                             </div>
-                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Comprehensive support from a team backed by
+                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Comprehensive support from a
+                                team backed by
                                 Consumer Attorneys.</p>
                         </div>
                     </div>
@@ -627,7 +767,8 @@
                                     class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
                                 <span class="lg:text-Top1">05</span>
                             </div>
-                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Company registered in Florida, a top
+                            <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Company registered in Florida,
+                                a top
                                 business-friendly state.</p>
                         </div>
                     </div>
