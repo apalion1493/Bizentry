@@ -2819,6 +2819,12 @@ html {
 .w-full {
   width: 100%;
 }
+.w-\[280px\] {
+  width: 280px;
+}
+.w-\[380px\] {
+  width: 380px;
+}
 .min-w-14 {
   min-width: 3.5rem;
 }
