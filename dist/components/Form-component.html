@@ -1,60 +1,4 @@
-<section class="">
-  <div class="max-w-[1217px] lg:mx-5 mx-auto rounded-4xl overflow-hidden bg-white shadow-v2 border border-Grey4 pt-12 px-12 lg:px-5 lg:py-8">
-    <div class="container px-0">
-      <div class="row gap-x-6 lg:gap-x-0">
-        <div class="col-span-5 lg:col-span-12">
-          <div class="relative h-full">
-            <svg class="absolute bottom-[94px] z-[2] -left-2" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
-     viewBox="0 0 31 31">
-  <defs>
-    <!-- Радиальный градиент для эффекта затухания -->
-    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
-      <!-- Центр полностью видимый -->
-      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
-        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
-      </stop>
-      <!-- Края прозрачные -->
-      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
-        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
-      </stop>
-    </radialGradient>
-  </defs>
-  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
-</svg>
-
-            <svg class="absolute bottom-1/2 z-[2] right-0" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
-     viewBox="0 0 31 31">
-  <defs>
-    <!-- Радиальный градиент для эффекта затухания -->
-    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
-      <!-- Центр полностью видимый -->
-      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
-        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
-      </stop>
-      <!-- Края прозрачные -->
-      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
-        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
-      </stop>
-    </radialGradient>
-  </defs>
-  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
-</svg>
-
-            <div class="flex flex-col gap-y-6 relative lg:mb-6 z-[3]">
-              <h3 class="text-h2_2 lg:text-Top5 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
-                business?</h3>
-              <p class="text-base lg:text-body font-medium">Get a free consultation today. <br>
-                BizEntry — your gateway to the U.S. <br>
-                No visa. No stress. Guaranteed.</p>
-            </div>
-            <div class="img-bg-1 absolute bottom-5 left-0 z-0"></div>
-            <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative lg:hidden" src="img/businessman-04-3.png" alt="Ready to launch your U.S. business?">
-            <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative minlg:hidden max-w-[350px] mx-auto" src="img/businessman-04-3--mob.png" alt="Ready to launch your U.S. business?">
-          </div>
-        </div>
-        <div class="col-span-7 lg:col-span-12 relative">
-          <div class="max-w-[573px] lg:max-w-full flex flex-col w-full ml-auto">
-            <div id="contactFormWrapper" x-data="{ submitted: false }">
+<div id="contactFormWrapper" x-data="{ submitted: false }">
   <form id="contactForm" x-cloak x-show="!submitted" @submit.prevent="submitted = true" class="flex flex-col gap-y-5" action="">
     <div class="flex flex-col gap-y-2">
       <div class="form-group flex flex-col items-start ">
@@ -124,10 +68,3 @@
     </div>
   </div>
 </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>

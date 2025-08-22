@@ -1,0 +1,88 @@
+<div id="contactFormWrapper" x-data="{ submitted: false }">
+  <form id="contactForm" x-cloak x-show="!submitted" @submit.prevent="submitted = true" class="flex flex-col gap-y-5" action="">
+    <div class="flex flex-col gap-y-2">
+      @@include('input.html', {
+      "common-style": "",
+      "StyleLabel": "hidden",
+      "idInput": "nameID",
+      "label": "Full Name",
+      "styleInput": "",
+      "type": "text",
+      "placeholder": "Full Name",
+      "Name": "fullName",
+      "errorStyle": "hidden",
+      })
+
+      @@include('input.html', {
+      "common-style": "",
+      "StyleLabel": "hidden",
+      "idInput": "EmailID",
+      "label": "Email",
+      "styleInput": "",
+      "type": "email",
+      "placeholder": "Email",
+      "Name": "email",
+      "errorStyle": "hidden",
+      })
+
+      @@include('input.html', {
+      "common-style": "",
+      "StyleLabel": "hidden",
+      "idInput": "phoneID",
+      "label": "Phone",
+      "styleInput": "",
+      "type": "text",
+      "placeholder": "Phone",
+      "Name": "phone",
+      "errorStyle": "hidden",
+      })
+
+
+      @@include('Select.html', {
+      "common-style": "",
+      "StyleLabel": "hidden",
+      "idSelect": "phoneID",
+      "label": "Phone",
+      "NameSelect": "phone",
+      })
+
+      @@include('textarea.html', {
+      "common-style": "",
+      "StyleLabel": "hidden",
+      "idTextarea": "MesssageID",
+      "label": "Messsage",
+      "styleTextarea": "",
+      "placeholder": "Messsage",
+      "Name": "messsage",
+      "rows": "6",
+      })
+    </div>
+    <div class="flex flex-col gap-y-2 items-center">
+      @@include('button.html', {
+      "style": "w-full",
+      "type": "submit",
+      "ariaLabel": "Send Request button",
+      "title": "Send Request",
+      })
+      <div class="flex gap-x-2 mb-6 lg:inline lg:mb-0">
+        <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+        <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+          and only contact you as requested.</p>
+      </div>
+    </div>
+  </form>
+  <div id="thankYou" x-cloak x-show="submitted" class="flex flex-col items-center pb-8 lg:pb-0" aria-live="polite">
+    <img class="w-full mb-8 lg:hidden" src="__IMAGE_PATH__ty-img.svg" alt="thank You">
+    <img class="w-full mb-8 minlg:hidden max-w-[300px] mx-auto" src="__IMAGE_PATH__ty-img--mob.svg" alt="thank You">
+    @@include('Link.html', {
+    'style': 'px-[32px] w-full',
+    'url': 'index.html',
+    'title': 'Back to the Homepage'
+    })
+    <div class="flex gap-x-2 lg:inline mt-4">
+      <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+      <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+        and only contact you as requested.</p>
+    </div>
+  </div>
+</div>

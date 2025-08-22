@@ -15,9 +15,9 @@
 </head>
 
 
-<body class="">
+<body class="" x-data="{modalIsOpen: false, mobileOpen: false}">
 <main id="content" class="flex flex-col min-h-screen overflow-hidden">
-  <header class="w-full absolute top-8 lg:top-5 left-1/2 -translate-x-1/2 z-[100]" x-data="{ mobileOpen: false }" x-init="
+  <header class="w-full absolute top-8 lg:top-5 left-1/2 -translate-x-1/2 z-[100]" x-init="
     document.documentElement.classList.remove('overflow-hidden');
     document.body.classList.remove('overflow-hidden');
     $watch('mobileOpen', v => {
@@ -563,9 +563,9 @@
         <div class="col-span-7 lg:col-span-12 relative">
           <div class="max-w-[573px] lg:max-w-full flex flex-col w-full ml-auto">
             <div id="contactFormWrapper" x-data="{ submitted: false }">
-              <form id="contactForm" x-cloak x-show="!submitted" @submit.prevent="submitted = true" class="flex flex-col gap-y-5" action="">
-                <div class="flex flex-col gap-y-2">
-                  <div class="form-group flex flex-col items-start ">
+  <form id="contactForm" x-cloak x-show="!submitted" @submit.prevent="submitted = true" class="flex flex-col gap-y-5" action="">
+    <div class="flex flex-col gap-y-2">
+      <div class="form-group flex flex-col items-start ">
     <label class="mb-2 text-body md:text-body2 text-Text hidden" for="nameID">Full Name</label>
     <input
         class="input  "
@@ -573,7 +573,7 @@
     <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
 </div>
 
-                  <div class="form-group flex flex-col items-start ">
+      <div class="form-group flex flex-col items-start ">
     <label class="mb-2 text-body md:text-body2 text-Text hidden" for="EmailID">Email</label>
     <input
         class="input  "
@@ -581,7 +581,7 @@
     <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
 </div>
 
-                  <div class="form-group flex flex-col items-start ">
+      <div class="form-group flex flex-col items-start ">
     <label class="mb-2 text-body md:text-body2 text-Text hidden" for="phoneID">Phone</label>
     <input
         class="input  "
@@ -590,7 +590,7 @@
 </div>
 
 
-                  <div class="form-group flex flex-col items-start relative ">
+      <div class="form-group flex flex-col items-start relative ">
     <label class="block mb-2 text-body md:text-body2 text-Text2 hidden" for="phoneID">Phone</label>
     <select id="phoneID" name="phone" class="select w-full input">
         <option selected>What are you interested in?</option>
@@ -601,37 +601,38 @@
 </div>
 
 
-                  <div class="form-group flex flex-col items-start overflow-hidden ">
+      <div class="form-group flex flex-col items-start overflow-hidden ">
     <label class="mb-3 font-semibold text-body hidden" for="MesssageID">Messsage</label>
     <textarea
         class="input textarea resize-none "
         id="MesssageID" placeholder="Messsage" rows="6" name="messsage"></textarea>
 </div>
-                </div>
-                <div class="flex flex-col gap-y-2 items-center">
-                  <button class="button w-full" type="submit" aria-label="Send Request button">
+    </div>
+    <div class="flex flex-col gap-y-2 items-center">
+      <button class="button w-full" type="submit" aria-label="Send Request button">
     <span>Send Request</span>
 </button>
-                  <div class="flex gap-x-2 mb-6 lg:inline lg:mb-0">
-                    <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
-                    <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
-                      and only contact you as requested.</p>
-                  </div>
-                </div>
-              </form>
-              <div id="thankYou" x-cloak x-show="submitted" class="flex flex-col items-center pb-8 lg:pb-0" aria-live="polite">
-                  <img class="w-full mb-8 lg:hidden" src="img/ty-img.svg" alt="thank You">
-                  <img class="w-full mb-8 minlg:hidden max-w-[300px] mx-auto" src="img/ty-img--mob.svg" alt="thank You">
-                  <a class="button px-[32px] w-full" href="index.html">
+      <div class="flex gap-x-2 mb-6 lg:inline lg:mb-0">
+        <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+        <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+          and only contact you as requested.</p>
+      </div>
+    </div>
+  </form>
+  <div id="thankYou" x-cloak x-show="submitted" class="flex flex-col items-center pb-8 lg:pb-0" aria-live="polite">
+    <img class="w-full mb-8 lg:hidden" src="img/ty-img.svg" alt="thank You">
+    <img class="w-full mb-8 minlg:hidden max-w-[300px] mx-auto" src="img/ty-img--mob.svg" alt="thank You">
+    <a class="button px-[32px] w-full" href="index.html">
     <span class="">Back to the Homepage</span>
 </a>
-                  <div class="flex gap-x-2 lg:inline mt-4">
-                      <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
-                      <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
-                          and only contact you as requested.</p>
-                  </div>
-              </div>
-            </div>
+    <div class="flex gap-x-2 lg:inline mt-4">
+      <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+      <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+        and only contact you as requested.</p>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
@@ -772,12 +773,139 @@
 </footer>
 
 </main>
+<div x-cloak x-show="modalIsOpen" x-transition.opacity.duration.200ms x-trap.inert.noscroll="modalIsOpen" x-on:keydown.esc.window="modalIsOpen = false" x-on:click.self="modalIsOpen = false" class="fixed inset-0 z-[99999999] flex items-center justify-center bg-black/20 p-4 pb-8 backdrop-blur-md sm:items-center lg:p-8 lg:px-5" role="dialog" aria-modal="true" aria-labelledby="defaultModalTitle">
+  <!-- Modal Dialog -->
+  <div x-show="modalIsOpen" x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity" x-transition:enter-start="opacity-0 scale-50" x-transition:enter-end="opacity-100 scale-100" class="flex max-w-[1216px] flex-col gap-4 overflow-hidden rounded-xl border border-slate-300 bg-white px-12 pt-12 lg:px-5 lg:py-8">
+    <div class="row gap-x-6 lg:gap-x-0">
+      <div class="col-span-5 lg:col-span-12">
+        <div class="relative h-full">
+          <svg class="absolute bottom-[94px] z-[2] -left-2" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<!-- Alpine.js for interactive logic -->
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+          <svg class="absolute bottom-1/2 z-[2] right-0" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+          <div class="flex flex-col gap-y-6 relative lg:mb-6 z-[3]">
+            <h3 class="text-h2_2 lg:text-Top5 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
+              business?</h3>
+            <p class="text-base lg:text-body font-medium">Get a free consultation today. <br>
+              BizEntry — your gateway to the U.S. <br>
+              No visa. No stress. Guaranteed.</p>
+          </div>
+          <div class="img-bg-1 absolute bottom-5 left-0 z-0"></div>
+          <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative lg:hidden" src="img/businessman-04-3.png" alt="Ready to launch your U.S. business?">
+          <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative minlg:hidden max-w-[350px] mx-auto" src="img/businessman-04-3--mob.png" alt="Ready to launch your U.S. business?">
+        </div>
+      </div>
+      <div class="col-span-7 lg:col-span-12 relative">
+        <div class="max-w-[573px] lg:max-w-full flex flex-col w-full ml-auto">
+          <div id="contactFormWrapper" x-data="{ submitted: false }">
+  <form id="contactForm" x-cloak x-show="!submitted" @submit.prevent="submitted = true" class="flex flex-col gap-y-5" action="">
+    <div class="flex flex-col gap-y-2">
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="nameID">Full Name</label>
+    <input
+        class="input  "
+        type="text" id="nameID" placeholder="Full Name" name="fullName" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="EmailID">Email</label>
+    <input
+        class="input  "
+        type="email" id="EmailID" placeholder="Email" name="email" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="phoneID">Phone</label>
+    <input
+        class="input  "
+        type="text" id="phoneID" placeholder="Phone" name="phone" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+
+      <div class="form-group flex flex-col items-start relative ">
+    <label class="block mb-2 text-body md:text-body2 text-Text2 hidden" for="phoneID">Phone</label>
+    <select id="phoneID" name="phone" class="select w-full input">
+        <option selected>What are you interested in?</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</div>
+
+
+      <div class="form-group flex flex-col items-start overflow-hidden ">
+    <label class="mb-3 font-semibold text-body hidden" for="MesssageID">Messsage</label>
+    <textarea
+        class="input textarea resize-none "
+        id="MesssageID" placeholder="Messsage" rows="6" name="messsage"></textarea>
+</div>
+    </div>
+    <div class="flex flex-col gap-y-2 items-center">
+      <button class="button w-full" type="submit" aria-label="Send Request button">
+    <span>Send Request</span>
+</button>
+      <div class="flex gap-x-2 mb-6 lg:inline lg:mb-0">
+        <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+        <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+          and only contact you as requested.</p>
+      </div>
+    </div>
+  </form>
+  <div id="thankYou" x-cloak x-show="submitted" class="flex flex-col items-center pb-8 lg:pb-0" aria-live="polite">
+    <img class="w-full mb-8 lg:hidden" src="img/ty-img.svg" alt="thank You">
+    <img class="w-full mb-8 minlg:hidden max-w-[300px] mx-auto" src="img/ty-img--mob.svg" alt="thank You">
+    <a class="button px-[32px] w-full" href="index.html">
+    <span class="">Back to the Homepage</span>
+</a>
+    <div class="flex gap-x-2 lg:inline mt-4">
+      <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+      <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+        and only contact you as requested.</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="./js/scripts.js"></script>
 <script>
     document.addEventListener('alpine:init', () => {

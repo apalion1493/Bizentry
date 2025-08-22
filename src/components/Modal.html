@@ -1,0 +1,32 @@
+<div x-cloak x-show="modalIsOpen" x-transition.opacity.duration.200ms x-trap.inert.noscroll="modalIsOpen" x-on:keydown.esc.window="modalIsOpen = false" x-on:click.self="modalIsOpen = false" class="fixed inset-0 z-[99999999] flex items-center justify-center bg-black/20 p-4 pb-8 backdrop-blur-md sm:items-center lg:p-8 lg:px-5" role="dialog" aria-modal="true" aria-labelledby="defaultModalTitle">
+  <!-- Modal Dialog -->
+  <div x-show="modalIsOpen" x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity" x-transition:enter-start="opacity-0 scale-50" x-transition:enter-end="opacity-100 scale-100" class="flex max-w-[1216px] flex-col gap-4 overflow-hidden rounded-xl border border-slate-300 bg-white px-12 pt-12 lg:px-5 lg:py-8">
+    <div class="row gap-x-6 lg:gap-x-0">
+      <div class="col-span-5 lg:col-span-12">
+        <div class="relative h-full">
+          @@include('Animated-circle.html', {
+          "Style": "absolute bottom-[94px] z-[2] -left-2"
+          })
+          @@include('Animated-circle.html', {
+          "Style": "absolute bottom-1/2 z-[2] right-0"
+          })
+          <div class="flex flex-col gap-y-6 relative lg:mb-6 z-[3]">
+            <h3 class="text-h2_2 lg:text-Top5 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
+              business?</h3>
+            <p class="text-base lg:text-body font-medium">Get a free consultation today. <br>
+              BizEntry — your gateway to the U.S. <br>
+              No visa. No stress. Guaranteed.</p>
+          </div>
+          <div class="img-bg-1 absolute bottom-5 left-0 z-0"></div>
+          <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative lg:hidden" src="__IMAGE_PATH__businessman-04-3.png" alt="Ready to launch your U.S. business?">
+          <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative minlg:hidden max-w-[350px] mx-auto" src="__IMAGE_PATH__businessman-04-3--mob.png" alt="Ready to launch your U.S. business?">
+        </div>
+      </div>
+      <div class="col-span-7 lg:col-span-12 relative">
+        <div class="max-w-[573px] lg:max-w-full flex flex-col w-full ml-auto">
+          @@include('Form-component.html')
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

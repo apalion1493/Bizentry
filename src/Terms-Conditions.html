@@ -5,7 +5,7 @@
 'title': 'Terms & Conditions'
 })
 
-<body class="">
+<body class="" x-data="{modalIsOpen: false, mobileOpen: false}">
 <main id="content" class="flex flex-col min-h-screen overflow-hidden">
   @@include('components/Header.html', {
   'commonStyle': ' ',
@@ -68,7 +68,7 @@
 
   @@include('components/Footer.html')
 </main>
-
+@@include('components/Modal.html')
 @@include('components/script.html')
 </body>
 
