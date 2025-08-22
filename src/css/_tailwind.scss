@@ -219,6 +219,10 @@ input[type='search']::-webkit-search-results-decoration {
     transition: none !important;
   }
 
+  .mh-a {
+    min-height: auto !important;
+  }
+
 }
 
 @media (max-width: 767.98px) {
