@@ -1,0 +1,42 @@
+<div class="flex lg:flex-col lg:gap-x-0 lg:gap-y-3 gap-x-4 h-full bg-white border border-Grey4 rounded-3xl shadow-v2 py-6 px-5 lg:p-5 transition-all hover:border-Red @@Style">
+  <div class="flex items-center gap-x-3">
+    <div class="relative min-w-20 w-20 h-20 lg:w-16 lg:h-16 lg:min-w-16 overflow-hidden rounded-full">
+      <svg class="lg:w-16 lg:h-16 lg:min-w-16" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+        <g filter="url(#filter0_n_133_721)">
+          <path d="M0 40C0 17.9086 17.9086 0 40 0C62.0914 0 80 17.9086 80 40C80 62.0914 62.0914 80 40 80C17.9086 80 0 62.0914 0 40Z" fill="#DF4A53"/>
+        </g>
+        <defs>
+          <filter id="filter0_n_133_721" x="0" y="0" width="80" height="80" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3" result="noise" seed="6161"/>
+            <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
+            <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+              <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+            </feComponentTransfer>
+            <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+            <feComponentTransfer in="alphaNoise" result="coloredNoise2">
+              <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
+            </feComponentTransfer>
+            <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+            <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
+            <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+            <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
+            <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+            <feMerge result="effect1_noise_133_721">
+              <feMergeNode in="shape"/>
+              <feMergeNode in="color1"/>
+              <feMergeNode in="color2"/>
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
+      <i class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 icon-40-lg @@Icon"></i>
+    </div>
+    <span class="text-Top1 font-bold text-DarkBlue lg:text-Top3 minlg:hidden">@@Title</span>
+  </div>
+  <div class="flex flex-col gap-y-3">
+    <span class="text-Top1 font-bold text-DarkBlue lg:text-Top3 lg:hidden">@@Title</span>
+    <p class="font-medium">@@Text</p>
+  </div>
+</div>

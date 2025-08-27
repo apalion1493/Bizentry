@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Services-Tax Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+</head>
+
+
+<body class="" x-data="{modalIsOpen: false, mobileOpen: false}">
+<main id="content" class="flex flex-col min-h-screen overflow-hidden max-w-screen ">
+  <header class="w-full absolute top-8 lg:top-5 left-1/2 -translate-x-1/2 z-[100]" x-init="
+    document.documentElement.classList.remove('overflow-hidden');
+    document.body.classList.remove('overflow-hidden');
+    $watch('mobileOpen', v => {
+      const on = !!v;
+      document.documentElement.classList.toggle('overflow-hidden', on);
+      document.body.classList.remove('overflow-hidden');
+    })
+  ">
+  <div class="container">
+    <div
+      class="flex justify-between items-center header-w gap-x-5 px-12 bg-white py-4 lg:p-[10px] rounded-[56px] shadow-v2 mx-auto">
+      <a class="flex items-center" href="index.html">
+        <img class="lg:max-w-[124px]" width="124" height="36" src="__IMAGE_PATH__Logo-1.svg" alt="Logo OneSaleRX">
+      </a>
+      <div id="desktop-menu" class="show-mobile-menu">
+        <ul class="header-menu relative z-[1] flex items-center gap-x-[30px]">
+          <li class="flex items-center lg:px-[10px] lg:py-42 lg:w-full lg:rounded-7xl">
+            <a class="text-body font-semibold text-Grey hover:text-Red transition-all active" href="index.html">Home</a>
+          </li>
+          <li class="flex items-center lg:px-[10px] lg:py-4 lg:w-full lg:rounded-7xl">
+            <a class="text-body font-semibold text-Grey hover:text-Red transition-all" href="About-us.html">About</a>
+          </li>
+          <li class="relative lg:px-[10px] lg:py-4 lg:w-full lg:rounded-7xl">
+            <div x-data="{ open: false }" @click.outside="open = false">
+              <button type="button" class="flex items-center text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open">
+                Services
+                <svg class="ml-2 w-4 h-4 text-Grey transition-transform minlg:group-hover:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <ul id="services-submenu" x-cloak :class="{ 'hidden': !open }" class="block border border-Grey4 px-4 space-y-2 minlg:space-y-0 minlg:absolute minlg:left-1/2 minlg:-translate-x-1/2 minlg:top-full minlg:mt-3 minlg:w-[156px] minlg:rounded-2xl minlg:bg-white minlg:shadow-v2 minlg:py-4">
+                <li><a class="block py-1 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Business-Support.html">Business Support</a></li>
+                <li><a class="block py-1 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Tax-Support.html">Tax Support</a></li>
+                <li><a class="block py-1 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Other-Services.html">Other Services</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="flex items-center lg:px-[10px] lg:py-4 lg:w-full lg:rounded-7xl">
+            <a class="text-body font-semibold text-Grey hover:text-Red transition-all" href="FAQs.html">FAQ</a>
+          </li>
+          <li class="flex items-center lg:px-[10px] lg:py-4 lg:w-full lg:rounded-7xl">
+            <a class="text-body font-semibold text-Grey hover:text-Red transition-all active" href="Pricing.html">Pricing</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex items-center gap-x-3">
+        <div class="relative hidden minlg:block" x-data="{ open: false, lang: localStorage.getItem('lang') || 'EN', setLang(v){ this.lang = v; localStorage.setItem('lang', v); this.open = false; } }">
+          <button type="button" class="flex items-center gap-x-[6px] min-w-[72px] text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open" @keydown.escape.window="open = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3.23159e-07 10.0035C-0.0013909 4.49086 4.48935 -0.000779088 10.0015 1.01362e-07C15.5138 0.00077929 20.0032 4.49386 20 10.0066C19.9968 15.5175 15.499 20.0071 9.98812 20.0001C4.48451 19.9929 0.00139154 15.506 3.23159e-07 10.0035ZM13.2358 8.01129C11.0728 8.01129 8.92517 8.01129 6.77986 8.01129C6.62933 8.73944 6.63055 11.3088 6.78153 11.9887C8.92701 11.9887 11.0747 11.9887 13.2343 11.9887C13.3673 10.6639 13.3647 9.34999 13.2358 8.01129ZM13.0398 6.6575C13.0398 6.6152 13.045 6.5807 13.0391 6.54819C12.8224 5.35036 12.5063 4.18313 11.9475 3.09421C11.6768 2.56698 11.3556 2.07337 10.8883 1.69412C10.3006 1.21726 9.72228 1.21425 9.1284 1.68099C8.73992 1.98632 8.45683 2.3797 8.21298 2.8023C7.71336 3.66792 7.39778 4.60467 7.16567 5.57153C7.08047 5.92646 7.01291 6.28566 6.93423 6.6575C8.98806 6.6575 11.0114 6.6575 13.0398 6.6575ZM13.0787 13.3432C11.0126 13.3432 8.98739 13.3432 6.96055 13.3432C6.96055 13.3872 6.95532 13.4224 6.96133 13.4556C7.17263 14.6272 7.48159 15.7692 8.01782 16.8386C8.28354 17.3685 8.59701 17.8683 9.05556 18.2577C9.69891 18.8041 10.3238 18.8235 10.9366 18.2494C11.2657 17.9412 11.5462 17.5654 11.7864 17.1812C12.2226 16.4832 12.4942 15.7077 12.7057 14.9146C12.8427 14.4005 12.9525 13.8792 13.0787 13.3432ZM5.37445 8.00021C4.1529 8.00021 2.91844 7.99843 1.68404 8.00689C1.63591 8.00722 1.55917 8.09872 1.54509 8.15922C1.37286 8.89962 1.29072 9.65181 1.34653 10.41C1.38549 10.9394 1.47464 11.4651 1.54041 11.985C2.86469 11.985 4.1376 11.985 5.37445 11.985C5.37445 10.6547 5.37445 9.33936 5.37445 8.00021ZM18.4135 11.993C18.4293 11.945 18.4457 11.9068 18.4546 11.8669C18.7283 10.6438 18.7368 9.42045 18.47 8.19384C18.4368 8.04084 18.383 7.99542 18.228 7.99632C17.0762 8.00299 15.9243 7.99977 14.7725 8.00043C14.7123 8.00049 14.652 8.00717 14.6256 8.00878C14.6256 9.34659 14.6256 10.6664 14.6256 11.993C15.8704 11.993 17.1319 11.993 18.4135 11.993ZM12.7649 18.1928C15.2002 17.3311 16.9341 15.7202 18.0018 13.3428C16.7874 13.3428 15.61 13.3428 14.4194 13.3428C14.1323 15.0489 13.6902 16.7006 12.7649 18.1928ZM17.9914 6.66067C17.4991 5.48599 16.7976 4.49837 15.8906 3.65646C14.9834 2.81454 13.9458 2.19191 12.7208 1.77972C13.6956 3.3056 14.132 4.95982 14.4214 6.66062C15.6174 6.66067 16.79 6.66067 17.9914 6.66067ZM1.99963 6.65572C3.22268 6.65572 4.39937 6.65572 5.58102 6.65572C5.86722 4.9444 6.31168 3.29658 7.23406 1.80588C4.80199 2.67145 3.06419 4.27663 1.99963 6.65572ZM7.23083 18.1898C6.30612 16.6959 5.86705 15.0443 5.57979 13.3432C4.38624 13.3432 3.21032 13.3432 1.99807 13.3432C3.06419 15.7193 4.79898 17.3282 7.23083 18.1898Z" fill="#DF4A53"/>
+            </svg>
+            <span x-text="lang"></span>
+            <svg class="ml-[2px] w-4 h-4 text-Grey" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <ul x-cloak x-show="open" @click.outside="open = false" class="absolute right-0 mt-2 w-[64px] border border-Grey4 rounded-2xl bg-white shadow-v2 py-2">
+            <li class="border-b border-Grey4">
+              <button type="button" @click="setLang('EN')" :class="lang === 'EN' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">En</button>
+            </li>
+            <li>
+              <button type="button" @click="setLang('RU')" :class="lang === 'RU' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">Ru</button>
+            </li>
+          </ul>
+        </div>
+        <a class="button lg:hidden px-[32px] ml-1" href="Contacts.html">
+    <span class="">Contact Us</span>
+</a>
+        <button id="burger-button" @click="mobileOpen = true"
+                class="minlg:hidden flex items-center justify-center w-12 h-12 rounded-[50%] bg-Red"
+                aria-label="Mobile Burger Button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14" fill="none">
+            <path d="M1 1H19M1 7H19M1 13H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile overlay -->
+  <div x-cloak x-show="mobileOpen" @click="mobileOpen = false" class="fixed inset-0 z-[900] minlg:hidden"></div>
+
+  <!-- Mobile left drawer -->
+  <aside x-cloak x-show="mobileOpen" @keydown.escape.window="mobileOpen = false"
+         class="fixed inset-y-0 pt-[68px] -top-14 left-0 w-full h-[120vh] max-w-full bg-white shadow-v2 z-[1000] minlg:hidden flex flex-col px-5 py-4"
+         x-transition:enter="transition-transform ease-out duration-200"
+         x-transition:enter-start="-translate-x-full"
+         x-transition:enter-end="translate-x-0"
+         x-transition:leave="transition-transform ease-in duration-150"
+         x-transition:leave-start="translate-x-0"
+         x-transition:leave-end="-translate-x-full">
+    <div class="flex items-center justify-between mb-4">
+      <a class="flex items-center" href="index.html">
+        <img class="max-w-[124px]" width="124" height="36" src="__IMAGE_PATH__Logo-1.svg" alt="Logo BizEntry">
+      </a>
+      <button id="burger-button-close" @click="mobileOpen = false"
+              class="flex items-center justify-center w-[40px] h-[40px] rounded-[50%] bg-Red"
+              aria-label="Close Mobile Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <g clip-path="url(#clip0_1_5885)">
+            <path d="M19.7561 0.243989C19.5999 0.0877628 19.3879 0 19.167 0C18.946 0 18.7341 0.0877628 18.5778 0.243989L10.0003 8.82149L1.42281 0.243989C1.26654 0.0877628 1.05461 0 0.833644 0C0.612674 0 0.40075 0.0877628 0.244477 0.243989C0.0882511 0.400262 0.000488281 0.612185 0.000488281 0.833155C0.000488281 1.05413 0.0882511 1.26605 0.244477 1.42232L8.82198 9.99982L0.244477 18.5773C0.0882511 18.7336 0.000488281 18.9455 0.000488281 19.1665C0.000488281 19.3875 0.0882511 19.5994 0.244477 19.7557C0.40075 19.9119 0.612674 19.9996 0.833644 19.9996C1.05461 19.9996 1.26654 19.9119 1.42281 19.7557L10.0003 11.1782L18.5778 19.7557C18.7341 19.9119 18.946 19.9996 19.167 19.9996C19.3879 19.9996 19.5999 19.9119 19.7561 19.7557C19.9124 19.5994 20.0001 19.3875 20.0001 19.1665C20.0001 18.9455 19.9124 18.7336 19.7561 18.5773L11.1786 9.99982L19.7561 1.42232C19.9124 1.26605 20.0001 1.05413 20.0001 0.833155C20.0001 0.612185 19.9124 0.400262 19.7561 0.243989Z" fill="white"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_1_5885">
+              <rect width="20" height="20" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="flex flex-col gap-y-[10px]">
+      <li><a class="block px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" href="index.html">Home</a></li>
+      <li><a class="block px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" href="About-us.html">About</a></li>
+      <li>
+        <div x-data="{ open: false }" @click.outside="open = false">
+          <button type="button" class="w-full flex items-center justify-between px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open">
+            <span>Services</span>
+            <svg class="ml-2 w-4 h-4 text-Grey transition-transform" :class="{ 'rotate-180': open }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <ul x-cloak x-show="open" class="pl-4 space-y-1">
+            <li><a class="block py-2 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Business-Support.html">Business Support</a></li>
+            <li><a class="block py-2 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Tax-Support.html">Tax Support</a></li>
+            <li><a class="block py-2 text-body2 font-medium text-Grey hover:text-Red transition-all" href="Services-Other-Services.html">Other Services</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a class="block px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" href="FAQs.html">FAQ</a></li>
+      <li><a class="block px-[10px] py-3 text-body font-semibold text-Grey hover:text-Red transition-all" href="Pricing.html">Pricing</a></li>
+    </ul>
+
+    <div class="mt-4 border-t border-Grey4 pt-4">
+      <div class="relative" x-data="{ open: false, lang: localStorage.getItem('lang') || 'EN', setLang(v){ this.lang = v; localStorage.setItem('lang', v); this.open = false; } }">
+        <button type="button" class="w-full flex items-center justify-between gap-x-[6px] text-body font-semibold text-Grey hover:text-Red transition-all" @click="open = !open" @keydown.escape.window="open = false">
+          <span class="flex items-center gap-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M3.23159e-07 10.0035C-0.0013909 4.49086 4.48935 -0.000779088 10.0015 1.01362e-07C15.5138 0.00077929 20.0032 4.49386 20 10.0066C19.9968 15.5175 15.499 20.0071 9.98812 20.0001C4.48451 19.9929 0.00139154 15.506 3.23159e-07 10.0035ZM13.2358 8.01129C11.0728 8.01129 8.92517 8.01129 6.77986 8.01129C6.62933 8.73944 6.63055 11.3088 6.78153 11.9887C8.92701 11.9887 11.0747 11.9887 13.2343 11.9887C13.3673 10.6639 13.3647 9.34999 13.2358 8.01129ZM13.0398 6.6575C13.0398 6.6152 13.045 6.5807 13.0391 6.54819C12.8224 5.35036 12.5063 4.18313 11.9475 3.09421C11.6768 2.56698 11.3556 2.07337 10.8883 1.69412C10.3006 1.21726 9.72228 1.21425 9.1284 1.68099C8.73992 1.98632 8.45683 2.3797 8.21298 2.8023C7.71336 3.66792 7.39778 4.60467 7.16567 5.57153C7.08047 5.92646 7.01291 6.28566 6.93423 6.6575C8.98806 6.6575 11.0114 6.6575 13.0398 6.6575ZM13.0787 13.3432C11.0126 13.3432 8.98739 13.3432 6.96055 13.3432C6.96055 13.3872 6.95532 13.4224 6.96133 13.4556C7.17263 14.6272 7.48159 15.7692 8.01782 16.8386C8.28354 17.3685 8.59701 17.8683 9.05556 18.2577C9.69891 18.8041 10.3238 18.8235 10.9366 18.2494C11.2657 17.9412 11.5462 17.5654 11.7864 17.1812C12.2226 16.4832 12.4942 15.7077 12.7057 14.9146C12.8427 14.4005 12.9525 13.8792 13.0787 13.3432ZM5.37445 8.00021C4.1529 8.00021 2.91844 7.99843 1.68404 8.00689C1.63591 8.00722 1.55917 8.09872 1.54509 8.15922C1.37286 8.89962 1.29072 9.65181 1.34653 10.41C1.38549 10.9394 1.47464 11.4651 1.54041 11.985C2.86469 11.985 4.1376 11.985 5.37445 11.985C5.37445 10.6547 5.37445 9.33936 5.37445 8.00021ZM18.4135 11.993C18.4293 11.945 18.4457 11.9068 18.4546 11.8669C18.7283 10.6438 18.7368 9.42045 18.47 8.19384C18.4368 8.04084 18.383 7.99542 18.228 7.99632C17.0762 8.00299 15.9243 7.99977 14.7725 8.00043C14.7123 8.00049 14.652 8.00717 14.6256 8.00878C14.6256 9.34659 14.6256 10.6664 14.6256 11.993C15.8704 11.993 17.1319 11.993 18.4135 11.993ZM12.7649 18.1928C15.2002 17.3311 16.9341 15.7202 18.0018 13.3428C16.7874 13.3428 15.61 13.3428 14.4194 13.3428C14.1323 15.0489 13.6902 16.7006 12.7649 18.1928ZM17.9914 6.66067C17.4991 5.48599 16.7976 4.49837 15.8906 3.65646C14.9834 2.81454 13.9458 2.19191 12.7208 1.77972C13.6956 3.3056 14.132 4.95982 14.4214 6.66062C15.6174 6.66067 16.79 6.66067 17.9914 6.66067ZM1.99963 6.65572C3.22268 6.65572 4.39937 6.65572 5.58102 6.65572C5.86722 4.9444 6.31168 3.29658 7.23406 1.80588C4.80199 2.67145 3.06419 4.27663 1.99963 6.65572ZM7.23083 18.1898C6.30612 16.6959 5.86705 15.0443 5.57979 13.3432C4.38624 13.3432 3.21032 13.3432 1.99807 13.3432C3.06419 15.7193 4.79898 17.3282 7.23083 18.1898Z" fill="#DF4A53"/>
+            </svg>
+            <span x-text="lang"></span>
+          </span>
+          <svg class="ml-[2px] w-4 h-4 text-Grey" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <ul x-cloak x-show="open" @click.outside="open = false" class="mt-2 w-[100%] border border-Grey4 rounded-2xl bg-white shadow-v2 py-2">
+          <li class="border-b border-Grey4">
+            <button type="button" @click="setLang('EN')" :class="lang === 'EN' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">EN</button>
+          </li>
+          <li>
+            <button type="button" @click="setLang('RU')" :class="lang === 'RU' ? 'font-semibold text-DarkBlue' : 'font-medium text-Grey'" class="block w-full text-center px-4 py-1 text-body hover:text-Red transition-all">RU</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+      <a class="button px-[32px] mt-10 mx-auto" href="Contacts.html">
+    <span class="">Contact Us</span>
+</a>
+  </aside>
+</header>
+
+  <section class="overflow-hidden">
+    <div class="max-w-[1700px] mx-auto pt-[120px] lg:pt-[84px] pb-14 img-bg-2">
+      <div class="container relative">
+        <div class="flex flex-col max-w-[600px] mx-auto mt-12 relative z-[2]">
+          <h1 class="text-h2 text-DarkBlue font-bold text-center mb-6 lg:text-h4 lg:text-left"><span class="text-Red">Tax</span>
+            Support.
+          </h1>
+          <p class="text-center text-DarkBlue font-bold text-Top2 mb-5 lg:text-left lg:text-Top3">Your U.S. Tax Partner
+            — for Business for the IRS.</p>
+          <p class="text-center text-base font-medium text-Grey lg:text-left">Running a business in the U.S. means
+            staying compliant with
+            the company's tax obligations. <br> <br>
+            BizEntry provides full tax support for Corporations, including filings with the IRS, state-level reports,
+            extensions, 1099s, and returns.</p>
+        </div>
+        <svg class="absolute z-[1] lg:hidden top-0 left-6" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+        <svg class="absolute z-[1] lg:hidden top-1 right-8" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+        <svg class="absolute z-[1] lg:hidden bottom-3 left-40" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+      </div>
+    </div>
+  </section>
+  <section class="py-12 bg-pageBg">
+    <div class="container">
+      <div class="flex gap-8 flex-wrap justify-center">
+        <div
+          class="flex flex-col gap-y-8 flex-1 max-w-[50%] min-w-[45%] lg:max-w-full lg:min-w-full border border-Grey4 px-5 py-6 lg:p-5 overflow-hidden rounded-3xl bg-white shadow-v2">
+          <div class="flex gap-x-4 lg:gap-x-3 items-center">
+            <span
+              class="bg-Red w-[58px] min-w-[58px] h-[58px] lg:w-[52px] lg:min-w-[52px] lg:h-[52px] flex items-center justify-center text-white text-Top1 rounded-full font-bold">01</span>
+            <span class="text-Top1 lg:text-Top3 font-bold text-DarkBlue">Annual Report to the State</span>
+          </div>
+          <ul class="flex flex-col gap-y-5">
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Filing the Annual Report with Sunbiz (Florida) or any other state
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Updating company details
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Paying filing fee on your behalf
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Verifying Good Standing status
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Submission confirmation in PDF
+            </li>
+          </ul>
+          <a class="button px-8 medium-btn mt-auto" href="Pricing.html">
+    <span class="">See Price</span>
+</a>
+        </div>
+        <div
+          class="flex flex-col gap-y-8 flex-1 max-w-[50%] min-w-[45%] lg:max-w-full lg:min-w-full border border-Grey4 px-5 py-6 lg:p-5 overflow-hidden rounded-3xl bg-white shadow-v2">
+          <div class="flex gap-x-4 lg:gap-x-3 items-center">
+            <span
+              class="bg-Red w-[58px] min-w-[58px] h-[58px] lg:w-[52px] lg:min-w-[52px] lg:h-[52px] flex items-center justify-center text-white text-Top1 rounded-full font-bold">02</span>
+            <span class="text-Top1 lg:text-Top3 font-bold text-DarkBlue">Federal Business Tax Filings</span>
+          </div>
+          <ul class="flex flex-col gap-y-5">
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Form 1120 or 1120S (for corporations)
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Deadline tracking & authorized submission
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Support through the full IRS process
+            </li>
+          </ul>
+          <a class="button px-8 medium-btn mt-auto" href="Pricing.html">
+    <span class="">See Price</span>
+</a>
+        </div>
+        <div
+          class="flex flex-col gap-y-8 flex-1 max-w-[50%] min-w-[45%] lg:max-w-full lg:min-w-full border border-Grey4 px-5 py-6 lg:p-5 overflow-hidden rounded-3xl bg-white shadow-v2">
+          <div class="flex gap-x-4 lg:gap-x-3 items-center">
+            <span
+              class="bg-Red w-[58px] min-w-[58px] h-[58px] lg:w-[52px] lg:min-w-[52px] lg:h-[52px] flex items-center justify-center text-white text-Top1 rounded-full font-bold">03</span>
+            <span class="text-Top1 lg:text-Top3 font-bold text-DarkBlue">Tax Extension Filing</span>
+          </div>
+          <ul class="flex flex-col gap-y-5">
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              File Form 7004 to extend your business return deadline by 6 months
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Confirmation from the IRS
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Recommended when accounting is delayed or switching CPAs
+            </li>
+          </ul>
+          <a class="button px-8 medium-btn mt-auto" href="Pricing.html">
+    <span class="">See Price</span>
+</a>
+        </div>
+        <div
+          class="flex flex-col gap-y-8 flex-1 max-w-[50%] min-w-[45%] lg:max-w-full lg:min-w-full border border-Grey4 px-5 py-6 lg:p-5 overflow-hidden rounded-3xl bg-white shadow-v2">
+          <div class="flex gap-x-4 lg:gap-x-3 items-center">
+            <span
+              class="bg-Red w-[58px] min-w-[58px] h-[58px] lg:w-[52px] lg:min-w-[52px] lg:h-[52px] flex items-center justify-center text-white text-Top1 rounded-full font-bold">04</span>
+            <span class="text-Top1 lg:text-Top3 font-bold text-DarkBlue">Contractor 1099 Filing</span>
+          </div>
+          <ul class="flex flex-col gap-y-5">
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Collect W-9 forms from U.S. contractors
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Prepare and file 1099-NEC
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Delivery via mail or email
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              IRS electronic filing with confirmation
+            </li>
+
+          </ul>
+          <a class="button px-8 medium-btn mt-auto" href="Pricing.html">
+    <span class="">See Price</span>
+</a>
+        </div>
+        <div
+          class="flex flex-col gap-y-8 flex-1 max-w-[50%] min-w-[45%] lg:max-w-full lg:min-w-full border border-Grey4 px-5 py-6 lg:p-5 overflow-hidden rounded-3xl bg-white shadow-v2">
+          <div class="flex gap-x-4 lg:gap-x-3 items-center">
+            <span
+              class="bg-Red w-[58px] min-w-[58px] h-[58px] lg:w-[52px] lg:min-w-[52px] lg:h-[52px] flex items-center justify-center text-white text-Top1 rounded-full font-bold">05</span>
+            <span class="text-Top1 lg:text-Top3 font-bold text-DarkBlue">Sales Tax Filing in Any U.S. State</span>
+          </div>
+          <ul class="flex flex-col gap-y-5">
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Registration with state tax department
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Monthly, quarterly, or annual filing
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Accurate sales tax calculation per local rates
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Electronic filing and payment via ACH/EFT
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Support for Florida, California, New York, and others
+            </li>
+          </ul>
+          <a class="button px-8 medium-btn mt-auto" href="Pricing.html">
+    <span class="">See Price</span>
+</a>
+        </div>
+        <div
+          class="flex flex-col gap-y-8 flex-1 max-w-[50%] min-w-[45%] lg:max-w-full lg:min-w-full border border-Grey4 px-5 py-6 lg:p-5 overflow-hidden rounded-3xl bg-white shadow-v2">
+          <div class="flex gap-x-4 lg:gap-x-3 items-center">
+            <span
+              class="bg-Red w-[58px] min-w-[58px] h-[58px] lg:w-[52px] lg:min-w-[52px] lg:h-[52px] flex items-center justify-center text-white text-Top1 rounded-full font-bold">06</span>
+            <span class="text-Top1 lg:text-Top3 font-bold text-DarkBlue">IRS Representation</span>
+          </div>
+          <ul class="flex flex-col gap-y-5">
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Assign BizEntry as your Authorized IRS Representative (Form 2848)
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              We handle calls and letters on your behalf
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Resolve discrepancies or past due issues
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Request EINs, transcripts, or confirmations
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Respond to IRS notices and correspondence
+            </li>
+          </ul>
+          <a class="button px-8 medium-btn mt-auto" href="Pricing.html">
+    <span class="">See Price</span>
+</a>
+        </div>
+        <div
+          class="flex flex-col gap-y-8 flex-1 max-w-[50%] min-w-[45%] lg:max-w-full lg:min-w-full border border-Grey4 px-5 py-6 lg:p-5 overflow-hidden rounded-3xl bg-white shadow-v2">
+          <div class="flex gap-x-4 lg:gap-x-3 items-center">
+            <span
+              class="bg-Red w-[58px] min-w-[58px] h-[58px] lg:w-[52px] lg:min-w-[52px] lg:h-[52px] flex items-center justify-center text-white text-Top1 rounded-full font-bold">07</span>
+            <span class="text-Top1 lg:text-Top3 font-bold text-DarkBlue">Tax Planning</span>
+          </div>
+          <ul class="flex flex-col gap-y-5">
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Entity structure advice (LLC, Inc, C-Corp, S-Corp)
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Optimize owner payouts (e.g., through payroll)
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Planning for international profit distribution
+            </li>
+            <li class="flex items-center gap-x-3 text-base font-medium text-Grey">
+              <i class="list-image-1"></i>
+              Support for S‑Election and tax status change
+            </li>
+          </ul>
+          <a class="button px-8 medium-btn mt-auto" href="Pricing.html">
+    <span class="">See Price</span>
+</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bg-Blue2  overflow-hidden">
+    <div class="max-w-[1700px] mx-auto py-14 img-bg-6">
+      <div class="container relative">
+        <div class="flex items-center flex-col">
+          <h1 class="mb-5 text-h2 text-white font-bold text-center lg:text-Top5">How it <span class="text-Red">works?</span></h1>
+          <p class="text-base text-White3 font-medium text-center lg:text-body">That’s it — your U.S. business <br> is officially
+            launched!</p>
+        </div>
+        <div class="row">
+          <div class="col-span-12">
+            <img class="lg:hidden absolute left-1/2 -translate-x-1/2 -bottom-14" src="__IMAGE_PATH__businessman-03-4.png" alt="businessman avatar">
+            <img class="w-[380px] lg:hidden absolute left-0 -bottom-14" src="__IMAGE_PATH__flag-1.png" alt="Flag USA">
+            <img class="w-[380px] lg:hidden absolute right-0 -bottom-14" src="__IMAGE_PATH__flag-2.png" alt="Flag USA">
+            <div class="minlg:hidden h-[236px] relative mt-5">
+              <img class="absolute top-0 left-1/2 -translate-x-1/2" src="__IMAGE_PATH__businessman034-mob.png" alt="businessman avatar">
+            </div>
+            <div class="relative mt-10 h-[500px] lg:h-full max-w-[956px] w-full mx-auto lg:flex lg:flex-col lg:gap-y-5">
+              <div class="absolute lg:relative lg:top-auto lg:left-auto lg:translate-x-0 lg:w-full left-0 top-4 flex flex-col items-center gap-y-5 w-fit">
+                <div
+                  class="lg:hidden relative overflow-hidden rounded-full flex items-center justify-center w-[76px] min-w-[76px] h-[76px] lg:w-[56px] lg:min-w-[56px] lg:h-[56px]">
+                  <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76"
+                       fill="none">
+                    <g filter="url(#filter0_n_94_2010)">
+                      <path
+                        d="M10 38C10 22.536 22.536 10 38 10C53.464 10 66 22.536 66 38C66 53.464 53.464 66 38 66C22.536 66 10 53.464 10 38Z"
+                        fill="#DF4A53"/>
+                      <path
+                        d="M38 5C56.2254 5 71 19.7746 71 38C71 56.2254 56.2254 71 38 71C19.7746 71 5 56.2254 5 38C5 19.7746 19.7746 5 38 5Z"
+                        stroke="#FCD0C7" stroke-width="10"/>
+                      <path
+                        d="M24.984 37.028C24.984 33.7987 25.5627 31.2693 26.72 29.44C27.896 27.6107 29.8373 26.696 32.544 26.696C35.2507 26.696 37.1827 27.6107 38.34 29.44C39.516 31.2693 40.104 33.7987 40.104 37.028C40.104 40.276 39.516 42.824 38.34 44.672C37.1827 46.52 35.2507 47.444 32.544 47.444C29.8373 47.444 27.896 46.52 26.72 44.672C25.5627 42.824 24.984 40.276 24.984 37.028ZM36.24 37.028C36.24 35.6467 36.1467 34.4893 35.96 33.556C35.792 32.604 35.4373 31.8293 34.896 31.232C34.3733 30.6347 33.5893 30.336 32.544 30.336C31.4987 30.336 30.7053 30.6347 30.164 31.232C29.6413 31.8293 29.2867 32.604 29.1 33.556C28.932 34.4893 28.848 35.6467 28.848 37.028C28.848 38.4467 28.932 39.6413 29.1 40.612C29.268 41.564 29.6227 42.3387 30.164 42.936C30.7053 43.5147 31.4987 43.804 32.544 43.804C33.5893 43.804 34.3827 43.5147 34.924 42.936C35.4653 42.3387 35.82 41.564 35.988 40.612C36.156 39.6413 36.24 38.4467 36.24 37.028ZM42.6096 30.7V27.088H49.3576V47.5H45.3256V30.7H42.6096Z"
+                        fill="white"/>
+                    </g>
+                    <defs>
+                      <filter id="filter0_n_94_2010" x="0" y="0" width="76" height="76" filterUnits="userSpaceOnUse"
+                              color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                      result="noise" seed="6161"/>
+                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                          <feFuncA type="discrete"
+                                   tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise2">
+                          <feFuncA type="discrete"
+                                   tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                        <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
+                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                        <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
+                        <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                        <feMerge result="effect1_noise_94_2010">
+                          <feMergeNode in="shape"/>
+                          <feMergeNode in="color1"/>
+                          <feMergeNode in="color2"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <div
+                  class="w-fit lg:w-full lg:flex lg:items-center lg:gap-x-4 border border-White4 p-6 px-8 lg:py-4 lg:px-5 rounded-6xl shadow-v2 bg-White4 blur-effect overflow-hidden">
+                  <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                    <g filter="url(#filter0_n_185_3894)">
+                      <path d="M8 28C8 16.9543 16.9543 8 28 8C39.0457 8 48 16.9543 48 28C48 39.0457 39.0457 48 28 48C16.9543 48 8 39.0457 8 28Z" fill="#DF4A53"/>
+                      <path d="M28 4C41.2548 4 52 14.7452 52 28C52 41.2548 41.2548 52 28 52C14.7452 52 4 41.2548 4 28C4 14.7452 14.7452 4 28 4Z" stroke="#FCD0C7" stroke-width="8"/>
+                      <path d="M18.56 27.52C18.56 25.2133 18.9733 23.4067 19.8 22.1C20.64 20.7933 22.0267 20.14 23.96 20.14C25.8933 20.14 27.2733 20.7933 28.1 22.1C28.94 23.4067 29.36 25.2133 29.36 27.52C29.36 29.84 28.94 31.66 28.1 32.98C27.2733 34.3 25.8933 34.96 23.96 34.96C22.0267 34.96 20.64 34.3 19.8 32.98C18.9733 31.66 18.56 29.84 18.56 27.52ZM26.6 27.52C26.6 26.5333 26.5333 25.7067 26.4 25.04C26.28 24.36 26.0267 23.8067 25.64 23.38C25.2667 22.9533 24.7067 22.74 23.96 22.74C23.2133 22.74 22.6467 22.9533 22.26 23.38C21.8867 23.8067 21.6333 24.36 21.5 25.04C21.38 25.7067 21.32 26.5333 21.32 27.52C21.32 28.5333 21.38 29.3867 21.5 30.08C21.62 30.76 21.8733 31.3133 22.26 31.74C22.6467 32.1533 23.2133 32.36 23.96 32.36C24.7067 32.36 25.2733 32.1533 25.66 31.74C26.0467 31.3133 26.3 30.76 26.42 30.08C26.54 29.3867 26.6 28.5333 26.6 27.52ZM31.1497 23V20.42H35.9697V35H33.0897V23H31.1497Z" fill="white"/>
+                    </g>
+                    <defs>
+                      <filter id="filter0_n_185_3894" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3" result="noise" seed="6161"/>
+                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                          <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise2">
+                          <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                        <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
+                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                        <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
+                        <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                        <feMerge result="effect1_noise_185_3894">
+                          <feMergeNode in="shape"/>
+                          <feMergeNode in="color1"/>
+                          <feMergeNode in="color2"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p class="text-white text-Top2 font-bold lg:text-base">Choose your package <span class="text-Red">&</span><br class="lg:hidden"> submit
+                    the application.</p>
+                </div>
+              </div>
+              <div class="absolute lg:relative lg:top-auto lg:left-auto lg:translate-x-0 lg:w-full right-0 top-4 flex flex-col items-center gap-y-5 w-fit">
+                <div
+                  class="lg:hidden relative overflow-hidden rounded-full flex items-center justify-center w-[76px] min-w-[76px] h-[76px] lg:w-[56px] lg:min-w-[56px] lg:h-[56px]">
+                  <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76"
+                       fill="none">
+                    <g filter="url(#filter0_n_94_953)">
+                      <path
+                        d="M10 38C10 22.536 22.536 10 38 10C53.464 10 66 22.536 66 38C66 53.464 53.464 66 38 66C22.536 66 10 53.464 10 38Z"
+                        fill="#DF4A53"/>
+                      <path
+                        d="M38 5C56.2254 5 71 19.7746 71 38C71 56.2254 56.2254 71 38 71C19.7746 71 5 56.2254 5 38C5 19.7746 19.7746 5 38 5Z"
+                        stroke="#FCD0C7" stroke-width="10"/>
+                      <path
+                        d="M21.984 37.028C21.984 33.7987 22.5627 31.2693 23.72 29.44C24.896 27.6107 26.8373 26.696 29.544 26.696C32.2507 26.696 34.1827 27.6107 35.34 29.44C36.516 31.2693 37.104 33.7987 37.104 37.028C37.104 40.276 36.516 42.824 35.34 44.672C34.1827 46.52 32.2507 47.444 29.544 47.444C26.8373 47.444 24.896 46.52 23.72 44.672C22.5627 42.824 21.984 40.276 21.984 37.028ZM33.24 37.028C33.24 35.6467 33.1467 34.4893 32.96 33.556C32.792 32.604 32.4373 31.8293 31.896 31.232C31.3733 30.6347 30.5893 30.336 29.544 30.336C28.4987 30.336 27.7053 30.6347 27.164 31.232C26.6413 31.8293 26.2867 32.604 26.1 33.556C25.932 34.4893 25.848 35.6467 25.848 37.028C25.848 38.4467 25.932 39.6413 26.1 40.612C26.268 41.564 26.6227 42.3387 27.164 42.936C27.7053 43.5147 28.4987 43.804 29.544 43.804C30.5893 43.804 31.3827 43.5147 31.924 42.936C32.4653 42.3387 32.82 41.564 32.988 40.612C33.156 39.6413 33.24 38.4467 33.24 37.028ZM41.3176 43.076C43.1096 41.5827 44.5376 40.3413 45.6016 39.352C46.6656 38.344 47.5522 37.2987 48.2616 36.216C48.9709 35.1333 49.3256 34.0693 49.3256 33.024C49.3256 32.072 49.1016 31.3253 48.6536 30.784C48.2056 30.2427 47.5149 29.972 46.5816 29.972C45.6482 29.972 44.9296 30.2893 44.4256 30.924C43.9216 31.54 43.6602 32.3893 43.6416 33.472H39.8336C39.9082 31.232 40.5709 29.5333 41.8216 28.376C43.0909 27.2187 44.6962 26.64 46.6376 26.64C48.7656 26.64 50.3989 27.2093 51.5376 28.348C52.6762 29.468 53.2456 30.952 53.2456 32.8C53.2456 34.256 52.8536 35.6467 52.0696 36.972C51.2856 38.2973 50.3896 39.4547 49.3816 40.444C48.3736 41.4147 47.0576 42.5907 45.4336 43.972H53.6936V47.22H39.8616V44.308L41.3176 43.076Z"
+                        fill="white"/>
+                    </g>
+                    <defs>
+                      <filter id="filter0_n_94_953" x="0" y="0" width="76" height="76" filterUnits="userSpaceOnUse"
+                              color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                      result="noise" seed="6161"/>
+                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                          <feFuncA type="discrete"
+                                   tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise2">
+                          <feFuncA type="discrete"
+                                   tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                        <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
+                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                        <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
+                        <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                        <feMerge result="effect1_noise_94_953">
+                          <feMergeNode in="shape"/>
+                          <feMergeNode in="color1"/>
+                          <feMergeNode in="color2"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <div
+                  class="w-fit lg:w-full lg:flex lg:items-center lg:gap-x-4 border border-White4 p-6 px-8 lg:py-4 lg:px-5 rounded-6xl shadow-v2 bg-White4 blur-effect overflow-hidden">
+                  <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                    <g filter="url(#filter0_n_185_3900)">
+                      <path d="M8 28C8 16.9543 16.9543 8 28 8C39.0457 8 48 16.9543 48 28C48 39.0457 39.0457 48 28 48C16.9543 48 8 39.0457 8 28Z" fill="#DF4A53"/>
+                      <path d="M28 4C41.2548 4 52 14.7452 52 28C52 41.2548 41.2548 52 28 52C14.7452 52 4 41.2548 4 28C4 14.7452 14.7452 4 28 4Z" stroke="#FCD0C7" stroke-width="8"/>
+                      <path d="M16.56 27.52C16.56 25.2133 16.9733 23.4067 17.8 22.1C18.64 20.7933 20.0267 20.14 21.96 20.14C23.8933 20.14 25.2733 20.7933 26.1 22.1C26.94 23.4067 27.36 25.2133 27.36 27.52C27.36 29.84 26.94 31.66 26.1 32.98C25.2733 34.3 23.8933 34.96 21.96 34.96C20.0267 34.96 18.64 34.3 17.8 32.98C16.9733 31.66 16.56 29.84 16.56 27.52ZM24.6 27.52C24.6 26.5333 24.5333 25.7067 24.4 25.04C24.28 24.36 24.0267 23.8067 23.64 23.38C23.2667 22.9533 22.7067 22.74 21.96 22.74C21.2133 22.74 20.6467 22.9533 20.26 23.38C19.8867 23.8067 19.6333 24.36 19.5 25.04C19.38 25.7067 19.32 26.5333 19.32 27.52C19.32 28.5333 19.38 29.3867 19.5 30.08C19.62 30.76 19.8733 31.3133 20.26 31.74C20.6467 32.1533 21.2133 32.36 21.96 32.36C22.7067 32.36 23.2733 32.1533 23.66 31.74C24.0467 31.3133 24.3 30.76 24.42 30.08C24.54 29.3867 24.6 28.5333 24.6 27.52ZM30.3697 31.84C31.6497 30.7733 32.6697 29.8867 33.4297 29.18C34.1897 28.46 34.823 27.7133 35.3297 26.94C35.8364 26.1667 36.0897 25.4067 36.0897 24.66C36.0897 23.98 35.9297 23.4467 35.6097 23.06C35.2897 22.6733 34.7964 22.48 34.1297 22.48C33.463 22.48 32.9497 22.7067 32.5897 23.16C32.2297 23.6 32.043 24.2067 32.0297 24.98H29.3097C29.363 23.38 29.8364 22.1667 30.7297 21.34C31.6364 20.5133 32.783 20.1 34.1697 20.1C35.6897 20.1 36.8564 20.5067 37.6697 21.32C38.483 22.12 38.8897 23.18 38.8897 24.5C38.8897 25.54 38.6097 26.5333 38.0497 27.48C37.4897 28.4267 36.8497 29.2533 36.1297 29.96C35.4097 30.6533 34.4697 31.4933 33.3097 32.48H39.2097V34.8H29.3297V32.72L30.3697 31.84Z" fill="white"/>
+                    </g>
+                    <defs>
+                      <filter id="filter0_n_185_3900" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3" result="noise" seed="6161"/>
+                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                          <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise2">
+                          <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                        <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
+                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                        <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
+                        <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                        <feMerge result="effect1_noise_185_3900">
+                          <feMergeNode in="shape"/>
+                          <feMergeNode in="color1"/>
+                          <feMergeNode in="color2"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p class="text-white text-Top2 font-bold lg:text-base">We prepare your docs <span class="text-Red">&</span><br class="lg:hidden">
+                    register your company</p>
+                </div>
+              </div>
+              <div class="absolute lg:relative lg:top-auto lg:left-auto lg:translate-x-0 lg:w-full left-1/2 -translate-x-1/2 bottom-0 flex flex-col items-center gap-y-5 w-fit">
+                <div
+                  class="lg:hidden relative overflow-hidden rounded-full flex items-center justify-center w-[76px] min-w-[76px] h-[76px] lg:w-[56px] lg:min-w-[56px] lg:h-[56px]">
+                  <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="76" height="76" viewBox="0 0 76 76"
+                       fill="none">
+                    <g filter="url(#filter0_n_94_959)">
+                      <path
+                        d="M10 38C10 22.536 22.536 10 38 10C53.464 10 66 22.536 66 38C66 53.464 53.464 66 38 66C22.536 66 10 53.464 10 38Z"
+                        fill="#DF4A53"/>
+                      <path
+                        d="M38 5C56.2254 5 71 19.7746 71 38C71 56.2254 56.2254 71 38 71C19.7746 71 5 56.2254 5 38C5 19.7746 19.7746 5 38 5Z"
+                        stroke="#FCD0C7" stroke-width="10"/>
+                      <path
+                        d="M21.984 37.028C21.984 33.7987 22.5627 31.2693 23.72 29.44C24.896 27.6107 26.8373 26.696 29.544 26.696C32.2507 26.696 34.1827 27.6107 35.34 29.44C36.516 31.2693 37.104 33.7987 37.104 37.028C37.104 40.276 36.516 42.824 35.34 44.672C34.1827 46.52 32.2507 47.444 29.544 47.444C26.8373 47.444 24.896 46.52 23.72 44.672C22.5627 42.824 21.984 40.276 21.984 37.028ZM33.24 37.028C33.24 35.6467 33.1467 34.4893 32.96 33.556C32.792 32.604 32.4373 31.8293 31.896 31.232C31.3733 30.6347 30.5893 30.336 29.544 30.336C28.4987 30.336 27.7053 30.6347 27.164 31.232C26.6413 31.8293 26.2867 32.604 26.1 33.556C25.932 34.4893 25.848 35.6467 25.848 37.028C25.848 38.4467 25.932 39.6413 26.1 40.612C26.268 41.564 26.6227 42.3387 27.164 42.936C27.7053 43.5147 28.4987 43.804 29.544 43.804C30.5893 43.804 31.3827 43.5147 31.924 42.936C32.4653 42.3387 32.82 41.564 32.988 40.612C33.156 39.6413 33.24 38.4467 33.24 37.028ZM40.1416 32.464C40.2349 30.5973 40.8882 29.16 42.1016 28.152C43.3336 27.1253 44.9482 26.612 46.9456 26.612C48.3082 26.612 49.4749 26.8547 50.4456 27.34C51.4162 27.8067 52.1442 28.4507 52.6296 29.272C53.1336 30.0747 53.3856 30.9893 53.3856 32.016C53.3856 33.192 53.0776 34.1907 52.4616 35.012C51.8642 35.8147 51.1456 36.356 50.3056 36.636V36.748C51.3882 37.084 52.2282 37.6813 52.8256 38.54C53.4416 39.3987 53.7496 40.5 53.7496 41.844C53.7496 42.964 53.4882 43.9627 52.9656 44.84C52.4616 45.7173 51.7056 46.408 50.6976 46.912C49.7082 47.3973 48.5136 47.64 47.1136 47.64C45.0042 47.64 43.2869 47.108 41.9616 46.044C40.6362 44.98 39.9362 43.412 39.8616 41.34H43.6696C43.7069 42.2547 44.0149 42.992 44.5936 43.552C45.1909 44.0933 46.0029 44.364 47.0296 44.364C47.9816 44.364 48.7096 44.1027 49.2136 43.58C49.7362 43.0387 49.9976 42.348 49.9976 41.508C49.9976 40.388 49.6429 39.5853 48.9336 39.1C48.2242 38.6147 47.1229 38.372 45.6296 38.372H44.8176V35.152H45.6296C48.2802 35.152 49.6056 34.2653 49.6056 32.492C49.6056 31.6893 49.3629 31.064 48.8776 30.616C48.4109 30.168 47.7296 29.944 46.8336 29.944C45.9562 29.944 45.2749 30.1867 44.7896 30.672C44.3229 31.1387 44.0522 31.736 43.9776 32.464H40.1416Z"
+                        fill="white"/>
+                    </g>
+                    <defs>
+                      <filter id="filter0_n_94_959" x="0" y="0" width="76" height="76" filterUnits="userSpaceOnUse"
+                              color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3"
+                                      result="noise" seed="6161"/>
+                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                          <feFuncA type="discrete"
+                                   tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise2">
+                          <feFuncA type="discrete"
+                                   tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                        <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
+                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                        <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
+                        <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                        <feMerge result="effect1_noise_94_959">
+                          <feMergeNode in="shape"/>
+                          <feMergeNode in="color1"/>
+                          <feMergeNode in="color2"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <div
+                  class="w-fit lg:w-full lg:flex lg:items-center lg:gap-x-4 border border-White4 p-6 px-8 lg:py-4 lg:px-5 rounded-6xl shadow-v2 bg-White4 blur-effect overflow-hidden">
+                  <svg class="minlg:hidden min-w-14" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                    <g filter="url(#filter0_n_185_3905)">
+                      <path d="M8 28C8 16.9543 16.9543 8 28 8C39.0457 8 48 16.9543 48 28C48 39.0457 39.0457 48 28 48C16.9543 48 8 39.0457 8 28Z" fill="#DF4A53"/>
+                      <path d="M28 4C41.2548 4 52 14.7452 52 28C52 41.2548 41.2548 52 28 52C14.7452 52 4 41.2548 4 28C4 14.7452 14.7452 4 28 4Z" stroke="#FCD0C7" stroke-width="8"/>
+                      <path d="M16.56 27.52C16.56 25.2133 16.9733 23.4067 17.8 22.1C18.64 20.7933 20.0267 20.14 21.96 20.14C23.8933 20.14 25.2733 20.7933 26.1 22.1C26.94 23.4067 27.36 25.2133 27.36 27.52C27.36 29.84 26.94 31.66 26.1 32.98C25.2733 34.3 23.8933 34.96 21.96 34.96C20.0267 34.96 18.64 34.3 17.8 32.98C16.9733 31.66 16.56 29.84 16.56 27.52ZM24.6 27.52C24.6 26.5333 24.5333 25.7067 24.4 25.04C24.28 24.36 24.0267 23.8067 23.64 23.38C23.2667 22.9533 22.7067 22.74 21.96 22.74C21.2133 22.74 20.6467 22.9533 20.26 23.38C19.8867 23.8067 19.6333 24.36 19.5 25.04C19.38 25.7067 19.32 26.5333 19.32 27.52C19.32 28.5333 19.38 29.3867 19.5 30.08C19.62 30.76 19.8733 31.3133 20.26 31.74C20.6467 32.1533 21.2133 32.36 21.96 32.36C22.7067 32.36 23.2733 32.1533 23.66 31.74C24.0467 31.3133 24.3 30.76 24.42 30.08C24.54 29.3867 24.6 28.5333 24.6 27.52ZM29.5297 24.26C29.5964 22.9267 30.063 21.9 30.9297 21.18C31.8097 20.4467 32.963 20.08 34.3897 20.08C35.363 20.08 36.1964 20.2533 36.8897 20.6C37.583 20.9333 38.103 21.3933 38.4497 21.98C38.8097 22.5533 38.9897 23.2067 38.9897 23.94C38.9897 24.78 38.7697 25.4933 38.3297 26.08C37.903 26.6533 37.3897 27.04 36.7897 27.24V27.32C37.563 27.56 38.163 27.9867 38.5897 28.6C39.0297 29.2133 39.2497 30 39.2497 30.96C39.2497 31.76 39.063 32.4733 38.6897 33.1C38.3297 33.7267 37.7897 34.22 37.0697 34.58C36.363 34.9267 35.5097 35.1 34.5097 35.1C33.003 35.1 31.7764 34.72 30.8297 33.96C29.883 33.2 29.383 32.08 29.3297 30.6H32.0497C32.0764 31.2533 32.2964 31.78 32.7097 32.18C33.1364 32.5667 33.7164 32.76 34.4497 32.76C35.1297 32.76 35.6497 32.5733 36.0097 32.2C36.383 31.8133 36.5697 31.32 36.5697 30.72C36.5697 29.92 36.3164 29.3467 35.8097 29C35.303 28.6533 34.5164 28.48 33.4497 28.48H32.8697V26.18H33.4497C35.343 26.18 36.2897 25.5467 36.2897 24.28C36.2897 23.7067 36.1164 23.26 35.7697 22.94C35.4364 22.62 34.9497 22.46 34.3097 22.46C33.683 22.46 33.1964 22.6333 32.8497 22.98C32.5164 23.3133 32.323 23.74 32.2697 24.26H29.5297Z" fill="white"/>
+                    </g>
+                    <defs>
+                      <filter id="filter0_n_185_3905" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                        <feTurbulence type="fractalNoise" baseFrequency="1.25 1.25" stitchTiles="stitch" numOctaves="3" result="noise" seed="6161"/>
+                        <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+                          <feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"/>
+                        <feComponentTransfer in="alphaNoise" result="coloredNoise2">
+                          <feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 "/>
+                        </feComponentTransfer>
+                        <feComposite operator="in" in2="shape" in="coloredNoise2" result="noise2Clipped"/>
+                        <feFlood flood-color="rgba(95, 0, 0, 0.07)" result="color1Flood"/>
+                        <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"/>
+                        <feFlood flood-color="rgba(255, 255, 255, 0.15)" result="color2Flood"/>
+                        <feComposite operator="in" in2="noise2Clipped" in="color2Flood" result="color2"/>
+                        <feMerge result="effect1_noise_185_3905">
+                          <feMergeNode in="shape"/>
+                          <feMergeNode in="color1"/>
+                          <feMergeNode in="color2"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                  </svg>
+                  <p class="text-white text-Top2 font-bold lg:text-base">You receive your EIN & open <br class="lg:hidden"> your <span class="text-Red">U.S.</span>
+                    bank account</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pb-12 lg:pb-8 bg-gradient-1">
+    <div class="img-bg-5 pt-14 lg:pt-8 max-w-[1700px] mx-auto">
+      <div class="container pb-14">
+        <div class="row gap-x-6 gap-y-8 lg:gap-x-0">
+          <div class="col-span-6 lg:col-span-12 flex items-end">
+            <div class="flex flex-col gap-y-5 max-w-[392px] lg:max-w-full">
+              <h3 class="text-h2 text-DarkBlue font-bold lg:text-Top5">Why BizEntry<span class="text-Red">?</span></h3>
+              <p class="text-base lg:text-body font-medium">Corporate solutions is our business!
+                Due Diligence, Integrity, and Consistency are the virtues of our professionals.</p>
+            </div>
+          </div>
+          <div class="col-span-6 lg:col-span-12 flex items-end">
+            <div class="max-w-[480px] flex items-center gap-x-4 mx-auto lg:max-w-full lg:ml-0">
+              <div
+                class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
+                <span class="lg:text-Top1">01</span>
+              </div>
+              <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Company registered in Florida, a top
+                business-friendly state.</p>
+            </div>
+          </div>
+          <div class="col-span-6 lg:col-span-12 flex items-end">
+            <div class="max-w-[480px] flex items-center gap-x-4 lg:max-w-full lg:ml-0">
+              <div
+                class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
+                <span class="lg:text-Top1">02</span>
+              </div>
+              <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Real Chase Bank account — no U.S. visit
+                required.</p>
+            </div>
+          </div>
+          <div class="col-span-6 lg:col-span-12 flex items-end">
+            <div class="max-w-[480px] flex items-center gap-x-4 mx-auto lg:max-w-full lg:ml-0">
+              <div
+                class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
+                <span class="lg:text-Top1">03</span>
+              </div>
+              <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Fully remote, fast, no in-person presence
+                needed.</p>
+            </div>
+          </div>
+          <div class="col-span-6 lg:col-span-12 flex items-end">
+            <div class="max-w-[480px] flex items-center gap-x-4 lg:max-w-full lg:ml-0">
+              <div
+                class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
+                <span class="lg:text-Top1">04</span>
+              </div>
+              <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Comprehensive support from a team backed by
+                Consumer Attorneys.</p>
+            </div>
+          </div>
+          <div class="col-span-6 lg:col-span-12 flex items-end">
+            <div class="max-w-[480px] flex items-center gap-x-4 mx-auto lg:max-w-full lg:ml-0">
+              <div
+                class="rounded-full lg:w-16 lg:h-16 lg:min-w-16 w-20 h-20 min-w-20 flex items-center justify-center bg-Red text-white text-h4 border-[10px] border-Red3">
+                <span class="lg:text-Top1">05</span>
+              </div>
+              <p class="text-DarkBlue text-Top3 font-semibold lg:text-base">Company registered in Florida, a top
+                business-friendly state.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="">
+  <div class="max-w-[1217px] lg:mx-5 mx-auto rounded-4xl overflow-hidden bg-white shadow-v2 border border-Grey4 pt-12 px-12 lg:px-5 lg:py-8">
+    <div class="container px-0">
+      <div class="row gap-x-6 lg:gap-x-0">
+        <div class="col-span-5 lg:col-span-12">
+          <div class="relative h-full">
+            <svg class="absolute bottom-[94px] z-[2] -left-2" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+            <svg class="absolute bottom-1/2 z-[2] right-0" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+            <div class="flex flex-col gap-y-6 relative lg:mb-6 z-[3]">
+              <h3 class="text-h2_2 lg:text-Top5 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
+                business?</h3>
+              <p class="text-base lg:text-body font-medium">Get a free consultation today. <br>
+                BizEntry — your gateway to the U.S. <br>
+                No visa. No stress. Guaranteed.</p>
+            </div>
+            <div class="img-bg-1 absolute bottom-5 left-0 z-0"></div>
+            <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative lg:hidden" src="__IMAGE_PATH__businessman-04-3.png" alt="Ready to launch your U.S. business?">
+            <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative minlg:hidden max-w-[350px] mx-auto" src="__IMAGE_PATH__businessman-04-3--mob.png" alt="Ready to launch your U.S. business?">
+          </div>
+        </div>
+        <div class="col-span-7 lg:col-span-12 relative">
+          <div class="max-w-[573px] lg:max-w-full flex flex-col w-full ml-auto">
+            <div id="contactFormWrapper" x-data="{ submitted: false }">
+  <form id="contactForm" x-cloak x-show="!submitted" @submit.prevent="submitted = true" class="flex flex-col gap-y-5" action="">
+    <div class="flex flex-col gap-y-2">
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="nameID">Full Name</label>
+    <input
+        class="input  "
+        type="text" id="nameID" placeholder="Full Name" name="fullName" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="EmailID">Email</label>
+    <input
+        class="input  "
+        type="email" id="EmailID" placeholder="Email" name="email" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="phoneID">Phone</label>
+    <input
+        class="input  "
+        type="text" id="phoneID" placeholder="Phone" name="phone" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+
+      <div class="form-group flex flex-col items-start relative ">
+    <label class="block mb-2 text-body md:text-body2 text-Text2 hidden" for="phoneID">Phone</label>
+    <select id="phoneID" name="phone" class="select w-full input">
+        <option selected>What are you interested in?</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</div>
+
+
+      <div class="form-group flex flex-col items-start overflow-hidden ">
+    <label class="mb-3 font-semibold text-body hidden" for="MesssageID">Messsage</label>
+    <textarea
+        class="input textarea resize-none "
+        id="MesssageID" placeholder="Messsage" rows="6" name="messsage"></textarea>
+</div>
+    </div>
+    <div class="flex flex-col gap-y-2 items-center">
+      <button class="button w-full" type="submit" aria-label="Send Request button">
+    <span>Send Request</span>
+</button>
+      <div class="flex gap-x-2 mb-6 lg:inline lg:mb-0">
+        <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+        <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+          and only contact you as requested.</p>
+      </div>
+    </div>
+  </form>
+  <div id="thankYou" x-cloak x-show="submitted" class="flex flex-col items-center pb-8 lg:pb-0" aria-live="polite">
+    <img class="w-full mb-8 lg:hidden" src="__IMAGE_PATH__ty-img.svg" alt="thank You">
+    <img class="w-full mb-8 minlg:hidden max-w-[300px] mx-auto" src="__IMAGE_PATH__ty-img--mob.svg" alt="thank You">
+    <a class="button px-[32px] w-full" href="index.html">
+    <span class="">Back to the Homepage</span>
+</a>
+    <div class="flex gap-x-2 lg:inline mt-4">
+      <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+      <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+        and only contact you as requested.</p>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </div>
+  </section>
+  <footer class="w-full mt-auto overflow-hidden bg-footer shadow-v2">
+  <div class="container">
+    <div class="flex justify-between lg:flex-col gap-x-6 lg:gap-y-8 pt-16 pb-10 lg:pb-8 lg:pt-8">
+      <div class="flex flex-col gap-y-5 max-w-[331px] lg:flex-1">
+        <a class="w-full" href="index.html">
+          <img src="__IMAGE_PATH__Logo-2.svg" alt="BizEntry Logo">
+        </a>
+        <p>BizEntry is your reliable gateway to the U.S. market. No need to travel to the U.S— everything is done
+          remotely, turnkey, and with a guaranteed outcome.</p>
+      </div>
+      <div class="flex justify-between gap-x-6 max-w-[346px] w-full lg:max-w-full">
+        <div class="flex flex-col lg:flex-1">
+          <h3 class="text-body text-Grey font-semibold mb-3 uppercase">EXPLORE</h3>
+          <ul class="flex flex-col gap-y-2">
+            <li class="flex items-center">
+              <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="index.html">Home</a>
+            </li>
+            <li class="flex items-center">
+              <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="About-us.html">About</a>
+            </li>
+            <li class="flex items-center">
+              <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="FAQs.html">FAQ</a>
+            </li>
+              <li class="flex items-center">
+                  <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="Contacts.html">Contact</a>
+              </li>
+              <li class="flex items-center">
+                  <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="Pricing.html">Pricing</a>
+              </li>
+          </ul>
+        </div>
+        <div class="flex flex-col lg:flex-1">
+          <h3 class="text-body text-Grey font-semibold mb-3 uppercase">LEGAL</h3>
+          <ul class="flex flex-col gap-y-2">
+            <li class="flex items-center">
+              <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="Terms-Conditions.html">Privacy Policy</a>
+            </li>
+            <li class="flex items-center">
+              <a class="text-DarkBlue hover:underline transition-all text-body font-medium" href="Terms-Conditions.html">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <h3 class="text-body text-Grey font-semibold mb-3 uppercase">CONTACTS</h3>
+        <div class="flex items-center gap-x-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none">
+            <g clip-path="url(#clip0_208_222)">
+              <path d="M22.7173 22.7021C23.8846 22.7021 24.834 21.7524 24.834 20.5854V12.4145C24.834 11.2475 23.8846 10.2979 22.7173 10.2979H9.28234C8.11509 10.2979 7.16565 11.2475 7.16565 12.4145V20.5854C7.16565 21.7524 8.11509 22.7021 9.28234 22.7021H22.7173ZM10.3663 20.8271L14.5045 16.6889L15.1092 17.0864C15.3553 17.2504 15.6373 17.3325 15.9198 17.3325C16.1996 17.3325 16.4796 17.2519 16.7245 17.0903L17.4241 16.6179L21.6334 20.8271H10.3663ZM22.9593 12.8811V19.5012L19.0072 15.5491L22.9593 12.8811ZM20.6571 12.1729L15.9166 15.3733L11.047 12.1729H20.6571ZM9.04034 13.0979L12.9043 15.6374L9.04034 19.5012V13.0979Z" fill="#DF4A53"/>
+              <path d="M27.314 5.18625C24.292 2.16431 20.2739 0.5 16.0002 0.5C12.4414 0.5 9.05322 1.6575 6.27341 3.79319L6.2866 3.2385C6.29879 2.72094 5.88941 2.29125 5.37154 2.279C4.85348 2.2675 4.42454 2.67619 4.41204 3.19406L4.35929 5.41794C4.34223 6.13962 4.87029 6.74531 5.58754 6.82688L8.04235 7.09931C8.51279 7.09931 8.9186 6.74581 8.97279 6.26725C9.03116 5.75288 8.66154 5.2885 8.14685 5.23012L7.56847 5.16444C9.99291 3.3545 12.9243 2.375 16.0002 2.375C19.7732 2.375 23.3203 3.84425 25.988 6.51219C28.656 9.17994 30.1252 12.7271 30.1252 16.5C30.1252 18.2744 29.8008 20.0044 29.1606 21.6416C28.9721 22.1238 29.2101 22.6675 29.6923 22.856C29.8044 22.8999 29.9199 22.9207 30.0334 22.9207C30.4081 22.9207 30.7621 22.6944 30.907 22.3242C31.6323 20.4685 32.0002 18.5091 32.0002 16.5C32.0002 12.2263 30.3359 8.20825 27.314 5.18625Z" fill="#DF4A53"/>
+              <path d="M26.4927 26.1886L24.0059 25.8976C23.4917 25.8375 23.0259 26.2057 22.9656 26.7199C22.9055 27.234 23.2737 27.6999 23.7878 27.7599L24.4465 27.837C22.0434 29.6461 19.1072 30.6251 16 30.6251C12.2271 30.6251 8.67994 29.1559 6.01219 26.4879C3.34425 23.8202 1.875 20.273 1.875 16.5001C1.875 14.172 2.45312 11.8646 3.54713 9.82747C3.792 9.37141 3.62087 8.80303 3.16456 8.55816C2.7085 8.31303 2.13987 8.48416 1.895 8.94047C0.65525 11.2493 0 13.8634 0 16.5001C0 20.7738 1.66431 24.7919 4.68625 27.8139C7.70819 30.8359 11.7263 32.5001 16 32.5001C19.5603 32.5001 22.9248 31.3632 25.6687 29.2635L25.6594 29.7027C25.6487 30.2203 26.0593 30.649 26.5772 30.6598C26.5837 30.66 26.5906 30.66 26.5972 30.66C27.1057 30.66 27.5232 30.253 27.5342 29.742L27.5823 27.4398C27.5959 26.8007 27.1274 26.2625 26.4927 26.1886Z" fill="#DF4A53"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_208_222">
+                <rect width="32" height="32" fill="white" transform="translate(0 0.5)"/>
+              </clipPath>
+            </defs>
+          </svg>
+
+          <div class="flex flex-col">
+            <p class="text-body4 uppercase font-medium tracking-36">Email</p>
+            <a class="mt-[2px] text-body text-DarkBlue font-medium hover:underline transition-all" href="mailto:Info@bizentry.com">Info@bizentry.com</a>
+          </div>
+        </div>
+        <ul class="flex gap-x-3 mt-4">
+          <li class="flex items-center">
+            <a target="_blank" class="w-[30px] h-[30px] text-none flex items-center justify-center rounded-full bg-Red border border-Red group hover:bg-white transition-all" href="#">
+              Facebook
+              <svg xmlns="http://www.w3.org/2000/svg" width="9" height="14" viewBox="0 0 9 14" fill="none">
+                <g clip-path="url(#clip0_208_232)">
+                  <rect class="group-hover:fill-white transition-all" width="8.75" height="14" fill="#DF4A53"/>
+                  <path class="group-hover:fill-Red transition-all" d="M7.6327 7.875L8.02153 5.34133H5.5904V3.69715C5.5904 3.00398 5.93001 2.32832 7.01884 2.32832H8.12407V0.171172C8.12407 0.171172 7.1211 0 6.16215 0C4.16004 0 2.85137 1.21352 2.85137 3.41031V5.34133H0.625854V7.875H2.85137V14H5.5904V7.875H7.6327Z" fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_208_232">
+                    <rect class="group-hover:fill-Red transition-all" width="8.75" height="14" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a target="_blank" class="w-[30px] h-[30px] text-none flex items-center justify-center rounded-full bg-Red border border-Red group hover:bg-white transition-all" href="#">
+              Linkedin
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14" fill="none">
+                <g clip-path="url(#clip0_208_236)">
+                  <rect class="group-hover:fill-white transition-all" width="12.25" height="14" fill="#DF4A53"/>
+                  <path class="group-hover:fill-Red transition-all" d="M2.74203 12.25H0.202344V4.07145H2.74203V12.25ZM1.47082 2.95583C0.658711 2.95583 0 2.28317 0 1.47106C5.81273e-09 1.08098 0.154961 0.706869 0.430793 0.431037C0.706626 0.155205 1.08073 0.000244141 1.47082 0.000244141C1.86091 0.000244141 2.23501 0.155205 2.51085 0.431037C2.78668 0.706869 2.94164 1.08098 2.94164 1.47106C2.94164 2.28317 2.28266 2.95583 1.47082 2.95583ZM12.2473 12.25H9.71305V8.26872C9.71305 7.31989 9.69391 6.10309 8.39262 6.10309C7.07219 6.10309 6.86984 7.13395 6.86984 8.20036V12.25H4.33289V4.07145H6.76867V5.18708H6.80422C7.14328 4.5445 7.97152 3.86638 9.20719 3.86638C11.7775 3.86638 12.25 5.55895 12.25 7.75739V12.25H12.2473Z" fill="white"/>
+                </g>
+                <defs>
+                  <clipPath id="clip0_208_236">
+                    <rect class="group-hover:fill-Red transition-all" width="12.25" height="14" fill="white"/>
+                  </clipPath>
+                </defs>
+              </svg>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a target="_blank" class="w-[30px] h-[30px] text-none flex items-center justify-center rounded-full bg-Red border border-Red group hover:bg-white transition-all" href="#">
+              Instagram
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path class="group-hover:fill-Red transition-all" d="M7 1.26506C8.85542 1.26506 9.10843 1.26506 9.86747 1.26506C10.5422 1.26506 10.8795 1.43374 11.1325 1.51807C11.4699 1.68675 11.7229 1.77108 11.9759 2.0241C12.2289 2.27711 12.3976 2.53012 12.4819 2.86747C12.5663 3.12048 12.6506 3.45783 12.7349 4.13253C12.7349 4.89157 12.7349 5.06024 12.7349 7C12.7349 8.93976 12.7349 9.10843 12.7349 9.86747C12.7349 10.5422 12.5663 10.8795 12.4819 11.1325C12.3133 11.4699 12.2289 11.7229 11.9759 11.9759C11.7229 12.2289 11.4699 12.3976 11.1325 12.4819C10.8795 12.5663 10.5422 12.6506 9.86747 12.7349C9.10843 12.7349 8.93976 12.7349 7 12.7349C5.06024 12.7349 4.89157 12.7349 4.13253 12.7349C3.45783 12.7349 3.12048 12.5663 2.86747 12.4819C2.53012 12.3133 2.27711 12.2289 2.0241 11.9759C1.77108 11.7229 1.60241 11.4699 1.51807 11.1325C1.43374 10.8795 1.3494 10.5422 1.26506 9.86747C1.26506 9.10843 1.26506 8.93976 1.26506 7C1.26506 5.06024 1.26506 4.89157 1.26506 4.13253C1.26506 3.45783 1.43374 3.12048 1.51807 2.86747C1.68675 2.53012 1.77108 2.27711 2.0241 2.0241C2.27711 1.77108 2.53012 1.60241 2.86747 1.51807C3.12048 1.43374 3.45783 1.3494 4.13253 1.26506C4.89157 1.26506 5.14458 1.26506 7 1.26506ZM7 0C5.06024 0 4.89157 0 4.13253 0C3.37349 0 2.86747 0.168675 2.44578 0.33735C2.0241 0.506025 1.60241 0.759037 1.18072 1.18072C0.759037 1.60241 0.590362 1.93976 0.33735 2.44578C0.168675 2.86747 0.0843374 3.37349 0 4.13253C0 4.89157 0 5.14458 0 7C0 8.93976 0 9.10843 0 9.86747C0 10.6265 0.168675 11.1325 0.33735 11.5542C0.506025 11.9759 0.759037 12.3976 1.18072 12.8193C1.60241 13.241 1.93976 13.4096 2.44578 13.6627C2.86747 13.8313 3.37349 13.9157 4.13253 14C4.89157 14 5.14458 14 7 14C8.85542 14 9.10843 14 9.86747 14C10.6265 14 11.1325 13.8313 11.5542 13.6627C11.9759 13.494 12.3976 13.241 12.8193 12.8193C13.241 12.3976 13.4096 12.0602 13.6627 11.5542C13.8313 11.1325 13.9157 10.6265 14 9.86747C14 9.10843 14 8.85542 14 7C14 5.14458 14 4.89157 14 4.13253C14 3.37349 13.8313 2.86747 13.6627 2.44578C13.494 2.0241 13.241 1.60241 12.8193 1.18072C12.3976 0.759037 12.0602 0.590362 11.5542 0.33735C11.1325 0.168675 10.6265 0.0843374 9.86747 0C9.10843 0 8.93976 0 7 0Z" fill="white"/>
+                <path class="group-hover:fill-Red transition-all" d="M7 3.37349C4.9759 3.37349 3.37349 4.9759 3.37349 7C3.37349 9.0241 4.9759 10.6265 7 10.6265C9.0241 10.6265 10.6265 9.0241 10.6265 7C10.6265 4.9759 9.0241 3.37349 7 3.37349ZM7 9.36145C5.73494 9.36145 4.63855 8.3494 4.63855 7C4.63855 5.73494 5.6506 4.63855 7 4.63855C8.26506 4.63855 9.36145 5.6506 9.36145 7C9.36145 8.26506 8.26506 9.36145 7 9.36145Z" fill="white"/>
+                <path class="group-hover:fill-Red transition-all" d="M10.7108 4.13253C11.1766 4.13253 11.5542 3.75495 11.5542 3.28916C11.5542 2.82336 11.1766 2.44578 10.7108 2.44578C10.245 2.44578 9.86747 2.82336 9.86747 3.28916C9.86747 3.75495 10.245 4.13253 10.7108 4.13253Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a target="_blank" class="w-[30px] h-[30px] text-none flex items-center justify-center rounded-full bg-Red border border-Red group hover:bg-white transition-all" href="#">
+              Youtube
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path class="group-hover:fill-Red transition-all" d="M13.7075 3.56466C13.5464 2.94878 13.072 2.46372 12.4697 2.29911C11.3779 2 7 2 7 2C7 2 2.6221 2 1.53029 2.29911C0.927952 2.46375 0.453555 2.94878 0.292544 3.56466C0 4.68099 0 7.0101 0 7.0101C0 7.0101 0 9.33922 0.292544 10.4555C0.453555 11.0714 0.927952 11.5363 1.53029 11.7009C2.6221 12 7 12 7 12C7 12 11.3779 12 12.4697 11.7009C13.072 11.5363 13.5464 11.0714 13.7075 10.4555C14 9.33922 14 7.0101 14 7.0101C14 7.0101 14 4.68099 13.7075 3.56466ZM5.56817 9.12477V4.89544L9.22725 7.01016L5.56817 9.12477Z" fill="white"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="pt-6 lg:py-8 pb-8 border-t border-Grey3">
+      <div class="row">
+        <div class="col-span-12">
+          <p class="text-center text-body4 text-Grey">Copyright &#169; 2025. All rights reserved by BizEntry</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</main>
+<div x-cloak x-show="modalIsOpen" x-transition.opacity.duration.200ms x-trap.inert.noscroll="modalIsOpen" x-on:keydown.esc.window="modalIsOpen = false" x-on:click.self="modalIsOpen = false" class="fixed inset-0 z-[99999999] flex items-center lg:items-start lg:overflow-y-scroll justify-center bg-black/20 p-4 pb-8 backdrop-blur-md lg:p-8 lg:px-5" role="dialog" aria-modal="true" aria-labelledby="defaultModalTitle">
+  <!-- Modal Dialog -->
+  <div x-show="modalIsOpen" x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity" x-transition:enter-start="opacity-0 scale-50" x-transition:enter-end="opacity-100 scale-100" class="flex max-w-[1216px] flex-col gap-4 overflow-hidden rounded-xl border border-slate-300 bg-white px-12 pt-12 lg:px-5 lg:py-8">
+    <div class="row gap-x-6 lg:gap-x-0">
+      <div class="col-span-5 lg:col-span-12">
+        <div class="relative h-full">
+          <svg class="absolute bottom-[94px] z-[2] -left-2" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+          <svg class="absolute bottom-1/2 z-[2] right-0" xmlns="http://www.w3.org/2000/svg" width="31" height="31"
+     viewBox="0 0 31 31">
+  <defs>
+    <!-- Радиальный градиент для эффекта затухания -->
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <!-- Центр полностью видимый -->
+      <stop offset="0%" stop-color="#DF4A53" stop-opacity="1">
+        <animate attributeName="stop-opacity" values="1;0.8;1" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <!-- Края прозрачные -->
+      <stop offset="100%" stop-color="#DF4A53" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0;0.2;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+    </radialGradient>
+  </defs>
+  <circle cx="15.5" cy="15.5" r="11.25" fill="url(#fade)" stroke="white" stroke-width="0"/>
+</svg>
+
+          <div class="flex flex-col gap-y-6 relative lg:mb-6 z-[3]">
+            <h3 class="text-h2_2 lg:text-Top5 font-bold text-DarkBlue">Ready to launch your <span class="text-Red">U.S.</span>
+              business?</h3>
+            <p class="text-base lg:text-body font-medium">Get a free consultation today. <br>
+              BizEntry — your gateway to the U.S. <br>
+              No visa. No stress. Guaranteed.</p>
+          </div>
+          <div class="img-bg-1 absolute bottom-5 left-0 z-0"></div>
+          <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative lg:hidden" src="__IMAGE_PATH__businessman-04-3.png" alt="Ready to launch your U.S. business?">
+          <img class="w-full absolute left-0 bottom-0 z-[1] lg:relative minlg:hidden max-w-[350px] mx-auto" src="__IMAGE_PATH__businessman-04-3--mob.png" alt="Ready to launch your U.S. business?">
+        </div>
+      </div>
+      <div class="col-span-7 lg:col-span-12 relative">
+        <div class="max-w-[573px] lg:max-w-full flex flex-col w-full ml-auto">
+          <div id="contactFormWrapper" x-data="{ submitted: false }">
+  <form id="contactForm" x-cloak x-show="!submitted" @submit.prevent="submitted = true" class="flex flex-col gap-y-5" action="">
+    <div class="flex flex-col gap-y-2">
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="nameID">Full Name</label>
+    <input
+        class="input  "
+        type="text" id="nameID" placeholder="Full Name" name="fullName" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="EmailID">Email</label>
+    <input
+        class="input  "
+        type="email" id="EmailID" placeholder="Email" name="email" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+      <div class="form-group flex flex-col items-start ">
+    <label class="mb-2 text-body md:text-body2 text-Text hidden" for="phoneID">Phone</label>
+    <input
+        class="input  "
+        type="text" id="phoneID" placeholder="Phone" name="phone" required>
+    <small class="self-start text-body4 text-Error mt-2 hidden">Error</small>
+</div>
+
+
+      <div class="form-group flex flex-col items-start relative ">
+    <label class="block mb-2 text-body md:text-body2 text-Text2 hidden" for="phoneID">Phone</label>
+    <select id="phoneID" name="phone" class="select w-full input">
+        <option selected>What are you interested in?</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+</div>
+
+
+      <div class="form-group flex flex-col items-start overflow-hidden ">
+    <label class="mb-3 font-semibold text-body hidden" for="MesssageID">Messsage</label>
+    <textarea
+        class="input textarea resize-none "
+        id="MesssageID" placeholder="Messsage" rows="6" name="messsage"></textarea>
+</div>
+    </div>
+    <div class="flex flex-col gap-y-2 items-center">
+      <button class="button w-full" type="submit" aria-label="Send Request button">
+    <span>Send Request</span>
+</button>
+      <div class="flex gap-x-2 mb-6 lg:inline lg:mb-0">
+        <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+        <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+          and only contact you as requested.</p>
+      </div>
+    </div>
+  </form>
+  <div id="thankYou" x-cloak x-show="submitted" class="flex flex-col items-center pb-8 lg:pb-0" aria-live="polite">
+    <img class="w-full mb-8 lg:hidden" src="__IMAGE_PATH__ty-img.svg" alt="thank You">
+    <img class="w-full mb-8 minlg:hidden max-w-[300px] mx-auto" src="__IMAGE_PATH__ty-img--mob.svg" alt="thank You">
+    <a class="button px-[32px] w-full" href="index.html">
+    <span class="">Back to the Homepage</span>
+</a>
+    <div class="flex gap-x-2 lg:inline mt-4">
+      <p class="whitespace-nowrap lg:inline text-body2 text-DarkBlue font-semibold">Privacy Notice:</p>
+      <p class="text-body2 font-medium lg:inline">All inquiries are handled with strict confidentiality. We never share your data with third parties
+        and only contact you as requested.</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./js/scripts.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('data', () => ({
+        }))
+    })
+</script>
+
+</body>
+
+</html>
